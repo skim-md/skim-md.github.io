@@ -1,49 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skim — Markdown Viewer &amp; Reader for Chrome</title>
-<meta name="description" content="Read .md files beautifully in Chrome: local files, URLs, AI-agent output. Live reload, math, diagrams, folder view. Free, open source, no data collected.">
-<link rel="canonical" href="https://skim-md.github.io/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Skim">
-<meta property="og:title" content="Skim — Markdown Viewer &amp; Reader for Chrome">
-<meta property="og:description" content="Read .md files beautifully in Chrome: local files, URLs, AI-agent output. Live reload, math, diagrams, folder view. Free, open source, no data collected.">
-<meta property="og:url" content="https://skim-md.github.io/">
-<meta property="og:image" content="https://skim-md.github.io/assets/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site-fonts.css">
-<link rel="stylesheet" href="/assets/site.css">
-<script>/* theme before first paint: no flash */try{var t=localStorage.getItem('skim-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-head">
-  <div class="wrap bar">
-    <a class="brand" href="/" aria-label="Skim home">
-      <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
-      <strong>Skim</strong>
-    </a>
-    <nav class="site-nav" aria-label="Site">
-      <a href="/viewer/">Online viewer</a>
-      <a href="/ai/">For AI workflows</a>
-      <a href="/best-markdown-viewer-extensions-2026/">Compare</a>
-      <a href="https://github.com/skim-md/skim" rel="noopener">GitHub</a>
-      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
-    </nav>
-  </div>
-</header>
-<main id="main">
+<!--meta
+{
+  "title": "Skim — Markdown Viewer & Reader for Chrome",
+  "description": "Read .md files beautifully in Chrome: local files, URLs, AI-agent output. Live reload, math, diagrams, folder view. Free, open source, no data collected.",
+  "path": "/"
+}
+-->
 <section class="hero wrap">
   <span class="eyebrow">Free, open-source Chrome extension</span>
   <h1>Read what your AI wrote. <em>Instantly.</em></h1>
   <p class="sub">Skim turns raw <code>.md</code> files into beautiful, readable pages right in your browser. Agent plans, READMEs, notes, docs. Everything happens on your device.</p>
   <div class="actions">
-    <a class="btn primary" href="https://github.com/skim-md/skim" rel="noopener">Get Skim for Chrome, free (GitHub)</a>
+    <a class="btn primary" href="{{installUrl}}" rel="noopener">{{installLabel}}</a>
     <a class="btn" href="/viewer/">Try the online viewer</a>
   </div>
   <p class="note">Chrome Web Store listing coming soon. Until then, install the preview from GitHub: two minutes, instructions included. MIT-licensed.</p>
@@ -114,7 +81,7 @@
   <div class="wrap">
     <p class="close-line">Your next <code>.md</code> file deserves better than a wall of raw text.</p>
     <div class="actions">
-      <a class="btn primary" href="https://github.com/skim-md/skim" rel="noopener">Get Skim for Chrome, free (GitHub)</a>
+      <a class="btn primary" href="{{installUrl}}" rel="noopener">{{installLabel}}</a>
     </div>
     <p class="note">MIT-licensed. No accounts, no telemetry, nothing leaves your device.</p>
   </div>
@@ -161,45 +128,3 @@ if (reduced || !('IntersectionObserver' in window)) {
   els.forEach((el) => rio.observe(el));
 }
 </script>
-
-</main>
-<footer class="site-foot">
-  <div class="wrap cols">
-    <div>
-      <p class="foot-brand"><span class="lines" aria-hidden="true"><span></span><span></span><span></span></span> <strong>Skim</strong> — Markdown Viewer &amp; Reader</p>
-      <p class="muted">Free, MIT-licensed, open source.<br>No accounts. No tracking. Everything on-device.</p>
-    </div>
-    <div>
-      <p class="foot-h">Guides</p>
-      <a href="/how-to-open-md-file/">How to open a .md file</a>
-      <a href="/claude-chatgpt-md-file/">Read a .md file from Claude or ChatGPT</a>
-      <a href="/readme-md/">Open a README.md</a>
-      <a href="/open-md-windows-11/">MD files on Windows 11</a>
-      <a href="/open-md-mac/">MD files on Mac</a>
-      <a href="/best-markdown-viewer-extensions-2026/">Best markdown viewer extensions (2026)</a>
-    </div>
-    <div>
-      <p class="foot-h">Skim</p>
-      <a href="/viewer/">Free online viewer</a>
-      <a href="/ai/">The viewer for AI agent output</a>
-      <a href="https://github.com/skim-md/skim" rel="noopener">Install (GitHub)</a>
-      <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
-    </div>
-  </div>
-</footer>
-<script>
-(function () {
-  var btn = document.getElementById('theme-toggle');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    var cur = document.documentElement.getAttribute('data-theme')
-      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    var next = cur === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('skim-theme', next); } catch (e) {}
-  });
-})();
-</script>
-<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->
-</body>
-</html>
