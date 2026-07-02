@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseMeta, outPathFor, applyLayout, escAttr } from '../scripts/lib.mjs';
+import { extractRefs, extractCssUrls, resolveRef } from '../scripts/check.mjs';
 
 test('parseMeta: extracts JSON block and body', () => {
   const src = '<!--meta\n{ "title": "T", "description": "D", "path": "/x/" }\n-->\n<h1>Hi</h1>\n';
@@ -42,4 +43,21 @@ test('applyLayout: noindex pages get a robots meta', () => {
 
 test('escAttr escapes quotes and angle brackets', () => {
   assert.equal(escAttr('a"b<c>&'), 'a&quot;b&lt;c&gt;&amp;');
+});
+
+test('check: extractRefs finds local hrefs/srcs, skips externals and anchors', () => {
+  const html = '<a href="/viewer/">v</a><script src="/assets/a.js"></script><a href="https://x.y/z">e</a><a href="#top">t</a><a href="mailto:a@b.c">m</a>';
+  assert.deepEqual(extractRefs(html), ['/viewer/', '/assets/a.js']);
+});
+
+test('check: extractCssUrls finds root-relative url() targets', () => {
+  const css = '@font-face { src: url("/assets/webfonts/a.woff2") format("woff2"); } .x { background: url(/assets/img.png); } .y { background: url(data:image/png;base64,xx); }';
+  assert.deepEqual(extractCssUrls(css), ['/assets/webfonts/a.woff2', '/assets/img.png']);
+});
+
+test('check: resolveRef maps pretty URLs to files', () => {
+  assert.equal(resolveRef('viewer/index.html', '/'), 'index.html');
+  assert.equal(resolveRef('index.html', '/viewer/'), 'viewer/index.html');
+  assert.equal(resolveRef('index.html', '/assets/site.css'), 'assets/site.css');
+  assert.equal(resolveRef('index.html', '/viewer/?q=1#x'), 'viewer/index.html');
 });
