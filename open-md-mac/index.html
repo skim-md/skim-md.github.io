@@ -86,9 +86,30 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Why does TextEdit show # symbols?", "acceptedAnswer": { "@type": "Answer", "text": "Because TextEdit shows the raw markdown source, not a formatted page. The # before a line marks it as a heading, but TextEdit does not render that mark." } },
-    { "@type": "Question", "name": "Can Safari open .md files?", "acceptedAnswer": { "@type": "Answer", "text": "Safari downloads a .md file rather than displaying it. Chromium browsers can render it formatted with an extension like Skim. Safari support is on Skim's roadmap, not shipped yet." } },
-    { "@type": "Question", "name": "Is Quick Look enough?", "acceptedAnswer": { "@type": "Answer", "text": "For a quick look at the raw text, yes. It will not format headings or tables, and links are not clickable." } }
+    {
+      "@type": "Question",
+      "name": "Why does TextEdit show # symbols?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because TextEdit shows the raw markdown source, not a formatted page. The # before a line marks it as a heading, but TextEdit does not render that mark, it just displays it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Safari open .md files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Safari downloads a .md file rather than displaying it. Chromium browsers, Chrome, Arc, Brave, and Edge, can render it formatted with an extension like Skim. Safari support is on Skim's roadmap, not shipped yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Quick Look enough?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a quick look at the raw text, yes. It will not format headings or tables, and links are not clickable, so for anything you plan to actually read, a renderer is worth the extra step."
+      }
+    }
   ]
 }
 </script>
