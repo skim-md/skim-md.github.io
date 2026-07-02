@@ -15,11 +15,13 @@
   :root:not([data-theme="dark"]) {
     --bg: #ffffff; --panel: #f5f7fb; --panel-2: #eef3ff; --border: #dfe3ec;
     --accent: #3b5fd9; --accent-2: #b7791f; --text: #1c2130; --muted: #5b6478;
+    --ok: #15803d;
   }
 }
 :root[data-theme="light"] {
   --bg: #ffffff; --panel: #f5f7fb; --panel-2: #eef3ff; --border: #dfe3ec;
   --accent: #3b5fd9; --accent-2: #b7791f; --text: #1c2130; --muted: #5b6478;
+  --ok: #15803d;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -107,7 +109,9 @@ td.yes { color: var(--ok); } td.no { color: var(--muted); }
 .demo-head .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ok); animation: pulse 1.6s infinite; }
 .demo-head .demo-live { color: var(--ok); }
 .demo-replay { margin-left: auto; font: 13px var(--mono); }
-.demo-body { display: grid; grid-template-columns: 1fr 1fr; min-height: 380px; }
+/* min-height matches the panes' max-height cap below: the card is reserved
+   at its finished size up front, so the typewriter run never grows it. */
+.demo-body { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; }
 .demo-src { margin: 0; padding: 18px; border-right: 1px solid var(--border); background: var(--bg); overflow: auto; max-height: 480px; }
 .demo-src code { font: 13px/1.6 var(--mono); color: var(--muted); white-space: pre-wrap; word-break: break-word; }
 .demo-out { padding: 18px 22px; overflow: auto; max-height: 480px; }

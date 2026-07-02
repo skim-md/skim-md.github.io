@@ -2,8 +2,22 @@
 // 100% client-side. Files are read with the File API and rendered in this
 // tab; nothing is ever uploaded.
 import { renderMarkdown } from '../vendor/skim/render.js';
+import { extractFrontmatter, buildFrontmatterCard } from '../vendor/skim/frontmatter.js';
 
 export { renderMarkdown };
+
+// Strip a leading YAML frontmatter block (same rules as the extension) and
+// render the remaining body into `container`. When frontmatter is present,
+// a key/value card (same markup/class as the extension) is prepended inside
+// the container, ahead of the rendered body. Without this, frontmatter lines
+// fall straight into the markdown parser and read as a run-on heading.
+// Prepending inside (rather than as a sibling, like the extension does)
+// keeps this safe to use for grid cells such as the hero demo's output pane.
+function renderBody(container, source) {
+  const { fields, body } = extractFrontmatter(source);
+  container.innerHTML = renderMarkdown(body);
+  if (fields) container.prepend(buildFrontmatterCard(fields));
+}
 
 const LAZY_CSS = ['/assets/skim.css', '/assets/katex/katex.min.css', '/assets/viewer-fonts.css'];
 let cssDone = false;
@@ -77,7 +91,7 @@ export function initViewer(root, getPendingFile) {
 
   function render(source, name) {
     injectCss();
-    out.innerHTML = renderMarkdown(source);
+    renderBody(out, source);
     decorate(out);
     nameEl.textContent = name || 'pasted markdown';
     outWrap.hidden = false;
@@ -152,7 +166,7 @@ export function initHeroDemo(root) {
 
   function finish() {
     srcEl.textContent = DEMO_PLAN;
-    outEl.innerHTML = renderMarkdown(DEMO_PLAN);
+    renderBody(outEl, DEMO_PLAN);
     decorate(outEl);
     replay.hidden = false;
   }
@@ -168,7 +182,7 @@ export function initHeroDemo(root) {
       srcEl.textContent = DEMO_PLAN.slice(0, i);
       srcPane.scrollTop = srcPane.scrollHeight;
       if (t - lastRender > 160 || i === DEMO_PLAN.length) {
-        outEl.innerHTML = renderMarkdown(DEMO_PLAN.slice(0, i));
+        renderBody(outEl, DEMO_PLAN.slice(0, i));
         decorate(outEl);
         lastRender = t;
       }
