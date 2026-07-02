@@ -1,0 +1,62 @@
+<!--meta
+{
+  "title": "How to Open MD Files on Windows 11 — 3 Easy Ways",
+  "description": "Open any .md file on Windows 11: view it formatted in your browser, use a free online viewer, or open the raw text in Notepad. Step-by-step, 2 minutes.",
+  "path": "/open-md-windows-11/"
+}
+-->
+<article class="prose">
+<h1>How to open .md files on Windows 11</h1>
+<p class="byline">Windows 11 has no built-in markdown renderer. Here are the three real options. 3 minute read.</p>
+
+<h2>The 10-second answer</h2>
+<p>Windows 11 does not render markdown out of the box, so double-clicking a <code>.md</code> file just opens raw text in whatever app is set as default. You have three real options, ranked by how they read: a browser extension gives you a formatted page automatically every time, a free online viewer gives you a formatted page with zero install, and Notepad gives you the raw text with nothing to set up at all.</p>
+
+<h2>Option 1: Notepad, built in, raw text</h2>
+<p>Right-click the file, choose Open with, and pick Notepad, or run <code>notepad file.md</code> from a terminal. You will see the file exactly as written: a heading looks like <code>## Setup</code>, bold text looks like <code>**important**</code>, and a link looks like <code>[click here](https://example.com)</code>. Nothing is formatted. That is fine if you just need to scan a short file for one piece of information, like a version number or a single command. It gets tiring fast on anything longer, especially files with tables or code blocks, where the raw marks make the content genuinely hard to follow.</p>
+
+<h2>Option 2: free online viewer, formatted, no install</h2>
+<p>For a properly formatted page with nothing to install, use the <a href="/viewer/">free online markdown viewer</a>. Open it in Edge or Chrome, drag your <code>.md</code> file onto the page, and it renders instantly: headings, bold text, tables, and code blocks all appear the way they were meant to look. Nothing is uploaded. The file is processed entirely on your machine, so it works the same on a personal laptop or a locked-down work computer.</p>
+
+<h2>Option 3: render every .md automatically in your browser</h2>
+<p>If you open markdown files often, whether from GitHub downloads, note apps, or AI tools, install Skim once and stop thinking about it. Skim is a free, open-source extension that works in Chrome, and Edge runs Chrome extensions too, so the same install works there.</p>
+<ol>
+<li>Install Skim from GitHub. It is not on the Chrome Web Store yet; the listing is coming soon, but the GitHub install is a couple of minutes.</li>
+<li>Flip the one file-access switch. Chrome and Edge both hide local files from extensions by default, for privacy, so you grant permission once. Skim shows you exactly where the toggle is.</li>
+<li>Double-click any <code>.md</code> file. From then on it opens as a formatted page automatically, with no extra steps.</li>
+</ol>
+<p>To make this the permanent default so every <code>.md</code> file opens in your browser without a right-click, go to Settings, then Apps, then Default apps, type <code>.md</code> in the search box, and choose your browser from the list.</p>
+
+<h2>Optional: full editors</h2>
+<p>If you also write markdown, not just read it, VS Code has a free, built-in preview pane that shows source and formatted output side by side, and Obsidian is a solid choice if you are building a whole notes system. Neither is necessary just to read a file someone sent you.</p>
+
+<h2>FAQ</h2>
+<h3>Can Notepad open .md files?</h3>
+<p>Yes, as raw text. It shows the file exactly as written, including formatting marks like <code>#</code> and <code>**</code>, without rendering them.</p>
+<h3>How do I make .md files always open in my browser?</h3>
+<p>Go to Settings, then Apps, then Default apps, search for <code>.md</code>, and set your browser as the default. Every <code>.md</code> file will then open there when you double-click it.</p>
+<h3>Is .md the same as .markdown?</h3>
+<p>Yes. Both extensions mark the same plain-text markdown format. Some tools default to the shorter <code>.md</code>, others use the longer <code>.markdown</code>, but the content inside is identical.</p>
+
+<aside class="cta-box">
+  <p><strong>Opening .md files often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="{{installUrl}}" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/open-md-mac/">Open .md files on a Mac, step by step</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file, every method</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Can Notepad open .md files?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, as raw text. It shows the file exactly as written, including formatting marks like # and **, without rendering them." } },
+    { "@type": "Question", "name": "How do I make .md files always open in my browser?", "acceptedAnswer": { "@type": "Answer", "text": "Go to Settings, then Apps, then Default apps, search for .md, and set your browser as the default." } },
+    { "@type": "Question", "name": "Is .md the same as .markdown?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both extensions mark the same plain-text markdown format; the content inside is identical." } }
+  ]
+}
+</script>
+</article>

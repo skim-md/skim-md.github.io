@@ -1,0 +1,53 @@
+<!--meta
+{
+  "title": "Claude or ChatGPT Gave You a .md File? How to Read It",
+  "description": "AI tools love answering in markdown (.md) files. Here's how to read them formatted: online in one drag, or automatically in your browser with live reload.",
+  "path": "/claude-chatgpt-md-file/"
+}
+-->
+<article class="prose">
+<h1>Claude or ChatGPT gave you a .md file? Here's how to read it</h1>
+<p class="byline">Nothing is wrong with the file. It just needs rendering. 4 minute read.</p>
+
+<h2>Why AI tools hand you .md files</h2>
+<p>Markdown is how language models structure text: headings, numbered steps, tables, and code blocks, all written with plain characters like <code>#</code> and <code>**</code> instead of hidden formatting. It is the format models were trained on and the format they default to, so ChatGPT and Claude exports often arrive as <code>.md</code>, and coding agents like Claude Code and Cursor write files such as <code>plan.md</code>, <code>notes.md</code>, or <code>report.md</code> straight to your disk while they work. If you open one of those in Notepad or TextEdit, you get a page full of stray <code>#</code> and <code>**</code> marks instead of a document. The file is not broken. It just needs something that understands markdown to turn it into a formatted page.</p>
+
+<h2>Read it right now (no install)</h2>
+<p>For a one-off file, use the <a href="/viewer/">free online viewer</a>. Drag the file onto the page and it renders instantly, fully formatted, right in your browser. It is private by design: nothing is uploaded anywhere, which matters when the file is an AI's answer to a work question you would rather not send to a third-party server. If you do not even have the file saved yet, you can paste the raw markdown text straight from the chat instead of the drag-and-drop step, and it renders the same way.</p>
+
+<h2>If AI files keep coming: render them automatically</h2>
+<p>If you work with an AI coding agent or ask Claude and ChatGPT for markdown answers regularly, install the Skim extension once and every <code>.md</code> file opens formatted from then on, with no drag-and-drop step. The detail that matters most for agent users is live reload: leave <code>plan.md</code> open in a tab while Claude Code or Cursor keeps rewriting it in the background, and the page updates in place as the file changes on disk, with your scroll position kept intact. You are effectively watching the agent's plan take shape in real time instead of re-opening the file after every edit. Skim also adds a one-click "Copy for AI" button, which copies the document, or just a selection of it, back out as clean markdown source, ready to paste into your next prompt.</p>
+
+<h2>Reading agent files like plan.md and AGENTS.md</h2>
+<p>CLI coding agents tend to drop their output files directly in your project folder, alongside your code: a <code>plan.md</code> before a big change, an <code>AGENTS.md</code> describing how the agent should behave, or a running <code>notes.md</code>. You can open that whole folder as a <code>file://</code> address in your browser and click through the files there. Skim also adds a folder view, so once one markdown file in a project is open you can hop straight to the next one without hunting through a file picker each time, which is useful when an agent leaves several output files in the same run. For the fuller picture of Skim's AI-agent features, including copy for AI and folder view, see <a href="/">the Skim homepage</a>.</p>
+
+<h2>FAQ</h2>
+<h3>Why does the file look like code with # and ** everywhere?</h3>
+<p>That is markdown source, not broken output. Render it, with an extension or the online viewer, to see the formatting those marks describe.</p>
+<h3>Is it safe to open a .md file an AI generated?</h3>
+<p>Yes. It is plain text and cannot run programs. Renderers like Skim also sanitize any embedded HTML before displaying it.</p>
+<h3>Can I turn the .md file into a Word doc or PDF?</h3>
+<p>Render it, then print to PDF from your browser. Or paste the raw markdown source into Word or Google Docs, both of which now import markdown directly.</p>
+
+<aside class="cta-box">
+  <p><strong>Opening .md files often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="{{installUrl}}" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/how-to-open-md-file/">How to open a .md file, every method</a></li>
+<li><a href="/readme-md/">How to open a README.md file</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Why does the file look like code with # and ** everywhere?", "acceptedAnswer": { "@type": "Answer", "text": "That is markdown source, not broken output. Render it, with an extension or an online viewer, to see the formatting those marks describe." } },
+    { "@type": "Question", "name": "Is it safe to open a .md file an AI generated?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is plain text and cannot run programs. Renderers also sanitize any embedded HTML before displaying it." } },
+    { "@type": "Question", "name": "Can I turn the .md file into a Word doc or PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Render it, then print to PDF from your browser. Or paste the raw markdown source into Word or Google Docs, both of which now import markdown directly." } }
+  ]
+}
+</script>
+</article>

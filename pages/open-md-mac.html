@@ -1,0 +1,62 @@
+<!--meta
+{
+  "title": "How to Open MD Files on a Mac (Nothing to Install)",
+  "description": "Read any .md file on macOS: Quick Look or TextEdit for raw text, a free online viewer for instant formatting, or a browser extension for every file.",
+  "path": "/open-md-mac/"
+}
+-->
+<article class="prose">
+<h1>How to open .md files on a Mac</h1>
+<p class="byline">Start with the built-in tools, upgrade only if you need to. 3 minute read.</p>
+
+<h2>The 10-second answer</h2>
+<p>Select the file in Finder and press Space. Quick Look shows the raw text instantly, no app needed. That covers a quick glance. If you want the file properly formatted, with headings, bold text, and tables looking the way they were meant to, use the free online viewer for a one-off file or a browser extension if this happens often.</p>
+
+<h2>Quick Look and TextEdit (built in)</h2>
+<p>Space-bar preview is the fastest way to peek at any file on a Mac, markdown included, and it works with zero setup. For a bit more, right-click the file, choose Open With, and pick TextEdit. It opens <code>.md</code> files as plain text, showing the file exactly as written: a heading looks like <code>## Setup</code>, bold text looks like <code>**important**</code>. Neither tool renders those marks into actual formatting. For a short note or a two-line file, that is genuinely all you need. It gets harder to read once a file has tables, code blocks, or more than a screen of text.</p>
+
+<h2>Formatted in one drag (no install)</h2>
+<p>For a properly formatted page with nothing to install, use the <a href="/viewer/">free online markdown viewer</a>. Drag your <code>.md</code> file onto the page in Safari, Chrome, or any browser, and it renders instantly. Everything happens on your device: nothing is uploaded, so it is safe to use for private notes or work documents.</p>
+
+<h2>Formatted automatically, every time</h2>
+<p>If you find yourself opening markdown files regularly, install Skim, a free, open-source extension. It works in Chrome, Arc, Brave, and Edge on macOS, since all of them are built on Chromium and one extension install covers them all.</p>
+<ol>
+<li>Install Skim from GitHub. It is not on the Chrome Web Store yet; the listing is coming soon.</li>
+<li>Flip the one file-access switch. Chromium browsers hide local files from extensions by default, for privacy, so you grant permission once. Skim shows you exactly where to click.</li>
+<li>Double-click any <code>.md</code> file. From then on it opens as a formatted page automatically.</li>
+</ol>
+<p>To make this permanent, select any <code>.md</code> file in Finder, press Command-I to open Get Info, choose your browser under "Open with," then click "Change All" so every <code>.md</code> file uses it by default.</p>
+
+<h2>Optional: native apps</h2>
+<p>If you also write markdown, not just read it, MacDown is a free native markdown editor, Obsidian is popular for building a full notes system, and VS Code has a built-in preview pane. None of these are necessary just to read a file someone sent you.</p>
+
+<h2>FAQ</h2>
+<h3>Why does TextEdit show # symbols?</h3>
+<p>Because TextEdit shows the raw markdown source, not a formatted page. The <code>#</code> before a line marks it as a heading, but TextEdit does not render that mark, it just displays it.</p>
+<h3>Can Safari open .md files?</h3>
+<p>Safari downloads a <code>.md</code> file rather than displaying it. Chromium browsers, Chrome, Arc, Brave, and Edge, can render it formatted with an extension like Skim. Safari support is on Skim's roadmap, not shipped yet.</p>
+<h3>Is Quick Look enough?</h3>
+<p>For a quick look at the raw text, yes. It will not format headings or tables, and links are not clickable, so for anything you plan to actually read, a renderer is worth the extra step.</p>
+
+<aside class="cta-box">
+  <p><strong>Opening .md files often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="{{installUrl}}" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/open-md-windows-11/">Open .md files on Windows 11, step by step</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file, every method</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Why does TextEdit show # symbols?", "acceptedAnswer": { "@type": "Answer", "text": "Because TextEdit shows the raw markdown source, not a formatted page. The # before a line marks it as a heading, but TextEdit does not render that mark." } },
+    { "@type": "Question", "name": "Can Safari open .md files?", "acceptedAnswer": { "@type": "Answer", "text": "Safari downloads a .md file rather than displaying it. Chromium browsers can render it formatted with an extension like Skim. Safari support is on Skim's roadmap, not shipped yet." } },
+    { "@type": "Question", "name": "Is Quick Look enough?", "acceptedAnswer": { "@type": "Answer", "text": "For a quick look at the raw text, yes. It will not format headings or tables, and links are not clickable." } }
+  ]
+}
+</script>
+</article>
