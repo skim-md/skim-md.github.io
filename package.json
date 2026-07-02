@@ -1,0 +1,26 @@
+{
+  "name": "skim-site",
+  "private": true,
+  "type": "module",
+  "description": "skim-md.github.io — static site for the Skim markdown viewer",
+  "scripts": {
+    "sync": "node scripts/sync-renderer.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "node scripts/check.mjs",
+    "og": "node scripts/gen-og.mjs"
+  },
+  "dependencies": {
+    "@fontsource/frank-ruhl-libre": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/source-serif-4": "^5.2.9",
+    "dompurify": "^3.4.11",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.17.0",
+    "marked": "^18.0.5"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "esbuild": "^0.28.1"
+  }
+}

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /pages/
+Disallow: /templates/
+Disallow: /vendor/
+Disallow: /scripts/
+Disallow: /src/
+Disallow: /tests/
+
+Sitemap: https://skim-md.github.io/sitemap.xml
