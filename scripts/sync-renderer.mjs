@@ -10,6 +10,7 @@ const EXT = resolve(root, '../mdviewer'); // Skim extension checkout
 
 const FILES = [
   ['src/render.js', 'vendor/skim/render.js'],
+  ['src/frontmatter.js', 'vendor/skim/frontmatter.js'],
   ['src/skim.css', 'vendor/skim/skim.css'],
 ];
 
