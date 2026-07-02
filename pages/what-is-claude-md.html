@@ -1,0 +1,84 @@
+<!--meta
+{
+  "title": "What Is a CLAUDE.md File? Claude Code's Memory Explained",
+  "description": "CLAUDE.md is the project-instructions file Claude Code reads automatically. What goes in it, where it lives, and how to read one comfortably.",
+  "path": "/what-is-claude-md/"
+}
+-->
+<article class="prose">
+<h1>What is a CLAUDE.md file?</h1>
+<p class="byline">The file Claude Code reads automatically before it touches your project. 4 minute read.</p>
+
+<h2>Claude Code's project memory</h2>
+<p><code>CLAUDE.md</code> is a plain markdown file that Claude Code, Anthropic's coding agent, reads automatically at the start of a session. It's the place project-specific instructions live: the things you'd otherwise have to repeat at the start of every conversation. Put them in <code>CLAUDE.md</code> once, and Claude Code picks them up on its own from then on, no need to paste them into the chat again.</p>
+
+<h2>What people actually put in it</h2>
+<p>Most CLAUDE.md files cover a similar set of ground. The exact commands to build, test, and lint the project, so Claude doesn't have to guess or search for a <code>package.json</code> script by trial and error. Style rules that aren't enforced by a linter: naming conventions, preferred patterns, things to avoid. And architecture notes: how the pieces fit together, which directories are generated output versus hand-written source, and any part of the codebase that's easy to misunderstand at a glance. It reads like an onboarding note for a new teammate, because that's roughly the job it does, just for an agent instead of a person.</p>
+
+<h2>Plain markdown, nothing more</h2>
+<p>There's no special syntax or proprietary format involved. <code>CLAUDE.md</code> is markdown: headings with <code>#</code>, lists with <code>-</code>, code spans with backticks, the same formatting you'd use in any README. That's deliberate. Plain text is easy for a human to write and skim, easy for an agent to parse, and it produces clean, readable diffs when it changes, so updates to your project instructions show up in code review just like any other change worth reviewing.</p>
+
+<h2>Where it lives</h2>
+<p>A <code>CLAUDE.md</code> at the root of a repository is the common case, and it's what Claude Code looks for first. But it isn't limited to one location: you can also place a <code>CLAUDE.md</code> in a subdirectory for instructions specific to that part of a larger project, and Claude Code layers those in when it's working there. There's also a user-level file, kept under <code>~/.claude</code>, for instructions you want applied across every project you work on, separate from anything checked into a particular repo.</p>
+
+<h2>How it relates to AGENTS.md</h2>
+<p>CLAUDE.md is Claude Code's own file, but Claude Code also reads <a href="/what-is-agents-md/">AGENTS.md</a>, the open convention several coding agents have adopted for project instructions. The two aren't in competition so much as overlapping layers: broadly speaking, the ecosystem is converging on AGENTS.md as a shared, tool-agnostic base, while a tool-specific file like CLAUDE.md remains a natural place for notes particular to that tool. Exactly how much any given agent leans on one file versus the other shifts over time as tools evolve, so it's worth treating this as a general direction rather than a fixed rule, and checking your agent's current docs if the precise behavior matters for your setup.</p>
+
+<h2>How to read or review one</h2>
+<p>Reading a CLAUDE.md doesn't require anything beyond a text editor: it's plain markdown, so the raw file is already readable, formatting marks and all. On GitHub, it renders formatted automatically in the repository browser. For a quick formatted view elsewhere, our <a href="/viewer/">free online viewer</a> renders any markdown file you drag onto it, with nothing uploaded. And if you're using Skim while you work, it renders CLAUDE.md like any other markdown file, with live reload, which is genuinely useful here for a specific reason: Claude Code's memory feature actively edits CLAUDE.md during a session, adding notes as it learns things about your project. Leave the file open in a tab and you can watch it change in place as Claude works, instead of re-opening it after every edit.</p>
+<p>None of that is required, though. A plain text editor is a perfectly good way to read a CLAUDE.md file; the viewer and Skim's live reload are conveniences for when a formatted, up-to-date view is worth the extra step, not a requirement for understanding the file.</p>
+
+<p>For markdown that arrives outside your repo, like answers Claude or ChatGPT hand you directly in chat, see our guide on <a href="/claude-chatgpt-md-file/">reading a .md file from Claude or ChatGPT</a>.</p>
+
+<h2>FAQ</h2>
+<h3>Does CLAUDE.md work with other AI tools?</h3>
+<p>CLAUDE.md itself is a Claude Code convention, so other tools don't look for it by that name. But because it's plain markdown, any tool or person can open and read it regardless. If you want instructions read by multiple agents, AGENTS.md is the more broadly adopted shared convention.</p>
+<h3>CLAUDE.md vs AGENTS.md, what's the difference?</h3>
+<p>CLAUDE.md is specific to Claude Code and is read by it automatically. AGENTS.md is an open convention read by a wider range of coding agents. Many projects keep both: AGENTS.md for instructions any agent should see, CLAUDE.md for notes specific to working with Claude Code.</p>
+<h3>Where should CLAUDE.md live?</h3>
+<p>Most commonly at the root of your repository, which Claude Code reads at the start of every session there. You can add more in subdirectories for area-specific instructions, and a user-level copy under <code>~/.claude</code> for preferences that apply across all your projects.</p>
+
+<aside class="cta-box">
+  <p><strong>Reading agent files like CLAUDE.md often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="{{installUrl}}" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/what-is-agents-md/">What is an AGENTS.md file?</a></li>
+<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
+<li><a href="/viewer/">Free online markdown viewer</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does CLAUDE.md work with other AI tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CLAUDE.md itself is a Claude Code convention, so other tools don't look for it by that name. But because it's plain markdown, any tool or person can open and read it regardless. If you want instructions read by multiple agents, AGENTS.md is the more broadly adopted shared convention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CLAUDE.md vs AGENTS.md, what's the difference?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CLAUDE.md is specific to Claude Code and is read by it automatically. AGENTS.md is an open convention read by a wider range of coding agents. Many projects keep both: AGENTS.md for instructions any agent should see, CLAUDE.md for notes specific to working with Claude Code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should CLAUDE.md live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most commonly at the root of your repository, which Claude Code reads at the start of every session there. You can add more in subdirectories for area-specific instructions, and a user-level copy under ~/.claude for preferences that apply across all your projects."
+      }
+    }
+  ]
+}
+</script>
+</article>

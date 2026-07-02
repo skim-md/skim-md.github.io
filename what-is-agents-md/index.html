@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is an AGENTS.md File? (And How to Read One)</title>
+<meta name="description" content="AGENTS.md is the open convention coding agents read for project instructions. What goes in it, why it's markdown, and how to read one comfortably.">
+<link rel="canonical" href="https://skim-md.github.io/what-is-agents-md/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skim">
+<meta property="og:title" content="What Is an AGENTS.md File? (And How to Read One)">
+<meta property="og:description" content="AGENTS.md is the open convention coding agents read for project instructions. What goes in it, why it's markdown, and how to read one comfortably.">
+<meta property="og:url" content="https://skim-md.github.io/what-is-agents-md/">
+<meta property="og:image" content="https://skim-md.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>/* theme before first paint: no flash */try{var t=localStorage.getItem('skim-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Skim home">
+      <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <strong>Skim</strong>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/viewer/">Online viewer</a>
+      <a href="/ai/">For AI workflows</a>
+      <a href="/best-markdown-viewer-extensions-2026/">Compare</a>
+      <a href="https://github.com/skim-md/skim" rel="noopener">GitHub</a>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="prose">
+<h1>What is an AGENTS.md file?</h1>
+<p class="byline">The instructions file coding agents read before they touch your repo. 4 minute read.</p>
+
+<h2>An open convention, not one tool's feature</h2>
+<p><code>AGENTS.md</code> is a plain markdown file, usually sitting at the root of a repository, that gives an AI coding agent the context it needs before it starts making changes. It started as a convention rather than a single vendor's feature, and it has since been adopted across a wide range of coding agents, including OpenAI's Codex, Cursor, and a growing list of others. The idea is simple: instead of every tool inventing its own config format, agents look for one shared, human-readable file and read whatever they find there.</p>
+<p>That shared-file idea matters more than any single tool's implementation. A repository maintainer writes one <code>AGENTS.md</code>, and any agent that follows the convention picks it up, without the maintainer having to keep several tool-specific files in sync.</p>
+
+<h2>What actually goes in one</h2>
+<p>An <code>AGENTS.md</code> is essentially a briefing for whichever agent opens the repo next. Common contents include the exact commands to build and test the project, since guessing wrong wastes a run and can leave a half-built tree behind. Coding conventions the agent should follow, like formatting rules, naming patterns, or which directories are generated and should never be hand-edited. And warnings or gotchas: a flaky test to ignore, a migration step that must run before the app boots, a file that looks safe to delete but isn't. None of this is exotic. It's the same context a careful human contributor would want on their first day, written down once so an agent doesn't have to rediscover it by trial and error.</p>
+
+<h2>Why markdown, specifically</h2>
+<p>Markdown is plain text with a handful of formatting marks, like <code>#</code> for headings and <code>-</code> for list items, so it is readable two ways at once. A person can open it in any editor and understand it immediately. An agent can parse it without special tooling, since it's just text. Being plain text also means it lives comfortably in version control: changes to <code>AGENTS.md</code> show up as a normal, readable diff in a pull request, the same as a change to source code. A rich document format, or a proprietary config file, wouldn't offer either of those properties as cleanly.</p>
+
+<h2>Who actually writes it</h2>
+<p>Usually a human, typically whoever set up the project or has the clearest picture of its quirks, writes the first version of <code>AGENTS.md</code>. But it's not necessarily static after that. Because it's just a file in the repo, an agent working in that codebase can update it too, for example adding a note about a command it discovered, or a mistake it made that the next run should avoid. Over time, an <code>AGENTS.md</code> in an actively worked repository can end up being a mix of human-written ground rules and agent-added notes, which is part of why it's worth checking in on periodically rather than treating it as fixed once and forgotten.</p>
+
+<h2>How to read one comfortably</h2>
+<p>Because <code>AGENTS.md</code> is plain markdown, reading it doesn't require anything special. Any text editor opens it fine, you'll just see the raw <code>#</code> and <code>**</code> marks alongside the words. If the repo is on GitHub, its file browser renders <code>AGENTS.md</code> formatted automatically, headings, code blocks, and lists included, no extra step needed. For a quick formatted look outside GitHub, our own <a href="/viewer/">free online viewer</a> renders any markdown file you drag onto it, nothing uploaded. And if you're using Skim to browse the repo locally, it renders <code>AGENTS.md</code> like any other markdown file, with the added benefit of live reload: since agents sometimes edit this file mid-session, as described above, watching it update on screen as the agent works is a genuinely convenient way to follow along.</p>
+
+<h2>You don't actually need a special tool</h2>
+<p>Worth saying plainly: none of this is required. <code>AGENTS.md</code> is plain text, and a plain text editor is a perfectly good way to read it. GitHub's renderer, our viewer, and Skim's live reload are conveniences that make a markdown file easier on the eyes, not prerequisites for understanding one. If Notepad or TextEdit is what you have open, that works too.</p>
+
+<p>For more on reading markdown files that AI tools hand you day to day, see our guide to <a href="/claude-chatgpt-md-file/">opening a .md file from Claude or ChatGPT</a>. If your project uses Claude Code specifically, it also reads a related file, <a href="/what-is-claude-md/">CLAUDE.md</a>, which works alongside <code>AGENTS.md</code>.</p>
+
+<h2>FAQ</h2>
+<h3>Is AGENTS.md required?</h3>
+<p>No. It's an optional convention. A repository without one works fine; an agent just starts with less context and may ask more questions or make more assumptions along the way.</p>
+<h3>AGENTS.md vs README.md, what's the difference?</h3>
+<p>A README is written for human contributors and users: what the project does, how to install it, how to use it. AGENTS.md is written for coding agents specifically: build and test commands, conventions, and gotchas an agent needs before editing code. Some projects overlap the two; many keep them separate so the README stays focused on people.</p>
+<h3>Can I have both AGENTS.md and CLAUDE.md in the same repo?</h3>
+<p>Yes. They're not mutually exclusive, and it's common to see both in the same project. Claude Code reads AGENTS.md in addition to its own CLAUDE.md, and the two files can coexist without conflict; some teams keep CLAUDE.md focused on Claude-specific notes and let AGENTS.md hold the shared instructions.</p>
+
+<aside class="cta-box">
+  <p><strong>Reading agent files like AGENTS.md often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="https://github.com/skim-md/skim" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/what-is-claude-md/">What is a CLAUDE.md file?</a></li>
+<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
+<li><a href="/viewer/">Free online markdown viewer</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is AGENTS.md required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It's an optional convention. A repository without one works fine; an agent just starts with less context and may ask more questions or make more assumptions along the way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AGENTS.md vs README.md, what's the difference?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A README is written for human contributors and users: what the project does, how to install it, how to use it. AGENTS.md is written for coding agents specifically: build and test commands, conventions, and gotchas an agent needs before editing code. Some projects overlap the two; many keep them separate so the README stays focused on people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I have both AGENTS.md and CLAUDE.md in the same repo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. They're not mutually exclusive, and it's common to see both in the same project. Claude Code reads AGENTS.md in addition to its own CLAUDE.md, and the two files can coexist without conflict; some teams keep CLAUDE.md focused on Claude-specific notes and let AGENTS.md hold the shared instructions."
+      }
+    }
+  ]
+}
+</script>
+</article>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap cols">
+    <div>
+      <p class="foot-brand"><span class="lines" aria-hidden="true"><span></span><span></span><span></span></span> <strong>Skim</strong> — Markdown Viewer &amp; Reader</p>
+      <p class="muted">Free, MIT-licensed, open source.<br>No accounts. No tracking. Everything on-device.</p>
+    </div>
+    <div>
+      <p class="foot-h">Guides</p>
+      <a href="/how-to-open-md-file/">How to open a .md file</a>
+      <a href="/claude-chatgpt-md-file/">Read a .md file from Claude or ChatGPT</a>
+      <a href="/readme-md/">Open a README.md</a>
+      <a href="/open-md-windows-11/">MD files on Windows 11</a>
+      <a href="/open-md-mac/">MD files on Mac</a>
+      <a href="/best-markdown-viewer-extensions-2026/">Best markdown viewer extensions (2026)</a>
+    </div>
+    <div>
+      <p class="foot-h">Skim</p>
+      <a href="/viewer/">Free online viewer</a>
+      <a href="/ai/">The viewer for AI agent output</a>
+      <a href="https://github.com/skim-md/skim" rel="noopener">Install (GitHub)</a>
+      <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var cur = document.documentElement.getAttribute('data-theme')
+      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('skim-theme', next); } catch (e) {}
+  });
+})();
+</script>
+<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->
+</body>
+</html>
