@@ -139,6 +139,20 @@ td.yes { color: var(--ok); } td.no { color: var(--muted); }
   .demo-src code::after { display: none; }
 }
 
+/* /ai page: numbered workflow list, and a compact static variant of .demo
+   (no JS, no bundle load) used as an illustration rather than the live demo. */
+.workflow { font: 16px/1.7 var(--sans); color: var(--text); padding-left: 22px; margin: 18px 0 0; }
+.workflow li { margin: 10px 0; }
+.workflow strong { color: var(--text); }
+.demo.compact .demo-body { min-height: 220px; }
+.demo.compact .demo-src, .demo.compact .demo-out { max-height: 220px; }
+.demo-out.static .static-h1 { font: 700 20px var(--serif); margin: 0 0 10px; }
+.demo-out.static .static-h2 { font: 700 15px var(--serif); margin: 16px 0 6px; }
+.demo-out.static ul { margin: 0 0 10px; padding-left: 22px; }
+.demo-out.static li { margin: 4px 0; }
+.demo-out.static code { font: 0.85em var(--mono); background: var(--panel-2); border: 1px solid var(--border); border-radius: 5px; padding: 1px 5px; }
+.demo-out.static input[type="checkbox"] { margin-right: 6px; }
+
 /* Section rhythm */
 .section { padding: 48px 0 8px; }
 .section > .wrap > h2 { font-size: clamp(24px, 3.5vw, 32px); letter-spacing: -0.01em; margin: 0 0 18px; }
