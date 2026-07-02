@@ -1,0 +1,55 @@
+<!--meta
+{
+  "title": "Best Markdown Viewer Extensions in 2026 (Honest Review)",
+  "description": "Markdown Viewer, Markdown Reader, and Skim compared honestly: price, open source, local-file setup, live reload, and who each one is actually right for.",
+  "path": "/best-markdown-viewer-extensions-2026/"
+}
+-->
+<article class="prose">
+<h1>The best markdown viewer extensions in 2026: an honest comparison</h1>
+<p class="byline"><strong>Full disclosure:</strong> we make Skim, one of the extensions below. To keep this useful anyway, every claim about the others is verifiable on their store pages and repos, we say plainly what they do better than us, and we recommend a competitor for two of the three reader profiles at the end.</p>
+<p class="byline">Facts checked July 2026: user counts, ratings, update dates, pricing, and source-code status for both competitors were pulled from their Chrome Web Store listings and GitHub repositories on July 2, 2026. Sources are linked inline below.</p>
+
+<h2>What actually matters in a markdown viewer</h2>
+<p>Most of what separates these three comes down to a handful of things. Correct rendering: tables that don't break, math that shows as equations instead of raw LaTeX, code blocks with working syntax highlighting. Opening local <code>file://</code> pages without a fight, since Chrome blocks extensions from local files by default and every viewer needs the same one-time permission grant. Actually being maintained, since Chrome ships changes that quietly break stale extensions and a project that hasn't updated in a while is a real risk, not a cosmetic flaw. Respecting your privacy, since these tools read files before you've decided what's in them. And, if you work with AI agents, live reload: the page keeping up automatically as an agent rewrites the file underneath it.</p>
+
+<h2>Markdown Viewer (simov): the long-standing leader</h2>
+<p>Simeon Velichkov's <a href="https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk" rel="noopener">Markdown Viewer</a> is the extension most people already have. It has around 400,000 users and a 4.3-star rating from 401 reviews on the Chrome Web Store, and it earns that install base honestly: the most rendering plugins and format options of the three, full control over the markdown parser and compiler settings, 30-plus themes, Mermaid diagrams, MathJax math, and a working auto-reload option. All of it is MIT-licensed and open source at <a href="https://github.com/simov/markdown-viewer" rel="noopener">github.com/simov/markdown-viewer</a>. If you need an obscure GFM feature or fine control over the compiler, this is the extension most likely to already have it, and that's a genuine advantage over Skim, which keeps its rendering options simpler on purpose.</p>
+<p>The catch is honesty about age. The Chrome Web Store listing we checked shows an update from May 2, 2024, over two years old as of this review, version 5.3, and the interface hasn't moved with it, still a dense options page from another era. File access is the standard manual toggle in <code>chrome://extensions</code>, with no guided setup. None of that is a reason to switch if it's already doing the job. It's still a fine choice if it already works for you.</p>
+
+<h2>Markdown Reader (md-reader): the polished one</h2>
+<p>md-reader's <a href="https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg" rel="noopener">Markdown Reader</a> is the better-looking option: a clean modern UI, Mermaid diagrams, KaTeX math, and a sidebar directory view for browsing files, all easier on the eyes than the other two. It's also genuinely active. The Chrome Web Store listing we checked shows version 3.6.21, updated June 27, 2026, days before this review, with roughly 100,000 users and a 4.7 rating from 103 reviews. That's a better rating and a much more recent update than Skim can claim today, and it's worth saying plainly: this is the extension actively winning on polish and momentum right now.</p>
+<p>Two things worth knowing before installing. The shipping 3.x version is closed-source and sells a Pro plan for "advanced reading, customization, and workflow features" on top of a free tier (details on their <a href="https://md-reader.github.io/pricing/" rel="noopener">pricing page</a>), while the extension's public GitHub repo, <a href="https://github.com/md-reader/md-reader" rel="noopener">md-reader/md-reader</a>, holds only the old, unmaintained 2.x codebase, its own README says it exists "only to collect issues about Markdown Reader." One of those issues, <a href="https://github.com/md-reader/md-reader/issues/140" rel="noopener">#140</a>, describes login and subscription status disappearing after a few days on v3.6.8; it's closed and labeled a bug, but worth checking before you lean on paid features. If you like the design and don't need anything Pro-gated, it's the best-looking of the three.</p>
+
+<h2>Skim: the pitch, plainly</h2>
+<p>Skim is the newest of the three, built around a specific habit: reading a file an AI agent is actively writing. Everything is free, including the folder browser md-reader charges Pro for. The current source is MIT-licensed and public at <a href="https://github.com/skim-md/skim" rel="noopener">github.com/skim-md/skim</a>, not an old snapshot kept around for appearances. First run walks through the local-file permission with one guided switch instead of leaving you to find it in <code>chrome://extensions</code> on your own. Live reload is built specifically for agent output: leave a <code>plan.md</code> open while an agent rewrites it and the page updates in place, scroll position kept. It renders KaTeX math and Mermaid diagrams, and the whole extension is under 6 MB.</p>
+<p>The honest downsides: Skim is not on the Chrome Web Store yet, install is from GitHub for now, a few extra steps compared with a one-click store install. It's Chrome-family only today (Edge, Brave, and other Chromium browsers work fine; Firefox is planned, not shipped). And it's the newest of the three by a wide margin, with the smallest user base and the least real-world mileage of any extension on this page. If a small, unproven install source is a dealbreaker for you, that's a fair reason to wait.</p>
+
+<h2>How they compare</h2>
+<div class="table-scroll">
+<table class="compare">
+<thead><tr><th></th><th>Skim</th><th>Markdown Viewer</th><th>Markdown Reader</th></tr></thead>
+<tbody>
+<tr><td>Price</td><td class="yes">Free, everything included</td><td class="yes">Free</td><td>Free, with a paid Pro plan for advanced options</td></tr>
+<tr><td>Open source</td><td class="yes">MIT, current code</td><td class="yes">MIT, current code</td><td class="no">2.x only on GitHub; shipping 3.x is closed source</td></tr>
+<tr><td>Last updated</td><td class="yes">Actively, 2026</td><td class="no">May 2, 2024 (v5.3)</td><td class="yes">June 27, 2026 (v3.6.21)</td></tr>
+<tr><td>Local-file onboarding</td><td class="yes">Guided, one switch</td><td>Manual toggle in chrome://extensions</td><td>Manual toggle in chrome://extensions</td></tr>
+<tr><td>Live reload</td><td class="yes">Yes, built for agent output, scroll preserved</td><td>Yes, auto-reload polling option</td><td class="yes">Yes, live preview</td></tr>
+<tr><td>Mermaid diagrams</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+<tr><td>Math (KaTeX)</td><td class="yes">Yes, KaTeX</td><td class="no">MathJax, not KaTeX</td><td class="yes">Yes, KaTeX</td></tr>
+<tr><td>Folder tree</td><td class="yes">Yes, free</td><td class="no">No</td><td>Yes, sidebar directory view</td></tr>
+<tr><td>Package size</td><td class="yes">Under 6 MB</td><td class="yes">2.36 MiB</td><td class="no">11.44 MiB</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Which one should you pick?</h2>
+<p>Three honest answers, not one. If you want the most rendering plugins and format options and a track record at real scale, install Markdown Viewer; it's free, open source, and it already does the job for hundreds of thousands of people. If you care about interface polish and don't mind a Pro upsell for advanced features, Markdown Reader looks the best of the three and it's actively maintained, right now more actively than Skim. If you want everything free and open source with no paid tier at all, or you spend your day reading markdown an AI agent just wrote, Skim is built for exactly that, with live reload and folder browsing included at no cost. None of these is the wrong answer. They're built for different readers.</p>
+
+<p class="byline">Reviewed July 2026. We'll update this as the tools change.</p>
+
+<aside class="cta-box">
+  <p><strong>Reading a lot of AI-agent output?</strong> Skim is free and open source, with live reload built for exactly that. <a href="{{installUrl}}" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or try it with no install at all in the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+</article>
