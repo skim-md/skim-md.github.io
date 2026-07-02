@@ -1,0 +1,130 @@
+<!--meta
+{
+  "title": "Skim — Markdown Viewer & Reader for Chrome",
+  "description": "Read .md files beautifully in Chrome: local files, URLs, AI-agent output. Live reload, math, diagrams, folder view. Free, open source, no data collected.",
+  "path": "/"
+}
+-->
+<section class="hero wrap">
+  <span class="eyebrow">Free, open-source Chrome extension</span>
+  <h1>Read what your AI wrote. <em>Instantly.</em></h1>
+  <p class="sub">Skim turns raw <code>.md</code> files into beautiful, readable pages right in your browser. Agent plans, READMEs, notes, docs. Everything happens on your device.</p>
+  <div class="actions">
+    <a class="btn primary" href="{{installUrl}}" rel="noopener">{{installLabel}}</a>
+    <a class="btn" href="/viewer/">Try the online viewer</a>
+  </div>
+  <p class="note">Chrome Web Store listing coming soon. Until then, install the preview from GitHub: two minutes, instructions included. MIT-licensed.</p>
+</section>
+
+<div class="wrap">
+  <section class="demo" id="hero-demo" aria-label="Live demo: markdown renders while an agent writes it">
+    <div class="demo-head">
+      <span class="dot" aria-hidden="true"></span>
+      <span>plan.md</span>
+      <span class="demo-live">auto-reloading</span>
+      <button class="demo-replay link-btn" hidden type="button">Replay</button>
+    </div>
+    <div class="demo-body">
+      <pre class="demo-src" aria-hidden="true"><code></code></pre>
+      <article class="demo-out skim markdown-body viewer-pane">
+        <p class="muted">An agent is about to write a plan here. Watch the raw markdown on the left become a page on the right, live. That is Skim's auto-reload: leave the tab open and it keeps up.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Why Skim</span>
+    <h2 class="md-h">Built for the AI era</h2>
+    <div class="cards">
+      <div class="card reveal"><h3>Live reload</h3><p>Keep an agent's <code>plan.md</code> open in a tab. Skim re-renders the moment the file changes on disk, scroll position preserved.</p></div>
+      <div class="card reveal"><h3>One-switch local files</h3><p>Chrome blocks extensions from <code>file://</code> pages by default. Skim walks you through the single toggle once, then never nags again.</p></div>
+      <div class="card reveal"><h3>Math, diagrams, tables</h3><p>KaTeX math, mermaid diagrams, GitHub-flavored tables with smart handling for wide content. Hebrew and English bidi done right.</p></div>
+      <div class="card reveal"><h3>Folder view, free</h3><p>Browse a folder of markdown files and hop between siblings. Other viewers charge for this. Skim never will.</p></div>
+      <div class="card reveal"><h3>Copy for AI</h3><p>One click copies the document (or a selection) as clean markdown source, ready to paste back into a chat.</p></div>
+      <div class="card reveal"><h3>Private by design</h3><p>No accounts, no telemetry, no network calls with your content. The store privacy declaration reads: no data collected.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Honest by policy</span>
+    <h2 class="md-h">How Skim compares</h2>
+    <p class="muted">A snapshot. Full details in <a href="/best-markdown-viewer-extensions-2026/">the 2026 comparison</a>.</p>
+    <div class="table-scroll reveal">
+      <table class="compare">
+        <thead><tr><th></th><th>Skim</th><th>Markdown Viewer</th><th>Markdown Reader</th></tr></thead>
+        <tbody>
+          <tr><td>Price</td><td class="yes">Free, everything included</td><td>Free</td><td>Freemium: folder tree and some options are paid</td></tr>
+          <tr><td>Open source</td><td class="yes">MIT, current code</td><td class="yes">MIT</td><td class="no">Current 3.x is closed-source</td></tr>
+          <tr><td>Maintained</td><td class="yes">Actively (2026)</td><td class="no">Last update May 2024</td><td class="yes">Active</td></tr>
+          <tr><td>Local-file setup</td><td class="yes">Guided one-switch onboarding</td><td class="no">Manual</td><td class="no">Re-prompts after Chrome restarts</td></tr>
+          <tr><td>Live reload for agent output</td><td class="yes">Yes, scroll preserved</td><td>Partial</td><td>Partial</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">No install needed</span>
+    <h2 class="md-h">See it on your own file</h2>
+    <p>Drop any <code>.md</code> file into the <a href="/viewer/">free online viewer</a>. It uses the exact same rendering engine as the extension, entirely in your browser.</p>
+    <div class="cta-box reveal"><p><strong>New to markdown files?</strong> Start with <a href="/how-to-open-md-file/">how to open a .md file</a>, or the AI-specific guide: <a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a>.</p></div>
+  </div>
+</section>
+
+<section class="closing" aria-label="Install Skim">
+  <div class="wrap">
+    <p class="close-line">Your next <code>.md</code> file deserves better than a wall of raw text.</p>
+    <div class="actions">
+      <a class="btn primary" href="{{installUrl}}" rel="noopener">{{installLabel}}</a>
+    </div>
+    <p class="note">MIT-licensed. No accounts, no telemetry, nothing leaves your device.</p>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Skim — Markdown Viewer & Reader",
+  "operatingSystem": "Chrome",
+  "applicationCategory": "BrowserApplication",
+  "applicationSubCategory": "Markdown viewer",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://skim-md.github.io/",
+  "sameAs": ["https://github.com/skim-md/skim"],
+  "license": "https://opensource.org/license/mit/",
+  "description": "Free, open-source markdown viewer extension for Chrome. Renders .md files with live reload, KaTeX math, mermaid diagrams, and folder browsing. No data collected."
+}
+</script>
+
+<script type="module">
+// Lazy demo: load the render bundle when the demo nears the viewport
+// (or on idle as a fallback), then let it type. Reveals stay subtle and
+// are skipped entirely under prefers-reduced-motion.
+const demo = document.getElementById('hero-demo');
+let loaded = null;
+const boot = () => (loaded ??= import('/assets/viewer.bundle.js').then((m) => m.initHeroDemo(demo)));
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); boot(); } }, { rootMargin: '200px' });
+  io.observe(demo);
+}
+if ('requestIdleCallback' in window) requestIdleCallback(boot, { timeout: 4000 });
+else setTimeout(boot, 2000);
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const els = document.querySelectorAll('.reveal');
+if (reduced || !('IntersectionObserver' in window)) {
+  els.forEach((el) => el.classList.add('in'));
+} else {
+  const rio = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); }
+  }), { threshold: 0.15 });
+  els.forEach((el) => rio.observe(el));
+}
+</script>
