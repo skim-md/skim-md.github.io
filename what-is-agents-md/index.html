@@ -61,7 +61,7 @@
 <h2>You don't actually need a special tool</h2>
 <p>Worth saying plainly: none of this is required. <code>AGENTS.md</code> is plain text, and a plain text editor is a perfectly good way to read it. GitHub's renderer, our viewer, and Skim's live reload are conveniences that make a markdown file easier on the eyes, not prerequisites for understanding one. If Notepad or TextEdit is what you have open, that works too.</p>
 
-<p>For more on reading markdown files that AI tools hand you day to day, see our guide to <a href="/claude-chatgpt-md-file/">opening a .md file from Claude or ChatGPT</a>. If your project uses Claude Code specifically, it also reads a related file, <a href="/what-is-claude-md/">CLAUDE.md</a>, which works alongside <code>AGENTS.md</code>.</p>
+<p>For more on reading markdown files that AI tools hand you day to day, see our guide to <a href="/claude-chatgpt-md-file/">opening a .md file from Claude or ChatGPT</a>. If your project uses Claude Code specifically, there's a related file worth knowing, <a href="/what-is-claude-md/">CLAUDE.md</a>, which often sits alongside <code>AGENTS.md</code> in the same repo.</p>
 
 <h2>FAQ</h2>
 <h3>Is AGENTS.md required?</h3>
@@ -69,7 +69,7 @@
 <h3>AGENTS.md vs README.md, what's the difference?</h3>
 <p>A README is written for human contributors and users: what the project does, how to install it, how to use it. AGENTS.md is written for coding agents specifically: build and test commands, conventions, and gotchas an agent needs before editing code. Some projects overlap the two; many keep them separate so the README stays focused on people.</p>
 <h3>Can I have both AGENTS.md and CLAUDE.md in the same repo?</h3>
-<p>Yes. They're not mutually exclusive, and it's common to see both in the same project. Claude Code reads AGENTS.md in addition to its own CLAUDE.md, and the two files can coexist without conflict; some teams keep CLAUDE.md focused on Claude-specific notes and let AGENTS.md hold the shared instructions.</p>
+<p>Yes, and it's common. The two files coexist without conflict: AGENTS.md holds the shared instructions any agent should see, while CLAUDE.md holds notes specific to Claude Code. Many teams have CLAUDE.md import AGENTS.md, with a one-line @AGENTS.md reference, so both stay in sync without duplicating content.</p>
 
 <aside class="cta-box">
   <p><strong>Reading agent files like AGENTS.md often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="https://github.com/skim-md/skim" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p>
@@ -108,7 +108,7 @@
       "name": "Can I have both AGENTS.md and CLAUDE.md in the same repo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. They're not mutually exclusive, and it's common to see both in the same project. Claude Code reads AGENTS.md in addition to its own CLAUDE.md, and the two files can coexist without conflict; some teams keep CLAUDE.md focused on Claude-specific notes and let AGENTS.md hold the shared instructions."
+        "text": "Yes, and it's common. The two files coexist without conflict: AGENTS.md holds the shared instructions any agent should see, while CLAUDE.md holds notes specific to Claude Code. Many teams have CLAUDE.md import AGENTS.md, with a one-line @AGENTS.md reference, so both stay in sync without duplicating content."
       }
     }
   ]
