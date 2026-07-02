@@ -4,6 +4,7 @@
 import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { build } from 'esbuild';
 import { parseMeta, outPathFor, applyLayout } from './lib.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -46,6 +47,31 @@ async function vendorFonts() {
   console.log('vendored: webfonts + site-fonts.css + viewer-fonts.css');
 }
 
+async function vendorViewerAssets() {
+  // KaTeX stylesheet + fonts (render.js output references katex classes/fonts).
+  await mkdir(r('assets/katex'), { recursive: true });
+  await cp(r('node_modules/katex/dist/katex.min.css'), r('assets/katex/katex.min.css'));
+  await rm(r('assets/katex/fonts'), { recursive: true, force: true });
+  await cp(r('node_modules/katex/dist/fonts'), r('assets/katex/fonts'), { recursive: true });
+  // The extension theme, served as-is (family names match site-fonts.css).
+  await cp(r('vendor/skim/skim.css'), r('assets/skim.css'));
+  console.log('vendored: katex + skim.css');
+}
+
+async function bundleViewer() {
+  await build({
+    entryPoints: [r('src/viewer-entry.js')],
+    bundle: true,
+    format: 'esm',
+    platform: 'browser',
+    target: ['es2020'],
+    outfile: r('assets/viewer.bundle.js'),
+    minify: true,
+    legalComments: 'none',
+    logLevel: 'info',
+  });
+}
+
 async function buildPages() {
   const layout = await readFile(r('templates/layout.html'), 'utf8');
   const files = (await readdir(r('pages'))).filter((f) => f.endsWith('.html')).sort();
@@ -77,5 +103,7 @@ async function buildSitemapAndRobots(urls) {
 }
 
 await vendorFonts();
+await vendorViewerAssets();
+await bundleViewer();
 const urls = await buildPages();
 await buildSitemapAndRobots(urls);
