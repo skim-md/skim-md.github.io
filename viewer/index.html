@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Online Markdown Viewer — Open .md Files Instantly</title>
+<meta name="description" content="Drop or paste any .md file and read it beautifully: tables, math, code highlighting. 100% in your browser, nothing is uploaded. Free, no sign-up.">
+<link rel="canonical" href="https://skim-md.github.io/viewer/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skim">
+<meta property="og:title" content="Free Online Markdown Viewer — Open .md Files Instantly">
+<meta property="og:description" content="Drop or paste any .md file and read it beautifully: tables, math, code highlighting. 100% in your browser, nothing is uploaded. Free, no sign-up.">
+<meta property="og:url" content="https://skim-md.github.io/viewer/">
+<meta property="og:image" content="https://skim-md.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>/* theme before first paint: no flash */try{var t=localStorage.getItem('skim-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Skim home">
+      <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <strong>Skim</strong>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/viewer/">Online viewer</a>
+      <a href="/ai/">For AI workflows</a>
+      <a href="/best-markdown-viewer-extensions-2026/">Compare</a>
+      <a href="https://github.com/skim-md/skim" rel="noopener">GitHub</a>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose" style="max-width: 52rem;">
+  <h1>Free online markdown viewer</h1>
+  <p class="byline">Drop a <code>.md</code> file below and it renders right here, in your browser. <strong>Your file is never uploaded.</strong> No sign-up, no limits.</p>
+</section>
+
+<div class="wrap" id="viewer-app" style="max-width: 52rem;">
+  <div id="drop" class="dropzone" role="button" tabindex="0" aria-label="Choose or drop a markdown file">
+    <strong>Drop your .md file here</strong>
+    <span>or click to choose a file, or just paste markdown anywhere on this page</span>
+    <input id="file-input" type="file" accept=".md,.markdown,.mdown,.mkd,.mkdn,.mdx,.txt" hidden>
+  </div>
+
+  <details class="paste">
+    <summary>Paste markdown text instead</summary>
+    <textarea id="paste-box" rows="8" spellcheck="false" placeholder="# Paste your markdown here…"></textarea>
+    <p><button id="render-paste" class="btn primary" type="button">Render</button></p>
+  </details>
+
+  <p><button id="try-sample" class="link-btn" type="button">No file handy? Try a sample document</button></p>
+
+  <section id="out-wrap" hidden aria-live="polite">
+    <header class="out-head"><span id="doc-name"></span><span>rendered locally, nothing uploaded</span></header>
+    <article id="out" class="skim markdown-body viewer-pane"></article>
+  </section>
+
+  <aside class="cta-box">
+    <p><strong>Do this a lot?</strong> The Skim extension renders every <code>.md</code> file you open in Chrome automatically, local files included, and live-reloads while AI agents rewrite them. It also renders mermaid diagrams, which this online tool skips to stay light. <a href="https://github.com/skim-md/skim" rel="noopener">Get Skim free on GitHub</a> (Web Store listing coming soon).</p>
+  </aside>
+</div>
+
+<script type="module">
+// Lazy-load the render engine: on idle, or immediately at first intent.
+// Until it loads, prevent the browser from navigating away on a drop and
+// stash the file so nothing is lost.
+let pending = null;
+let loaded = null;
+const boot = () => (loaded ??= import('/assets/viewer.bundle.js')
+  .then((m) => m.initViewer(document.getElementById('viewer-app'), () => { const f = pending; pending = null; return f; })));
+document.addEventListener('dragover', (e) => { e.preventDefault(); boot(); });
+document.addEventListener('drop', (e) => { e.preventDefault(); pending = e.dataTransfer?.files?.[0] ?? null; boot(); });
+document.addEventListener('pointerdown', boot, { once: true });
+document.addEventListener('keydown', boot, { once: true });
+document.addEventListener('paste', boot);
+if ('requestIdleCallback' in window) requestIdleCallback(boot, { timeout: 1500 });
+else setTimeout(boot, 1500);
+</script>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap cols">
+    <div>
+      <p class="foot-brand"><span class="lines" aria-hidden="true"><span></span><span></span><span></span></span> <strong>Skim</strong> — Markdown Viewer &amp; Reader</p>
+      <p class="muted">Free, MIT-licensed, open source.<br>No accounts. No tracking. Everything on-device.</p>
+    </div>
+    <div>
+      <p class="foot-h">Guides</p>
+      <a href="/how-to-open-md-file/">How to open a .md file</a>
+      <a href="/claude-chatgpt-md-file/">Read a .md file from Claude or ChatGPT</a>
+      <a href="/readme-md/">Open a README.md</a>
+      <a href="/open-md-windows-11/">MD files on Windows 11</a>
+      <a href="/open-md-mac/">MD files on Mac</a>
+      <a href="/best-markdown-viewer-extensions-2026/">Best markdown viewer extensions (2026)</a>
+    </div>
+    <div>
+      <p class="foot-h">Skim</p>
+      <a href="/viewer/">Free online viewer</a>
+      <a href="/ai/">The viewer for AI agent output</a>
+      <a href="https://github.com/skim-md/skim" rel="noopener">Install (GitHub)</a>
+      <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var cur = document.documentElement.getAttribute('data-theme')
+      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('skim-theme', next); } catch (e) {}
+  });
+})();
+</script>
+<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->
+</body>
+</html>
