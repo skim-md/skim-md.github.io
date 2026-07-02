@@ -61,9 +61,30 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is a .md file safe to open?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A .md file is plain text; it cannot run programs. Markdown renderers also sanitize any embedded HTML before displaying it." } },
-    { "@type": "Question", "name": "Can I convert a .md file to PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Render the file first (with a browser extension like Skim or an online viewer), then use your browser's Print dialog and choose Save as PDF." } },
-    { "@type": "Question", "name": "Can I edit a .md file?", "acceptedAnswer": { "@type": "Answer", "text": "Any text editor can edit a .md file: Notepad on Windows, TextEdit on Mac, or a code editor like VS Code. Markdown is plain text with simple formatting marks." } }
+    {
+      "@type": "Question",
+      "name": "Is a .md file safe to open?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is plain text; it cannot run programs. Renderers like Skim also sanitize any embedded HTML before displaying it, so even a file from an untrusted source is safe to view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert a .md file to PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Render it first, either with an extension or the online viewer, then use your browser's Print dialog and choose Save as PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit a .md file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any text editor works: Notepad, TextEdit, VS Code, or whatever you already have. Markdown is just text with a few light formatting marks, so nothing special is required to change it."
+      }
+    }
   ]
 }
 </script>
