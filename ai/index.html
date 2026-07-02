@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skim — The Markdown Viewer for AI Agent Output</title>
+<meta name="description" content="Claude Code, Cursor, and CLI agents write plan.md, AGENTS.md, and reports all day. Skim renders them in a tab and live-reloads as the agent keeps writing.">
+<link rel="canonical" href="https://skim-md.github.io/ai/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skim">
+<meta property="og:title" content="Skim — The Markdown Viewer for AI Agent Output">
+<meta property="og:description" content="Claude Code, Cursor, and CLI agents write plan.md, AGENTS.md, and reports all day. Skim renders them in a tab and live-reloads as the agent keeps writing.">
+<meta property="og:url" content="https://skim-md.github.io/ai/">
+<meta property="og:image" content="https://skim-md.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>/* theme before first paint: no flash */try{var t=localStorage.getItem('skim-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Skim home">
+      <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <strong>Skim</strong>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/viewer/">Online viewer</a>
+      <a href="/ai/">For AI workflows</a>
+      <a href="/best-markdown-viewer-extensions-2026/">Compare</a>
+      <a href="https://github.com/skim-md/skim" rel="noopener">GitHub</a>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero wrap">
+<span class="eyebrow">For agentic coding</span>
+<h1>The fastest way to read what your AI agent wrote</h1>
+<p class="sub">Claude Code, Cursor, and CLI agents write <code>plan.md</code>, <code>AGENTS.md</code>, <code>research.md</code>, and <code>report.md</code> faster than you can read them, in raw text. Skim gives every one of those files a real page.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/skim-md/skim" rel="noopener">Get Skim for Chrome, free (GitHub)</a>
+<a class="btn" href="/viewer/">Try the online viewer</a>
+</div>
+<p class="note">Chrome Web Store listing coming soon. Until then, install the preview from GitHub: two minutes, instructions included. MIT-licensed.</p>
+</section>
+
+<section class="section">
+<div class="wrap">
+<span class="eyebrow">The workflow</span>
+<h2 class="md-h">From agent output to a page you can read</h2>
+<p>Nothing about this requires a new tool for the agent to learn. It writes plain markdown, the way it already does. The change is entirely on your side of the screen.</p>
+<ol class="workflow reveal">
+<li>Your agent, Claude Code, Cursor, Codex CLI, or anything that writes files, drops <code>plan.md</code> in the project folder.</li>
+<li>Open it in a browser tab: <code>file:///…/plan.md</code>. Skim renders it: headings, checklists, tables, code, mermaid diagrams. No need to bounce over to an editor's markdown preview pane.</li>
+<li>Leave the tab open. Skim watches the file and re-renders it in place, scroll position preserved, every time the agent rewrites it. No refresh key.</li>
+<li>Want to steer the agent? <strong>Copy for AI</strong> puts the current markdown on your clipboard, clean, in one click.</li>
+</ol>
+<div class="demo compact reveal" aria-label="Illustration: plan.md rendered by Skim">
+<div class="demo-head"><span class="dot" aria-hidden="true"></span><span>plan.md</span><span class="demo-live">watching for changes</span></div>
+<div class="demo-body">
+<pre class="demo-src" aria-hidden="true"><code># Migrate auth
+
+- [x] Audit current session logic
+- [ ] Add refresh-token endpoint
+- [ ] Update client SDK
+
+## Notes
+Watch the `sessions` row count during rollout.</code></pre>
+<div class="demo-out static">
+<p class="static-h1">Migrate auth</p>
+<ul>
+<li><input type="checkbox" checked disabled> Audit current session logic</li>
+<li><input type="checkbox" disabled> Add refresh-token endpoint</li>
+<li><input type="checkbox" disabled> Update client SDK</li>
+</ul>
+<p class="static-h2">Notes</p>
+<p>Watch the <code>sessions</code> row count during rollout.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<span class="eyebrow">Made for agent files</span>
+<h2 class="md-h">Every agent convention, rendered</h2>
+<div class="cards">
+<div class="card reveal"><h3>Frontmatter cards</h3><p>Agents love YAML headers. Skim renders the block at the top of a file as a tidy key/value card instead of a wall of raw dashes.</p></div>
+<div class="card reveal"><h3>Folder view</h3><p>An agent's output directory becomes a navigable reading list. Jump from <code>plan.md</code> to <code>report.md</code> without leaving the tab.</p></div>
+<div class="card reveal"><h3>Mermaid and KaTeX</h3><p>Architecture diagrams and math render as diagrams and equations, not fenced code blocks left to rot in a corner of the repo.</p></div>
+<div class="card reveal"><h3>Offline and private</h3><p>A plan for your unreleased product never leaves the machine. No accounts, no network calls, nothing collected.</p></div>
+</div>
+<p>None of this needs configuration. Point Skim at the file, in a tab or in a folder, and these show up because the markdown asks for them, not because you flipped a setting.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<span class="eyebrow">Honest scope</span>
+<h2 class="md-h">Skim is a viewer, nothing more</h2>
+<p>Skim doesn't run agents, doesn't call any LLM, and collects nothing. It has no opinion about which agent you use, which model sits behind it, or what you ask it to do. It is the reading surface for tools you already run: the page a <code>plan.md</code> or a <code>report.md</code> becomes once the agent has written it, or while it's still writing. Everything it renders comes from a file already sitting on your disk.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<span class="eyebrow">Try it in 60 seconds</span>
+<h2 class="md-h">See it on your own agent output</h2>
+<p>Paste your last agent output into the <a href="/viewer/">free online viewer</a> right now. No install, nothing uploaded, and it uses the same rendering engine as the extension, so what you see is what you'd get in a tab. When you're ready to swap paste-and-check for a tab that keeps up on its own, install the extension once and every <code>.md</code> file an agent writes opens formatted from then on, live reload included.</p>
+<div class="cta-box reveal"><p><strong>Reading agent output all day?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="https://github.com/skim-md/skim" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p></div>
+</div>
+</section>
+
+<section class="closing" aria-label="Install Skim">
+<div class="wrap">
+<p class="close-line">Your agent's next <code>plan.md</code> deserves a real page, not a wall of raw text.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/skim-md/skim" rel="noopener">Get Skim for Chrome, free (GitHub)</a>
+</div>
+<p class="note">MIT-licensed. No accounts, no telemetry, nothing leaves your device.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<h2 class="md-h">Related reading</h2>
+<ul>
+<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
+<li><a href="/best-markdown-viewer-extensions-2026/">The 2026 markdown viewer comparison</a></li>
+<li><a href="/what-is-agents-md/">What is an AGENTS.md file?</a></li>
+<li><a href="/what-is-claude-md/">What is a CLAUDE.md file?</a></li>
+</ul>
+</div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap cols">
+    <div>
+      <p class="foot-brand"><span class="lines" aria-hidden="true"><span></span><span></span><span></span></span> <strong>Skim</strong> — Markdown Viewer &amp; Reader</p>
+      <p class="muted">Free, MIT-licensed, open source.<br>No accounts. No tracking. Everything on-device.</p>
+    </div>
+    <div>
+      <p class="foot-h">Guides</p>
+      <a href="/how-to-open-md-file/">How to open a .md file</a>
+      <a href="/claude-chatgpt-md-file/">Read a .md file from Claude or ChatGPT</a>
+      <a href="/readme-md/">Open a README.md</a>
+      <a href="/open-md-windows-11/">MD files on Windows 11</a>
+      <a href="/open-md-mac/">MD files on Mac</a>
+      <a href="/best-markdown-viewer-extensions-2026/">Best markdown viewer extensions (2026)</a>
+    </div>
+    <div>
+      <p class="foot-h">Skim</p>
+      <a href="/viewer/">Free online viewer</a>
+      <a href="/ai/">The viewer for AI agent output</a>
+      <a href="https://github.com/skim-md/skim" rel="noopener">Install (GitHub)</a>
+      <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var cur = document.documentElement.getAttribute('data-theme')
+      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('skim-theme', next); } catch (e) {}
+  });
+})();
+</script>
+<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->
+</body>
+</html>
