@@ -311,6 +311,17 @@
       .notify-msg { margin: 12px 0 0; font: 14px/1.45 var(--sans); min-height: 1.2em; }
       .notify-msg.ok { color: var(--accent-2); }
       .notify-msg.err { color: #ff9b9b; }
+      .notify-qr { display: flex; justify-content: center; margin: 6px 0 14px; }
+      .notify-qr img {
+        width: 200px; height: 200px;
+        padding: 12px;
+        background: #222221;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+      .notify-qr-link { margin: 0; text-align: center; }
+      .notify-qr-link a { color: var(--accent-2); font: 14px/1.5 var(--sans); text-decoration: none; }
+      .notify-qr-link a:hover { text-decoration: underline; }
     </style>
 
     <section class="mobile-band" aria-label="Skim for Android and iOS, coming soon">
@@ -390,71 +401,29 @@
       <div class="notify-inner">
         <button type="button" class="notify-close" id="notifyClose" aria-label="Close">&times;</button>
         <h2 class="notify-title" id="notifyTitle">Get launch updates</h2>
-        <p class="notify-sub">We will email you once, when Skim for Android and iOS is ready. No spam, unsubscribe anytime.</p>
-        <form class="notify-form" id="notifyForm" novalidate>
-          <input class="notify-input" id="notifyEmail" type="email" name="email" required
-                 autocomplete="email" placeholder="you@example.com" aria-label="Email address">
-          <button class="notify-submit" type="submit" id="notifySubmit">Notify me</button>
-        </form>
-        <p class="notify-msg" id="notifyMsg" role="status" aria-live="polite"></p>
+        <p class="notify-sub">Scan to hear from us once, when Skim for Android and iOS is ready. No spam, unsubscribe anytime.</p>
+        <div class="notify-qr">
+          <img src="/assets/newsletter-qr.png" width="200" height="200"
+               alt="QR code that opens the Skim launch-updates signup page">
+        </div>
+        <p class="notify-qr-link"><a href="https://buttondown.com/skim-md" target="_blank" rel="noopener">On your phone? Open the signup page &rarr;</a></p>
       </div>
     </dialog>
 
     <script>
     (function () {
-      // --- Mailing list wiring --------------------------------------------
-      // Provider-agnostic waitlist for the mobile launch. Any newsletter
-      // service that accepts a plain form POST works; swap the endpoint below.
-      // Default is Buttondown (markdown-native, privacy-first, free up to 100
-      // subscribers). GitHub's Student Pack has no newsletter perk, so a hosted
-      // free tier is the path. To go live: create a free list, then replace the
-      // PLACEHOLDER endpoint. Higher free ceilings if you outgrow 100:
-      //   Kit        https://app.kit.com/forms/FORM_ID/subscriptions  field: email_address  (10k free)
-      //   MailerLite your embedded-form action URL                    field: fields[email]  (500 free)
-      var NOTIFY_ENDPOINT = 'https://buttondown.com/api/emails/embed-subscribe/PLACEHOLDER_SKIM';
-      var NOTIFY_FIELD = 'email';
-
+      // The mobile waitlist is handled entirely by Buttondown: the dialog
+      // shows a QR (desktop scans it) plus a tap-through link (mobile), both
+      // pointing at the hosted subscribe page. No form, no endpoint to wire.
       var dlg = document.getElementById('notifyDialog');
       var openBtn = document.getElementById('notifyOpen');
       var closeBtn = document.getElementById('notifyClose');
-      var form = document.getElementById('notifyForm');
-      var email = document.getElementById('notifyEmail');
-      var submit = document.getElementById('notifySubmit');
-      var msg = document.getElementById('notifyMsg');
       if (!dlg || !openBtn || typeof dlg.showModal !== 'function') return;
 
-      function setMsg(text, kind) { msg.textContent = text; msg.className = 'notify-msg' + (kind ? ' ' + kind : ''); }
-
-      openBtn.addEventListener('click', function () {
-        setMsg('', '');
-        dlg.showModal();
-        setTimeout(function () { email.focus(); }, 30);
-      });
+      openBtn.addEventListener('click', function () { dlg.showModal(); });
       closeBtn.addEventListener('click', function () { dlg.close(); });
       // Click on the backdrop (outside the inner panel) closes the dialog.
       dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var value = (email.value || '').trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) { setMsg('Please enter a valid email address.', 'err'); email.focus(); return; }
-        submit.disabled = true;
-        setMsg('Signing you up...', '');
-        var body = NOTIFY_FIELD + '=' + encodeURIComponent(value) + '&tag=mobile-waitlist';
-        // no-cors: the subscribe still registers; the opaque response can't be
-        // read, so we confirm optimistically after a successful network send.
-        fetch(NOTIFY_ENDPOINT, {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body
-        }).then(function () {
-          setMsg('You are on the list. We will be in touch at launch.', 'ok');
-          form.reset();
-          setTimeout(function () { if (dlg.open) dlg.close(); }, 1800);
-        }).catch(function () {
-          setMsg('Something went wrong. Please try again later.', 'err');
-        }).finally(function () { submit.disabled = false; });
-      });
     })();
     </script>
   </div>
