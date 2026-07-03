@@ -353,6 +353,8 @@ figure.figure figcaption { margin-top: 10px; font: 14px var(--sans); color: var(
 .browser-card .status { font: 12px var(--mono); color: var(--muted); }
 .browser-card .status.ok { color: var(--ok); }
 .browser-card .status.soon { color: var(--accent-2); }
+.browser-card.soon { opacity: 0.68; cursor: default; }
+.browser-card.soon:hover { transform: none; border-color: var(--border); box-shadow: none; }
 .browser-card p { margin: 10px 0 0; color: var(--muted); font: 15px var(--sans); }
 .browser-logo { width: 26px; height: 26px; flex: none; }
 .steps { counter-reset: step; list-style: none; padding: 0; margin: 18px 0 0; font-family: var(--sans); }
