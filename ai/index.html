@@ -22,6 +22,19 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="g-edge" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0a5ad3"/><stop offset="1" stop-color="#37c5f0"/></linearGradient>
+  <linearGradient id="g-arc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a5f"/><stop offset=".5" stop-color="#a06bff"/><stop offset="1" stop-color="#4f7cff"/></linearGradient>
+  <radialGradient id="g-ff" cx=".38" cy=".28" r=".85"><stop offset="0" stop-color="#ffe141"/><stop offset=".45" stop-color="#ff7a1a"/><stop offset="1" stop-color="#e02b6d"/></radialGradient>
+  <symbol id="logo-chrome" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 24 6.68 14a20 20 0 0 1 34.64 0Z"/><path fill="#FBBC05" d="M24 24 41.32 14A20 20 0 0 1 24 44Z"/><path fill="#34A853" d="M24 24 24 44A20 20 0 0 1 6.68 14Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.5" fill="#4285F4"/></symbol>
+  <symbol id="logo-edge" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="url(#g-edge)"/><path fill="#fff" d="M13 30c2.5 4.4 7 6.6 11.6 6.6 3.6 0 6.4-1 8.4-2.6v-4.4c-2.2 1.9-5 2.9-8 2.9-4.7 0-8.4-2.7-8.4-6.6 0-2.3 1.3-4.2 3.4-5.3-4.6 1-8 5.2-7 9.4z"/><path fill="#37c5f0" d="M35 20c0-6-6-11-13-11-6.4 0-11.7 4.2-13.4 10 2.2-3.4 6-5.4 10.2-5.4 5 0 9 2.6 9.8 6.4z"/></symbol>
+  <symbol id="logo-brave" viewBox="0 0 48 48"><path fill="#fb542b" d="m24 4 10 3.4 2.6 3-1 4.6 1.8 4.4-4 15.2L24 44l-9.2-6.2-4-15.2 1.8-4.4-1-4.6 2.6-3z"/><path fill="#fff" d="m24 14 5.6 6.6-2 3.4 2.2 2.4-5.8 4.4-5.8-4.4 2.2-2.4-2-3.4z"/></symbol>
+  <symbol id="logo-opera" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="19" ry="20" fill="#ee2f41"/><ellipse cx="24" cy="24" rx="7.5" ry="12.5" fill="#fff"/></symbol>
+  <symbol id="logo-vivaldi" viewBox="0 0 48 48"><rect x="4" y="4" width="40" height="40" rx="13" fill="#ef3939"/><path fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" d="M15 18l9 15 9-15"/></symbol>
+  <symbol id="logo-arc" viewBox="0 0 48 48"><rect x="5" y="5" width="38" height="38" rx="12" fill="url(#g-arc)"/><circle cx="23" cy="21" r="7.5" fill="none" stroke="#fff" stroke-width="4.2"/><path stroke="#fff" stroke-width="4.2" stroke-linecap="round" d="M25 28 18 39"/></symbol>
+  <symbol id="logo-firefox" viewBox="0 0 48 48"><circle cx="24" cy="25" r="19" fill="url(#g-ff)"/><path fill="#fff" opacity=".9" d="M24 9c4.2 2 5.6 6.2 3.4 9.6 3.2-1.2 5.6.8 6.6 3.4C35.4 13.6 30 8.6 24 9z"/><path fill="#ffe141" opacity=".55" d="M11 20c-1.4 3-1 7 1 10-.6-3.4.6-6.6 3-8.6-2 .2-3.4-.2-4-1.4z"/></symbol>
+  <symbol id="logo-safari" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#1e9bf0"/><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-width="1.6" opacity=".55"/><path fill="#fff" d="M24 24 34 14 28 26z"/><path fill="#ff3b30" d="M24 24 14 34 20 22z"/></symbol>
+</defs></svg>
 <header class="site-head">
   <div class="wrap bar">
     <a class="brand" href="/" aria-label="Skim home">
@@ -29,152 +42,229 @@
       <strong>Skim</strong>
     </a>
     <nav class="site-nav" aria-label="Site">
-      <a href="/viewer/">Online viewer</a>
-      <a href="/ai/">For AI workflows</a>
-      <a href="/best-markdown-viewer-extensions-2026/">Compare</a>
-      <a href="https://github.com/skim-md/skim" rel="noopener">GitHub</a>
+      <a class="nav-ext" href="/install/" aria-label="Install the Skim extension">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.2 2.2 0 0 1 0 4.4H2V19a2 2 0 0 0 2 2h3.8v-1.5a2.2 2.2 0 0 1 4.4 0V21H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
+        <span>Extensions</span>
+      </a>
+      <a href="/viewer/">Viewer</a>
+      <a href="/ai/">For AI</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-gh" href="https://github.com/skim-md/skim" rel="noopener" aria-label="Skim on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true" width="17" height="17"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span>GitHub</span>
+      </a>
       <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
+      <a class="btn-chrome compact" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install>
+        <span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span>
+        <span class="bi-label" data-install-label>Add to Chrome</span>
+      </a>
     </nav>
   </div>
 </header>
 <main id="main">
 <section class="hero wrap">
-<span class="eyebrow">For agentic coding</span>
-<h1>The fastest way to read what your AI agent wrote</h1>
-<p class="sub">Claude Code, Cursor, and CLI agents write <code>plan.md</code>, <code>AGENTS.md</code>, <code>research.md</code>, and <code>report.md</code> faster than you can read them, in raw text. Skim gives every one of those files a real page.</p>
-<div class="actions">
-<a class="btn primary" href="https://github.com/skim-md/skim" rel="noopener">Get Skim for Chrome, free (GitHub)</a>
-<a class="btn" href="/viewer/">Try the online viewer</a>
-</div>
-<p class="note">Chrome Web Store listing coming soon. Until then, install the preview from GitHub: two minutes, instructions included. MIT-licensed.</p>
+  <span class="eyebrow">For agentic coding</span>
+  <h1>Watch your agent's <em>plan.md</em> come alive</h1>
+  <p class="sub">Claude Code, Cursor, Codex, and every CLI agent write markdown faster than you can read it. Skim gives each <code>plan.md</code>, <code>AGENTS.md</code>, and <code>report.md</code> a real page, and keeps it live while the agent writes.</p>
+  <div class="actions"><span class="install-cta"><a class="btn-chrome" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install><span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span><span class="bi-text"><span class="bi-label" data-install-label>Add to Chrome</span><span class="bi-sub" data-install-sub>Free &middot; open source &middot; no sign-up</span></span></a><a class="install-alt" href="/install/" data-install-alt>Using another browser? See every install option &rarr;</a></span></div>
+</section>
+
+<section class="section" style="padding-top: 30px;">
+  <div class="wrap">
+    <div class="split rev">
+      <div>
+        <span class="eyebrow">The loop you already run</span>
+        <h2 style="font-size: clamp(24px,3.5vw,32px); letter-spacing:-0.01em; margin:0 0 14px;">Agent writes. Page updates. No refresh.</h2>
+        <p>Your agent drops a file and rewrites it as it works. Leave that file open in a tab and Skim re-renders it in place on every save, scroll position preserved. The terminal keeps streaming; the page keeps up.</p>
+        <p class="muted" style="font-family: var(--sans); font-size: 15px;">Nothing new for the agent to learn. It writes plain markdown, the way it already does.</p>
+      </div>
+      <figure class="figure reveal" style="margin: 0;">
+        <img class="shot" src="/assets/promo/02-autoreload.png" width="1280" height="800" loading="lazy" decoding="async" alt="Left: a terminal where an agent writes plan.md. Right: Skim rendering that same file, updating on every save.">
+      </figure>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="wrap">
-<span class="eyebrow">The workflow</span>
-<h2 class="md-h">From agent output to a page you can read</h2>
-<p>Nothing about this requires a new tool for the agent to learn. It writes plain markdown, the way it already does. The change is entirely on your side of the screen.</p>
-<ol class="workflow reveal">
-<li>Your agent, Claude Code, Cursor, Codex CLI, or anything that writes files, drops <code>plan.md</code> in the project folder.</li>
-<li>Open it in a browser tab: <code>file:///…/plan.md</code>. Skim renders it: headings, checklists, tables, code, mermaid diagrams. No need to bounce over to an editor's markdown preview pane.</li>
-<li>Leave the tab open. Skim watches the file and re-renders it in place, scroll position preserved, every time the agent rewrites it. No refresh key.</li>
-<li>Want to steer the agent? <strong>Copy for AI</strong> puts the current markdown on your clipboard, clean, in one click.</li>
-</ol>
-<div class="demo compact reveal" aria-label="Illustration: plan.md rendered by Skim">
-<div class="demo-head"><span class="dot" aria-hidden="true"></span><span>plan.md</span><span class="demo-live">watching for changes</span></div>
-<div class="demo-body">
-<pre class="demo-src" aria-hidden="true"><code># Migrate auth
-
-- [x] Audit current session logic
-- [ ] Add refresh-token endpoint
-- [ ] Update client SDK
-
-## Notes
-Watch the `sessions` row count during rollout.</code></pre>
-<div class="demo-out static">
-<p class="static-h1">Migrate auth</p>
-<ul>
-<li><input type="checkbox" checked disabled> Audit current session logic</li>
-<li><input type="checkbox" disabled> Add refresh-token endpoint</li>
-<li><input type="checkbox" disabled> Update client SDK</li>
-</ul>
-<p class="static-h2">Notes</p>
-<p>Watch the <code>sessions</code> row count during rollout.</p>
-</div>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <span class="eyebrow">Three steps, zero setup</span>
+    <h2 class="md-h">From agent output to a page you can read</h2>
+    <ol class="workflow reveal">
+      <li>Your agent drops <code>plan.md</code> in the project folder, the way it already does.</li>
+      <li>Open it in a tab: <code>file:///…/plan.md</code>. Skim renders headings, checklists, tables, code, and mermaid diagrams.</li>
+      <li>Leave the tab open. Every rewrite re-renders in place, scroll kept. Want to steer? <strong>Copy for AI</strong> puts clean markdown back on your clipboard in one click.</li>
+    </ol>
+  </div>
 </section>
 
 <section class="section">
-<div class="wrap">
-<span class="eyebrow">Made for agent files</span>
-<h2 class="md-h">Every agent convention, rendered</h2>
-<div class="cards">
-<div class="card reveal"><h3>Frontmatter cards</h3><p>Agents love YAML headers. Skim renders the block at the top of a file as a tidy key/value card instead of a wall of raw dashes.</p></div>
-<div class="card reveal"><h3>Folder view</h3><p>An agent's output directory becomes a navigable reading list. Jump from <code>plan.md</code> to <code>report.md</code> without leaving the tab.</p></div>
-<div class="card reveal"><h3>Mermaid and KaTeX</h3><p>Architecture diagrams and math render as diagrams and equations, not fenced code blocks left to rot in a corner of the repo.</p></div>
-<div class="card reveal"><h3>Offline and private</h3><p>A plan for your unreleased product never leaves the machine. No accounts, no network calls, nothing collected.</p></div>
-</div>
-<p>None of this needs configuration. Point Skim at the file, in a tab or in a folder, and these show up because the markdown asks for them, not because you flipped a setting.</p>
-</div>
+  <div class="wrap">
+    <span class="eyebrow">Made for agent files</span>
+    <h2 class="md-h">Every agent convention, rendered</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg></div>
+        <h3>Frontmatter cards</h3><p>YAML headers render as a tidy key/value card, not a wall of raw dashes at the top of the file.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <h3>Folder view</h3><p>An output directory becomes a reading list. Jump from <code>plan.md</code> to <code>report.md</code> without leaving the tab.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M17 5H7l6 7-6 7h10"/></svg></div>
+        <h3>Mermaid &amp; KaTeX</h3><p>Architecture diagrams and math render as diagrams and equations, not fenced code left to rot.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Offline and private</h3><p>A plan for your unreleased product never leaves the machine. No accounts, no network calls, nothing collected.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="wrap">
-<span class="eyebrow">Honest scope</span>
-<h2 class="md-h">Skim is a viewer, nothing more</h2>
-<p>Skim doesn't run agents, doesn't call any LLM, and collects nothing. It has no opinion about which agent you use, which model sits behind it, or what you ask it to do. It is the reading surface for tools you already run: the page a <code>plan.md</code> or a <code>report.md</code> becomes once the agent has written it, or while it's still writing. Everything it renders comes from a file already sitting on your disk.</p>
-</div>
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <p><strong>Skim is a viewer, nothing more.</strong> It doesn't run agents, call any LLM, or collect anything. It's the reading surface for the tools you already run, the page a <code>plan.md</code> becomes while it's still being written.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="wrap">
-<span class="eyebrow">Try it in 60 seconds</span>
-<h2 class="md-h">See it on your own agent output</h2>
-<p>Paste your last agent output into the <a href="/viewer/">free online viewer</a> right now. No install, nothing uploaded, and it uses the same rendering engine as the extension, so what you see is what you'd get in a tab. When you're ready to swap paste-and-check for a tab that keeps up on its own, install the extension once and every <code>.md</code> file an agent writes opens formatted from then on, live reload included.</p>
-<div class="cta-box reveal"><p><strong>Reading agent output all day?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="https://github.com/skim-md/skim" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or keep using the <a href="/viewer/">online viewer</a>.</p></div>
-</div>
-</section>
-
-<section class="closing" aria-label="Install Skim">
-<div class="wrap">
-<p class="close-line">Your agent's next <code>plan.md</code> deserves a real page, not a wall of raw text.</p>
-<div class="actions">
-<a class="btn primary" href="https://github.com/skim-md/skim" rel="noopener">Get Skim for Chrome, free (GitHub)</a>
-</div>
-<p class="note">MIT-licensed. No accounts, no telemetry, nothing leaves your device.</p>
-</div>
+  <div class="wrap">
+    <span class="eyebrow">Try it in 60 seconds</span>
+    <h2 class="md-h">See it on your own agent output</h2>
+    <p>Paste your last agent output into the <a href="/viewer/">free online viewer</a>. Same engine as the extension, nothing uploaded. When you're ready for a tab that keeps up on its own, install once.</p>
+    <div class="actions" style="margin-top: 20px;"><span class="install-cta"><a class="btn-chrome" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install><span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span><span class="bi-text"><span class="bi-label" data-install-label>Add to Chrome</span><span class="bi-sub" data-install-sub>Free &middot; open source &middot; no sign-up</span></span></a><a class="install-alt" href="/install/" data-install-alt>Using another browser? See every install option &rarr;</a></span></div>
+  </div>
 </section>
 
 <section class="section">
-<div class="wrap">
-<h2 class="md-h">Related reading</h2>
-<ul>
-<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
-<li><a href="/best-markdown-viewer-extensions-2026/">The 2026 markdown viewer comparison</a></li>
-<li><a href="/what-is-agents-md/">What is an AGENTS.md file?</a></li>
-<li><a href="/what-is-claude-md/">What is a CLAUDE.md file?</a></li>
-</ul>
-</div>
+  <div class="wrap">
+    <h2 class="md-h">Related reading</h2>
+    <ul class="workflow" style="list-style: disc;">
+      <li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
+      <li><a href="/best-markdown-viewer-extensions-2026/">The 2026 markdown viewer comparison</a></li>
+      <li><a href="/what-is-agents-md/">What is an AGENTS.md file?</a></li>
+      <li><a href="/what-is-claude-md/">What is a CLAUDE.md file?</a></li>
+    </ul>
+  </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I read a plan.md file an AI agent wrote?", "acceptedAnswer": { "@type": "Answer", "text": "Open the file in a browser tab (file:///…/plan.md) with the Skim extension installed. Skim renders the markdown as a formatted page and live-reloads it in place every time the agent rewrites the file, so you never refresh." } },
+    { "@type": "Question", "name": "Does Skim work with Claude Code, Cursor, and Codex?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Skim is agent-agnostic. Any tool that writes plain markdown files, including Claude Code, Cursor, and Codex CLI, produces files Skim can render and live-reload. Skim never runs the agent or calls an LLM itself." } },
+    { "@type": "Question", "name": "Does the agent need any special setup to work with Skim?", "acceptedAnswer": { "@type": "Answer", "text": "No. The agent writes plain markdown exactly as it already does. Skim is entirely on the reader's side: open the file in a tab and it renders, with live reload, frontmatter cards, mermaid diagrams, and KaTeX math." } }
+  ]
+}
+</script>
 
 </main>
 <footer class="site-foot">
-  <div class="wrap cols">
-    <div>
-      <p class="foot-brand"><span class="lines" aria-hidden="true"><span></span><span></span><span></span></span> <strong>Skim</strong> — Markdown Viewer &amp; Reader</p>
-      <p class="muted">Free, MIT-licensed, open source.<br>No accounts. No tracking. Everything on-device.</p>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-lead">
+        <a class="foot-brand" href="/" aria-label="Skim home">
+          <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
+          <strong>Skim</strong>
+        </a>
+        <p class="foot-tag">Read what your AI wrote. Instantly.</p>
+        <p class="muted foot-mini">Free and MIT-licensed. No accounts, no tracking, everything on-device.</p>
+        <a class="btn-ghost foot-gh" href="https://github.com/skim-md/skim" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          View source on GitHub
+        </a>
+      </div>
+      <div class="foot-links">
+        <div>
+          <p class="foot-h">Product</p>
+          <a href="/viewer/">Free online viewer</a>
+          <a href="/ai/">For AI workflows</a>
+          <a href="/install/">Install for your browser</a>
+          <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Get it on GitHub</a>
+        </div>
+        <div>
+          <p class="foot-h">Guides</p>
+          <a href="/how-to-open-md-file/">Open a .md file</a>
+          <a href="/claude-chatgpt-md-file/">Read a .md from Claude or ChatGPT</a>
+          <a href="/readme-md/">Open a README.md</a>
+          <a href="/blog/">All guides &amp; posts</a>
+        </div>
+        <div>
+          <p class="foot-h">Project</p>
+          <a href="https://github.com/skim-md/skim" rel="noopener">Source (MIT)</a>
+          <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
+          <a href="/best-markdown-viewer-extensions-2026/">How Skim compares</a>
+        </div>
+      </div>
     </div>
-    <div>
-      <p class="foot-h">Guides</p>
-      <a href="/how-to-open-md-file/">How to open a .md file</a>
-      <a href="/claude-chatgpt-md-file/">Read a .md file from Claude or ChatGPT</a>
-      <a href="/readme-md/">Open a README.md</a>
-      <a href="/open-md-windows-11/">MD files on Windows 11</a>
-      <a href="/open-md-mac/">MD files on Mac</a>
-      <a href="/best-markdown-viewer-extensions-2026/">Best markdown viewer extensions (2026)</a>
-    </div>
-    <div>
-      <p class="foot-h">Skim</p>
-      <a href="/viewer/">Free online viewer</a>
-      <a href="/ai/">The viewer for AI agent output</a>
-      <a href="https://github.com/skim-md/skim" rel="noopener">Install (GitHub)</a>
-      <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
+    <div class="foot-bar">
+      <span>&copy; Skim. Open source under the MIT license.</span>
+      <span class="muted">Not affiliated with Google. Chrome is a trademark of Google LLC.</span>
     </div>
   </div>
 </footer>
 <script>
 (function () {
+  var root = document.documentElement;
+  // Theme toggle
   var btn = document.getElementById('theme-toggle');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    var cur = document.documentElement.getAttribute('data-theme')
-      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  if (btn) btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     var next = cur === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
+    root.setAttribute('data-theme', next);
     try { localStorage.setItem('skim-theme', next); } catch (e) {}
   });
+
+  // Scroll reveals, shared across every page: without this, any element with
+  // .reveal stays at opacity:0 (that was the /ai page's "empty gaps" bug).
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var rio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      reveals.forEach(function (el) { rio.observe(el); });
+    }
+  }
+
+  // Highlight the current section in the nav.
+  var path = location.pathname.replace(/index\.html$/, '') || '/';
+  document.querySelectorAll('.site-nav a[href^="/"]').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (href === path || (href !== '/' && path.indexOf(href) === 0)) a.setAttribute('aria-current', 'page');
+  });
+
+  // Rewrite the install CTA to the visitor's actual browser: swap the logo in
+  // the button's left segment, sharpen the label, and point at that browser's
+  // store listing. (Store URLs are PLACEHOLDER ids to swap once live.)
+  var STORE = {
+    Chrome:  'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Edge:    'https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid',
+    Brave:   'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Opera:   'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Vivaldi: 'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Arc:     'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Firefox: 'https://addons.mozilla.org/firefox/addon/skim-markdown-viewer/',
+    Safari:  'https://apps.apple.com/app/skim-markdown-viewer/id000000000'
+  };
+  var ua = navigator.userAgent || '', name = 'Chrome';
+  if (navigator.brave && navigator.brave.isBrave) name = 'Brave';
+  else if (/Edg\//.test(ua)) name = 'Edge';
+  else if (/OPR\/|Opera/.test(ua)) name = 'Opera';
+  else if (/Vivaldi/.test(ua)) name = 'Vivaldi';
+  else if (/Firefox\//.test(ua)) name = 'Firefox';
+  else if (/Safari\//.test(ua) && !/Chrome|Chromium|CriOS/.test(ua)) name = 'Safari';
+  var href = STORE[name] || STORE.Chrome;
+  document.querySelectorAll('[data-install-label]').forEach(function (el) { el.textContent = 'Add to ' + name; });
+  document.querySelectorAll('[data-install]').forEach(function (a) { a.setAttribute('href', href); });
+  document.querySelectorAll('[data-install-use]').forEach(function (u) { u.setAttribute('href', '#logo-' + name.toLowerCase()); });
 })();
 </script>
 <!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->

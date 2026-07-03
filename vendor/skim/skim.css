@@ -128,6 +128,36 @@ html[data-skim-md="1"] body.skim-body {
 }
 .skim blockquote p { margin: 0.3em 0; }
 
+/* GitHub alerts / admonitions ---------------------------------------- */
+.skim-alert {
+  margin: 1.2em 0;
+  padding: 0.6em 1em;
+  border-inline-start: 3px solid var(--skim-alert-accent);
+  border-radius: 6px;
+  background: var(--skim-alert-bg);
+  color: var(--skim-fg);
+  font-style: normal;
+}
+.skim-alert > :first-child { margin-top: 0; }
+.skim-alert > :last-child { margin-bottom: 0; }
+.skim-alert p { margin: 0.4em 0; }
+.skim-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0 0 0.35em;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--skim-alert-accent);
+}
+.skim-alert-icon { flex: 0 0 auto; fill: currentColor; }
+/* Accent + tint per type (dark theme defaults). */
+.skim-alert-note      { --skim-alert-accent: #4493f8; --skim-alert-bg: rgba(56, 139, 253, 0.10); }
+.skim-alert-tip       { --skim-alert-accent: #3fb950; --skim-alert-bg: rgba(63, 185, 80, 0.10); }
+.skim-alert-important { --skim-alert-accent: #ab7df8; --skim-alert-bg: rgba(163, 113, 247, 0.10); }
+.skim-alert-warning   { --skim-alert-accent: #d29922; --skim-alert-bg: rgba(210, 153, 34, 0.10); }
+.skim-alert-caution   { --skim-alert-accent: #f85149; --skim-alert-bg: rgba(248, 81, 73, 0.10); }
+
 /* Lists --------------------------------------------------------------- */
 .skim ul, .skim ol { margin: 0 0 1em; padding-inline-start: 1.6em; }
 .skim li { margin: 0.25em 0; }
@@ -141,6 +171,34 @@ html[data-skim-md="1"] body.skim-body {
 
 /* Horizontal rule ----------------------------------------------------- */
 .skim hr { border: none; border-top: 1px solid var(--skim-hr); margin: 2em 0; }
+
+/* Footnotes ----------------------------------------------------------- */
+.skim sup [data-footnote-ref] { text-decoration: none; font-weight: 600; padding: 0 0.1em; }
+.skim .footnotes {
+  margin-top: 2.8em;
+  padding-top: 1em;
+  border-top: 1px solid var(--skim-hr);
+  font-size: 0.9em;
+  color: var(--skim-muted);
+}
+.skim .footnotes h2 {
+  margin: 0 0 0.5em;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--skim-muted);
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.skim .footnotes h2::before { content: none !important; }
+.skim .footnotes ol { padding-inline-start: 1.5em; }
+.skim .footnotes li { margin: 0.35em 0; }
+.skim .footnotes p { margin: 0.2em 0; }
+.skim [data-footnote-backref] { text-decoration: none; margin-inline-start: 0.35em; color: var(--skim-link-text); }
+/* Briefly flag the footnote you jumped to. */
+.skim .footnotes li:target { background: var(--skim-code-bg); border-radius: 4px; }
 
 /* Inline code --------------------------------------------------------- */
 .skim code {
@@ -548,6 +606,12 @@ html[data-skim-md="1"][data-theme="light"] {
   --skim-quote: #6c6c66;
 }
 html[data-skim-md="1"][data-theme="light"] .skim strong { color: #2a2a2e; }
+/* Alert accents tuned for paper (GitHub light palette). */
+html[data-skim-md="1"][data-theme="light"] .skim-alert-note      { --skim-alert-accent: #0969da; --skim-alert-bg: rgba(9, 105, 218, 0.06); }
+html[data-skim-md="1"][data-theme="light"] .skim-alert-tip       { --skim-alert-accent: #1a7f37; --skim-alert-bg: rgba(26, 127, 55, 0.06); }
+html[data-skim-md="1"][data-theme="light"] .skim-alert-important { --skim-alert-accent: #8250df; --skim-alert-bg: rgba(130, 80, 223, 0.06); }
+html[data-skim-md="1"][data-theme="light"] .skim-alert-warning   { --skim-alert-accent: #9a6700; --skim-alert-bg: rgba(154, 103, 0, 0.06); }
+html[data-skim-md="1"][data-theme="light"] .skim-alert-caution   { --skim-alert-accent: #cf222e; --skim-alert-bg: rgba(207, 34, 46, 0.06); }
 html[data-skim-md="1"][data-theme="light"] .skim th { background: #ebe9e1; }
 html[data-skim-md="1"][data-theme="light"] .skim tr:nth-child(even) td { background: #efedE5; }
 html[data-skim-md="1"][data-theme="light"] .skim .skim-table-wrap.is-scroll {
@@ -724,6 +788,7 @@ html[data-skim-md="1"][data-theme="light"] .skim .hljs-params { color: #24292e; 
   .skim pre.skim-code,
   .skim .skim-table-wrap,
   .skim blockquote,
+  .skim .skim-alert,
   .skim img,
   .skim tr { break-inside: avoid; }
   .skim h1, .skim h2, .skim h3, .skim h4, .skim h5, .skim h6 { break-after: avoid; }
