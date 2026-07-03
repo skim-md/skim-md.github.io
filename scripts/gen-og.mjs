@@ -51,7 +51,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
   <text x="100" y="452" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="500" fill="#f4f6ff" opacity="0.95">Read what your AI wrote. Instantly.</text>
 
   <!-- Footer -->
-  <text x="100" y="546" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#0d1017" opacity="0.55">skim-md.github.io &#183; free &#183; open source</text>
+  <text x="100" y="546" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#0d1017" opacity="0.55">skim.md &#183; free &#183; open source</text>
 </svg>`;
 
 const resvg = new Resvg(svg, {
