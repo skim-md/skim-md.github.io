@@ -7,4 +7,4 @@ Disallow: /scripts/
 Disallow: /src/
 Disallow: /tests/
 
-Sitemap: https://skim-md.github.io/sitemap.xml
+Sitemap: https://skim.md/sitemap.xml

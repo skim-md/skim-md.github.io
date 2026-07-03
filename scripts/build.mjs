@@ -11,7 +11,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const r = (...p) => resolve(root, ...p);
 
 // ---- Site-wide constants (single place to swap when things change) ----
-export const SITE_ORIGIN = 'https://skim-md.github.io'; // -> https://skim.md when purchased
+export const SITE_ORIGIN = 'https://skim.md'; // custom domain live 2026-07-03 (github.io redirects here)
 // Store listing URLs. PLACEHOLDER ids: swap for the real listings once live.
 // The per-browser map lives in the detect script in templates/layout.html;
 // this default (Chrome Web Store) is the static href before JS runs.
