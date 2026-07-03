@@ -27,6 +27,10 @@ export function applyLayout(layout, meta, body, consts) {
   const analytics = consts.GOATCOUNTER_CODE
     ? `<script data-goatcounter="https://${consts.GOATCOUNTER_CODE}.goatcounter.com/count" async src="/assets/count.js"></script>`
     : '<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->';
+  const ogType = meta.date ? 'article' : 'website';
+  const articleMeta = meta.date
+    ? `<meta property="article:published_time" content="${escAttr(meta.date)}">\n<meta property="article:modified_time" content="${escAttr(meta.updated || meta.date)}">`
+    : '';
   const tokens = {
     title: escAttr(meta.title),
     description: escAttr(meta.description),
@@ -40,6 +44,8 @@ export function applyLayout(layout, meta, body, consts) {
     installBtn: consts.installBtn || '',
     repoUrl: consts.REPO_URL || consts.INSTALL_URL,
     analytics,
+    ogType,
+    articleMeta,
   };
   // Two passes: the body itself may contain {{installUrl}} etc.
   let html = layout;
