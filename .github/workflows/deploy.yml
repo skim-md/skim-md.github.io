@@ -1,0 +1,75 @@
+name: Build & Deploy site
+
+# CI on every push/PR (build + tests + content gate), and on pushes to main
+# it also deploys the freshly built site to GitHub Pages. Because the deploy
+# uploads a clean _site/ artifact assembled here, the live site no longer
+# depends on build output being committed to the repo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      # Order matters: check.mjs validates the built output, so build first.
+      - run: npm run build
+      - run: npm test
+      - run: npm run check
+
+      # Assemble a clean publish dir: everything served, none of the source
+      # or tooling (which robots.txt only *asks* crawlers to skip today).
+      - name: Assemble _site
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          rsync -a \
+            --exclude='.git' --exclude='.github' --exclude='node_modules' \
+            --exclude='pages' --exclude='templates' --exclude='src' \
+            --exclude='scripts' --exclude='tests' --exclude='vendor' \
+            --exclude='package.json' --exclude='package-lock.json' \
+            --exclude='_site' \
+            ./ _site/
+
+      - name: Configure Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
