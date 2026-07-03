@@ -122,20 +122,15 @@
         <p>Skim for Safari ships through the Mac App Store, or use the online viewer, no install.</p>
         <span class="more">Get for Safari &rarr;</span>
       </a>
-      <div class="browser-card mobile-mini" data-browser="Mobile">
-        <h3><svg class="browser-logo" viewBox="0 0 48 48" aria-hidden="true" style="color:var(--accent)"><rect x="15" y="5" width="18" height="38" rx="4.5" fill="var(--panel-2)" stroke="currentColor" stroke-width="2.4"/><rect x="19" y="13" width="10" height="2" rx="1" fill="#e8eaf0"/><rect x="19" y="17.5" width="7" height="2" rx="1" fill="#7aa2ff"/><rect x="19" y="22" width="4" height="2" rx="1" fill="#9aa3b8"/><circle cx="26.7" cy="23" r="1.1" fill="#ffd866"/><circle cx="24" cy="38.5" r="1.4" fill="currentColor"/></svg>Android &amp; iOS</h3>
-        <span class="status soon">Coming soon</span>
-        <p>Skim is coming to your pocket. Read the markdown your agents write, on the go.</p>
-      </div>
     </div>
 
     <style>
       .mobile-band {
         margin-top: 34px;
         border: 1px solid var(--border);
-        border-radius: 16px;
+        border-radius: 18px;
         background:
-          radial-gradient(120% 140% at 88% 12%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 58%),
+          radial-gradient(120% 140% at 90% 10%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 58%),
           linear-gradient(180deg, var(--panel), var(--panel-2));
         overflow: hidden;
       }
@@ -143,23 +138,11 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 20px 44px;
-        padding: 34px 36px;
+        gap: 24px 40px;
+        padding: 10px 40px 10px 44px;
       }
-      .mobile-copy { flex: 1 1 300px; min-width: 260px; }
-      .mobile-headrow {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 14px;
-      }
-      .mobile-title {
-        margin: 0;
-        font: 600 1.7rem/1.15 var(--serif);
-        color: var(--text);
-        letter-spacing: -0.01em;
-      }
+      /* Copy column: deliberately sparse. Tag, title, one line, one button. */
+      .mobile-copy { flex: 1 1 280px; min-width: 240px; padding: 30px 0; }
       .mobile-tag {
         display: inline-flex;
         align-items: center;
@@ -180,61 +163,117 @@
         border-radius: 50%;
         background: var(--accent-2);
       }
-      .mobile-lede {
-        margin: 0 0 18px;
-        max-width: 34ch;
-        color: var(--muted);
-        font: 16px/1.6 var(--sans);
+      .mobile-title {
+        margin: 16px 0 8px;
+        font: 600 2.1rem/1.1 var(--serif);
+        color: var(--text);
+        letter-spacing: -0.015em;
       }
+      .mobile-lede {
+        margin: 0 0 22px;
+        max-width: 26ch;
+        color: var(--muted);
+        font: 16px/1.55 var(--sans);
+      }
+      /* The one interactive control: opens the notify dialog. */
       .mobile-notify {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        font: 600 13px/1 var(--sans);
-        color: var(--muted);
-        border: 1px solid var(--border);
+        gap: 9px;
+        font: 600 15px/1 var(--sans);
+        color: #05070b;
+        border: 0;
         border-radius: 999px;
-        padding: 9px 16px;
-        background: color-mix(in srgb, var(--panel) 60%, transparent);
-        cursor: default;
-        user-select: none;
+        padding: 13px 22px;
+        background: var(--accent);
+        cursor: pointer;
+        transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+        box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 34%, transparent);
       }
+      .mobile-notify:hover { transform: translateY(-1px); filter: brightness(1.05); }
+      .mobile-notify:active { transform: translateY(0); }
+      .mobile-notify:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
       .mobile-notify svg { display: block; }
+      /* Visual column: the phone is the hero, so give it the room and the size. */
       .mobile-visual {
-        flex: 1 1 300px;
-        min-width: 240px;
+        flex: 1.15 1 340px;
+        min-width: 260px;
         display: flex;
         justify-content: center;
+        align-self: stretch;
+        align-items: flex-end;
       }
       .mobile-phones {
         width: 100%;
-        max-width: 340px;
+        max-width: 460px;
         height: auto;
         display: block;
-        filter: drop-shadow(0 24px 40px color-mix(in srgb, var(--bg) 55%, transparent));
+        margin-bottom: -2px;
+        filter: drop-shadow(0 28px 46px color-mix(in srgb, var(--bg) 60%, transparent));
       }
-      @media (max-width: 640px) {
-        .mobile-band-inner { padding: 26px 22px; }
-        .mobile-title { font-size: 1.45rem; }
-        .mobile-visual { order: -1; }
+      @media (max-width: 720px) {
+        .mobile-band-inner { padding: 26px 24px 0; }
+        .mobile-copy { padding: 4px 0 0; }
+        .mobile-title { font-size: 1.7rem; }
+        .mobile-phones { max-width: 340px; }
       }
+
+      /* --- Notify dialog ---------------------------------------------------- */
+      .notify-dialog {
+        width: min(92vw, 420px);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 0;
+        background: linear-gradient(180deg, var(--panel), var(--panel-2));
+        color: var(--text);
+        box-shadow: 0 30px 70px rgba(3, 6, 12, 0.55);
+      }
+      .notify-dialog::backdrop { background: rgba(3, 6, 12, 0.62); }
+      .notify-inner { padding: 26px 26px 24px; position: relative; }
+      .notify-close {
+        position: absolute; top: 12px; right: 12px;
+        width: 30px; height: 30px; border-radius: 8px;
+        border: 1px solid transparent; background: transparent;
+        color: var(--muted); font-size: 20px; line-height: 1;
+        cursor: pointer;
+      }
+      .notify-close:hover { background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--text); }
+      .notify-title { margin: 2px 0 6px; font: 600 1.3rem/1.2 var(--serif); }
+      .notify-sub { margin: 0 0 16px; color: var(--muted); font: 14px/1.5 var(--sans); }
+      .notify-form { display: flex; gap: 8px; flex-wrap: wrap; }
+      .notify-input {
+        flex: 1 1 180px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 11px 13px;
+        background: var(--bg);
+        color: var(--text);
+        font: 15px/1 var(--sans);
+      }
+      .notify-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+      .notify-submit {
+        border: 0; border-radius: 10px; padding: 11px 18px;
+        background: var(--accent); color: #05070b;
+        font: 600 15px/1 var(--sans); cursor: pointer;
+        transition: filter .12s ease;
+      }
+      .notify-submit:hover { filter: brightness(1.05); }
+      .notify-submit:disabled { opacity: 0.6; cursor: default; }
+      .notify-msg { margin: 12px 0 0; font: 14px/1.45 var(--sans); min-height: 1.2em; }
+      .notify-msg.ok { color: var(--accent-2); }
+      .notify-msg.err { color: #ff9b9b; }
     </style>
 
-    <!-- Alternate full-width "Android & iOS" treatment, kept in code but hidden.
-         The compact 9th browser card above is shown by default; remove `hidden`
-         here (and delete the card) to switch to this larger band instead. -->
-    <section class="mobile-band" hidden aria-label="Skim for Android and iOS, coming soon">
+    <section class="mobile-band" aria-label="Skim for Android and iOS, coming soon">
       <div class="mobile-band-inner">
         <div class="mobile-copy">
-          <div class="mobile-headrow">
-            <h2 class="mobile-title">Android &amp; iOS</h2>
-            <span class="mobile-tag">Coming soon</span>
-          </div>
-          <p class="mobile-lede">Skim is coming to your pocket. Read the markdown your agents write, on the go.</p>
-          <span class="mobile-notify" aria-hidden="true">
-            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 1.6a3.4 3.4 0 0 0-3.4 3.4c0 3-1.3 4.1-1.3 4.1h9.4s-1.3-1.1-1.3-4.1A3.4 3.4 0 0 0 8 1.6zM6.7 12.4a1.3 1.3 0 0 0 2.6 0z"/></svg>
-            Notify me
-          </span>
+          <span class="mobile-tag">Coming soon</span>
+          <h2 class="mobile-title">Skim for Android &amp; iOS</h2>
+          <p class="mobile-lede">Read your agents' markdown on the go.</p>
+          <button type="button" class="mobile-notify" id="notifyOpen" aria-haspopup="dialog">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 1.6a3.4 3.4 0 0 0-3.4 3.4c0 3-1.3 4.1-1.3 4.1h9.4s-1.3-1.1-1.3-4.1A3.4 3.4 0 0 0 8 1.6zM6.7 12.4a1.3 1.3 0 0 0 2.6 0z"/></svg>
+            Get notified
+          </button>
         </div>
         <div class="mobile-visual">
           <svg class="mobile-phones" viewBox="0 0 380 350" role="img" aria-label="A smartphone showing the Skim markdown reader: the three-line Skim mark, a heading, paragraph lines, a checklist with a green check, and an inline code chip.">
@@ -297,6 +336,78 @@
         </div>
       </div>
     </section>
+
+    <dialog class="notify-dialog" id="notifyDialog" aria-labelledby="notifyTitle">
+      <div class="notify-inner">
+        <button type="button" class="notify-close" id="notifyClose" aria-label="Close">&times;</button>
+        <h2 class="notify-title" id="notifyTitle">Get launch updates</h2>
+        <p class="notify-sub">We will email you once, when Skim for Android and iOS is ready. No spam, unsubscribe anytime.</p>
+        <form class="notify-form" id="notifyForm" novalidate>
+          <input class="notify-input" id="notifyEmail" type="email" name="email" required
+                 autocomplete="email" placeholder="you@example.com" aria-label="Email address">
+          <button class="notify-submit" type="submit" id="notifySubmit">Notify me</button>
+        </form>
+        <p class="notify-msg" id="notifyMsg" role="status" aria-live="polite"></p>
+      </div>
+    </dialog>
+
+    <script>
+    (function () {
+      // --- Mailing list wiring --------------------------------------------
+      // Provider-agnostic waitlist for the mobile launch. Any newsletter
+      // service that accepts a plain form POST works; swap the endpoint below.
+      // Default is Buttondown (markdown-native, privacy-first, free up to 100
+      // subscribers). GitHub's Student Pack has no newsletter perk, so a hosted
+      // free tier is the path. To go live: create a free list, then replace the
+      // PLACEHOLDER endpoint. Higher free ceilings if you outgrow 100:
+      //   Kit        https://app.kit.com/forms/FORM_ID/subscriptions  field: email_address  (10k free)
+      //   MailerLite your embedded-form action URL                    field: fields[email]  (500 free)
+      var NOTIFY_ENDPOINT = 'https://buttondown.com/api/emails/embed-subscribe/PLACEHOLDER_SKIM';
+      var NOTIFY_FIELD = 'email';
+
+      var dlg = document.getElementById('notifyDialog');
+      var openBtn = document.getElementById('notifyOpen');
+      var closeBtn = document.getElementById('notifyClose');
+      var form = document.getElementById('notifyForm');
+      var email = document.getElementById('notifyEmail');
+      var submit = document.getElementById('notifySubmit');
+      var msg = document.getElementById('notifyMsg');
+      if (!dlg || !openBtn || typeof dlg.showModal !== 'function') return;
+
+      function setMsg(text, kind) { msg.textContent = text; msg.className = 'notify-msg' + (kind ? ' ' + kind : ''); }
+
+      openBtn.addEventListener('click', function () {
+        setMsg('', '');
+        dlg.showModal();
+        setTimeout(function () { email.focus(); }, 30);
+      });
+      closeBtn.addEventListener('click', function () { dlg.close(); });
+      // Click on the backdrop (outside the inner panel) closes the dialog.
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var value = (email.value || '').trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) { setMsg('Please enter a valid email address.', 'err'); email.focus(); return; }
+        submit.disabled = true;
+        setMsg('Signing you up...', '');
+        var body = NOTIFY_FIELD + '=' + encodeURIComponent(value) + '&tag=mobile-waitlist';
+        // no-cors: the subscribe still registers; the opaque response can't be
+        // read, so we confirm optimistically after a successful network send.
+        fetch(NOTIFY_ENDPOINT, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        }).then(function () {
+          setMsg('You are on the list. We will be in touch at launch.', 'ok');
+          form.reset();
+          setTimeout(function () { if (dlg.open) dlg.close(); }, 1800);
+        }).catch(function () {
+          setMsg('Something went wrong. Please try again later.', 'err');
+        }).finally(function () { submit.disabled = false; });
+      });
+    })();
+    </script>
   </div>
 </section>
 
