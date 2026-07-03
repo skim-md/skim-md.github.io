@@ -49,15 +49,15 @@
       <a href="/viewer/">Viewer</a>
       <a href="/ai/">For AI</a>
       <a href="/blog/">Blog</a>
+      <a class="btn-chrome compact" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install>
+        <span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span>
+        <span class="bi-label">Install</span>
+      </a>
       <a class="nav-gh" href="https://github.com/skim-md/skim" rel="noopener" aria-label="Skim on GitHub">
         <svg viewBox="0 0 16 16" aria-hidden="true" width="17" height="17"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         <span>GitHub</span>
       </a>
       <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
-      <a class="btn-chrome compact" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install>
-        <span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span>
-        <span class="bi-label" data-install-label>Add to Chrome</span>
-      </a>
     </nav>
   </div>
 </header>
@@ -125,6 +125,43 @@
     </div>
 
     <style>
+      /* Phone illustration palette: dark-theme defaults reproduce the exact
+         hex values the SVG used to hardcode, so the dark look is unchanged.
+         The light-theme overrides below follow the same two-selector
+         mechanism as assets/site.css's --accent/--panel/etc (OS preference
+         with no explicit choice, or the toggle set to light), so the phone
+         flips from a dark device to a light one with the rest of the page. */
+      :root {
+        --phone-body: #161b26; --phone-body-2: #131a2b; --phone-stroke: #2c3344;
+        --phone-screen: #0d1017; --phone-text: #e8eaf0; --phone-muted: #9aa3b8;
+        --phone-accent: #7aa2ff; --phone-line: #2c3344; --phone-line-2: #222a3a;
+        --phone-ok: #4ade80;
+      }
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="dark"]) {
+          --phone-body: #f5f7fb; --phone-body-2: #eef3ff; --phone-stroke: #dfe3ec;
+          --phone-screen: #ffffff; --phone-text: #1c2130; --phone-muted: #5b6478;
+          --phone-accent: #3b5fd9; --phone-line: #c3c9d6; --phone-line-2: #d7dbe6;
+          --phone-ok: #15803d;
+        }
+      }
+      :root[data-theme="light"] {
+        --phone-body: #f5f7fb; --phone-body-2: #eef3ff; --phone-stroke: #dfe3ec;
+        --phone-screen: #ffffff; --phone-text: #1c2130; --phone-muted: #5b6478;
+        --phone-accent: #3b5fd9; --phone-line: #c3c9d6; --phone-line-2: #d7dbe6;
+        --phone-ok: #15803d;
+      }
+      .ph-body { fill: var(--phone-body); }
+      .ph-body2 { fill: var(--phone-body-2); }
+      .ph-stroke { stroke: var(--phone-stroke); }
+      .ph-screen { fill: var(--phone-screen); }
+      .ph-text { fill: var(--phone-text); }
+      .ph-muted { fill: var(--phone-muted); }
+      .ph-accent { fill: var(--phone-accent); }
+      .ph-line { fill: var(--phone-line); }
+      .ph-line2 { fill: var(--phone-line-2); }
+      .ph-ok-stroke { stroke: var(--phone-ok); }
+
       .mobile-band {
         margin-top: 34px;
         border: 1px solid var(--border);
@@ -190,6 +227,14 @@
         transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
         box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 34%, transparent);
       }
+      /* --accent is a light pastel blue in dark theme (dark text reads fine
+         on it) but a darker, saturated blue in light theme, where the same
+         near-black text loses contrast. White fixes that in light theme;
+         dark theme's label stays as designed. */
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="dark"]) .mobile-notify { color: #fff; }
+      }
+      :root[data-theme="light"] .mobile-notify { color: #fff; }
       .mobile-notify:hover { transform: translateY(-1px); filter: brightness(1.05); }
       .mobile-notify:active { transform: translateY(0); }
       .mobile-notify:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
@@ -231,8 +276,8 @@
       .notify-dialog::backdrop { background: rgba(3, 6, 12, 0.62); }
       .notify-inner { padding: 26px 26px 24px; position: relative; }
       .notify-close {
-        position: absolute; top: 12px; right: 12px;
-        width: 30px; height: 30px; border-radius: 8px;
+        position: absolute; top: 10px; right: 10px;
+        width: 38px; height: 38px; border-radius: 8px;
         border: 1px solid transparent; background: transparent;
         color: var(--muted); font-size: 20px; line-height: 1;
         cursor: pointer;
@@ -245,20 +290,24 @@
         flex: 1 1 180px;
         border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 11px 13px;
+        padding: 13px;
         background: var(--bg);
         color: var(--text);
         font: 15px/1 var(--sans);
       }
       .notify-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
       .notify-submit {
-        border: 0; border-radius: 10px; padding: 11px 18px;
+        border: 0; border-radius: 10px; padding: 13px 18px;
         background: var(--accent); color: #05070b;
         font: 600 15px/1 var(--sans); cursor: pointer;
         transition: filter .12s ease;
       }
       .notify-submit:hover { filter: brightness(1.05); }
       .notify-submit:disabled { opacity: 0.6; cursor: default; }
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="dark"]) .notify-submit { color: #fff; }
+      }
+      :root[data-theme="light"] .notify-submit { color: #fff; }
       .notify-msg { margin: 12px 0 0; font: 14px/1.45 var(--sans); min-height: 1.2em; }
       .notify-msg.ok { color: var(--accent-2); }
       .notify-msg.err { color: #ff9b9b; }
@@ -279,58 +328,58 @@
           <svg class="mobile-phones" viewBox="0 0 380 350" role="img" aria-label="A smartphone showing the Skim markdown reader: the three-line Skim mark, a heading, paragraph lines, a checklist with a green check, and an inline code chip.">
             <!-- Secondary phone, behind, rotated for depth -->
             <g opacity="0.5" transform="rotate(-8 128 184)">
-              <rect x="64" y="56" width="128" height="256" rx="26" fill="#131a2b" stroke="#2c3344" stroke-width="2"/>
-              <rect x="72" y="64" width="112" height="240" rx="19" fill="#0d1017"/>
-              <rect x="86" y="88" width="20" height="4" rx="2" fill="#e8eaf0"/>
-              <rect x="86" y="96" width="14" height="4" rx="2" fill="#7aa2ff"/>
-              <rect x="86" y="104" width="8" height="4" rx="2" fill="#9aa3b8"/>
-              <rect x="86" y="122" width="76" height="7" rx="3.5" fill="#2c3344"/>
-              <rect x="86" y="140" width="94" height="5" rx="2.5" fill="#222a3a"/>
-              <rect x="86" y="150" width="82" height="5" rx="2.5" fill="#222a3a"/>
-              <rect x="86" y="160" width="90" height="5" rx="2.5" fill="#222a3a"/>
-              <rect x="86" y="180" width="70" height="5" rx="2.5" fill="#222a3a"/>
+              <rect class="ph-body2 ph-stroke" x="64" y="56" width="128" height="256" rx="26" stroke-width="2"/>
+              <rect class="ph-screen" x="72" y="64" width="112" height="240" rx="19"/>
+              <rect class="ph-text" x="86" y="88" width="20" height="4" rx="2"/>
+              <rect class="ph-accent" x="86" y="96" width="14" height="4" rx="2"/>
+              <rect class="ph-muted" x="86" y="104" width="8" height="4" rx="2"/>
+              <rect class="ph-line" x="86" y="122" width="76" height="7" rx="3.5"/>
+              <rect class="ph-line2" x="86" y="140" width="94" height="5" rx="2.5"/>
+              <rect class="ph-line2" x="86" y="150" width="82" height="5" rx="2.5"/>
+              <rect class="ph-line2" x="86" y="160" width="90" height="5" rx="2.5"/>
+              <rect class="ph-line2" x="86" y="180" width="70" height="5" rx="2.5"/>
             </g>
             <!-- Primary phone, straight on -->
             <g>
               <!-- side buttons -->
-              <rect x="193" y="98" width="3" height="16" rx="1.5" fill="#2c3344"/>
-              <rect x="193" y="122" width="3" height="26" rx="1.5" fill="#2c3344"/>
-              <rect x="346" y="112" width="3" height="34" rx="1.5" fill="#2c3344"/>
+              <rect class="ph-stroke" x="193" y="98" width="3" height="16" rx="1.5"/>
+              <rect class="ph-stroke" x="193" y="122" width="3" height="26" rx="1.5"/>
+              <rect class="ph-stroke" x="346" y="112" width="3" height="34" rx="1.5"/>
               <!-- body + screen -->
-              <rect x="196" y="24" width="150" height="298" rx="30" fill="#161b26" stroke="#2c3344" stroke-width="2.5"/>
-              <rect x="204" y="32" width="134" height="282" rx="23" fill="#0d1017"/>
-              <!-- notch -->
+              <rect class="ph-body ph-stroke" x="196" y="24" width="150" height="298" rx="30" stroke-width="2.5"/>
+              <rect class="ph-screen" x="204" y="32" width="134" height="282" rx="23"/>
+              <!-- notch: a hardware cutout, kept dark in both themes -->
               <rect x="250" y="35" width="42" height="9" rx="4.5" fill="#05070b"/>
               <circle cx="285" cy="39.5" r="1.7" fill="#223049"/>
               <!-- top row: Skim mark + filename chip -->
-              <rect x="220" y="55" width="22" height="4" rx="2" fill="#e8eaf0"/>
-              <rect x="220" y="63" width="15" height="4" rx="2" fill="#7aa2ff"/>
-              <rect x="220" y="71" width="9" height="4" rx="2" fill="#9aa3b8"/>
-              <rect x="272" y="54" width="50" height="18" rx="9" fill="#131a2b" stroke="#2c3344" stroke-width="1"/>
-              <text x="297" y="66.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5" fill="#9aa3b8" text-anchor="middle">notes.md</text>
+              <rect class="ph-text" x="220" y="55" width="22" height="4" rx="2"/>
+              <rect class="ph-accent" x="220" y="63" width="15" height="4" rx="2"/>
+              <rect class="ph-muted" x="220" y="71" width="9" height="4" rx="2"/>
+              <rect class="ph-body2 ph-stroke" x="272" y="54" width="50" height="18" rx="9" stroke-width="1"/>
+              <text class="ph-muted" x="297" y="66.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5" text-anchor="middle">notes.md</text>
               <!-- heading bar -->
-              <rect x="220" y="92" width="80" height="9" rx="3.5" fill="#e8eaf0"/>
+              <rect class="ph-text" x="220" y="92" width="80" height="9" rx="3.5"/>
               <!-- paragraph lines -->
-              <rect x="220" y="112" width="102" height="5" rx="2.5" fill="#2c3344"/>
-              <rect x="220" y="122" width="94" height="5" rx="2.5" fill="#2c3344"/>
-              <rect x="220" y="132" width="78" height="5" rx="2.5" fill="#2c3344"/>
+              <rect class="ph-line" x="220" y="112" width="102" height="5" rx="2.5"/>
+              <rect class="ph-line" x="220" y="122" width="94" height="5" rx="2.5"/>
+              <rect class="ph-line" x="220" y="132" width="78" height="5" rx="2.5"/>
               <!-- checklist item 1 (done) -->
-              <rect x="220" y="150" width="12" height="12" rx="3" fill="none" stroke="#4ade80" stroke-width="2"/>
-              <path d="M222.8 156.2l2.6 2.6 4.4-5.2" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="240" y="153.5" width="66" height="5" rx="2.5" fill="#9aa3b8"/>
+              <rect class="ph-ok-stroke" x="220" y="150" width="12" height="12" rx="3" fill="none" stroke-width="2"/>
+              <path class="ph-ok-stroke" d="M222.8 156.2l2.6 2.6 4.4-5.2" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect class="ph-muted" x="240" y="153.5" width="66" height="5" rx="2.5"/>
               <!-- checklist item 2 (todo) -->
-              <rect x="220" y="170" width="12" height="12" rx="3" fill="none" stroke="#2c3344" stroke-width="2"/>
-              <rect x="240" y="173.5" width="54" height="5" rx="2.5" fill="#2c3344"/>
+              <rect class="ph-stroke" x="220" y="170" width="12" height="12" rx="3" fill="none" stroke-width="2"/>
+              <rect class="ph-line" x="240" y="173.5" width="54" height="5" rx="2.5"/>
               <!-- paragraph with inline code chip -->
-              <rect x="220" y="197" width="26" height="5" rx="2.5" fill="#2c3344"/>
-              <rect x="253" y="191" width="40" height="16" rx="5" fill="#131a2b" stroke="#2c3344" stroke-width="1"/>
-              <text x="273" y="202.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#7aa2ff" text-anchor="middle">.md</text>
-              <rect x="299" y="197" width="18" height="5" rx="2.5" fill="#2c3344"/>
+              <rect class="ph-line" x="220" y="197" width="26" height="5" rx="2.5"/>
+              <rect class="ph-body2 ph-stroke" x="253" y="191" width="40" height="16" rx="5" stroke-width="1"/>
+              <text class="ph-accent" x="273" y="202.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" text-anchor="middle">.md</text>
+              <rect class="ph-line" x="299" y="197" width="18" height="5" rx="2.5"/>
               <!-- more paragraph lines -->
-              <rect x="220" y="218" width="98" height="5" rx="2.5" fill="#2c3344"/>
-              <rect x="220" y="228" width="72" height="5" rx="2.5" fill="#2c3344"/>
+              <rect class="ph-line" x="220" y="218" width="98" height="5" rx="2.5"/>
+              <rect class="ph-line" x="220" y="228" width="72" height="5" rx="2.5"/>
               <!-- home indicator -->
-              <rect x="252" y="300" width="38" height="4" rx="2" fill="#2c3344"/>
+              <rect class="ph-stroke" x="252" y="300" width="38" height="4" rx="2"/>
             </g>
           </svg>
         </div>
