@@ -63,6 +63,14 @@
 <p>Chrome, Edge, and Firefox. It installs from each browser's extension store.</p>
 <h3>Is "skim md" the same as Skim?</h3>
 <p>Yes. "Skim md" and skim.md both refer to Skim, the markdown viewer. The <code>.md</code> comes from the markdown file extension, which is also the project's domain.</p>
+<h3>Can Skim open local .md files on my computer?</h3>
+<p>Yes. After you enable "Allow access to file URLs" for the extension, which Skim walks you through with a single switch, it renders local <code>file://</code> markdown exactly like a file on the web. Nothing is uploaded.</p>
+<h3>What markdown features does Skim support?</h3>
+<p>GitHub-flavored markdown, tables, task lists, and syntax-highlighted code, plus LaTeX math through KaTeX, mermaid diagrams, footnotes, GitHub-style alerts, emoji shortcodes, and images with a click-to-zoom lightbox. On top it adds a table-of-contents sidebar, light and dark themes, and folder browsing.</p>
+<h3>Does Skim work offline?</h3>
+<p>Yes. Skim renders everything locally in your browser, so it works with no internet connection. Math and diagrams render offline too, with no external requests.</p>
+<h3>Is Skim safe and private?</h3>
+<p>Yes. Skim is open source under the MIT license, so anyone can audit exactly what it does. It has no telemetry, no analytics, and makes no network calls on your behalf, and your files never leave your device.</p>
 
 <aside class="cta-box">
   <p><strong>Read a lot of markdown?</strong> Skim is a free, open-source extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="{{installUrl}}" rel="noopener">Add it to your browser, free</a>, or try the <a href="/viewer/">online viewer</a>.</p>
@@ -146,7 +154,50 @@
         "@type": "Answer",
         "text": "Yes. skim md and skim.md both refer to Skim, the markdown viewer. The .md comes from the markdown file extension, which is also the project's domain."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Skim open local .md files on my computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After you enable Allow access to file URLs for the extension, which Skim walks you through with a single switch, it renders local file:// markdown exactly like a file on the web. Nothing is uploaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What markdown features does Skim support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GitHub-flavored markdown, tables, task lists, and syntax-highlighted code, plus LaTeX math through KaTeX, mermaid diagrams, footnotes, GitHub-style alerts, emoji shortcodes, and images with a click-to-zoom lightbox. On top it adds a table-of-contents sidebar, light and dark themes, and folder browsing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Skim work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Skim renders everything locally in your browser, so it works with no internet connection. Math and diagrams render offline too, with no external requests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Skim safe and private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Skim is open source under the MIT license, so anyone can audit exactly what it does. It has no telemetry, no analytics, and makes no network calls on your behalf, and your files never leave your device."
+      }
     }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skim.md/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://skim.md/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "What is Skim?", "item": "https://skim.md/what-is-skim/" }
   ]
 }
 </script>
