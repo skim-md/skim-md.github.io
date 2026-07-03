@@ -1,0 +1,72 @@
+<!--meta
+{
+  "title": "Privacy Policy for Skim Markdown Viewer",
+  "description": "Skim, the markdown viewer extension, collects no data: no telemetry, no analytics, nothing sent to any server. Everything runs on your device.",
+  "path": "/privacy/"
+}
+-->
+<article class="prose">
+<h1>Privacy Policy</h1>
+<p class="byline">Last updated 3 July 2026. In one line: Skim collects no data.</p>
+
+<aside class="cta-box">
+  <p><strong>Skim collects no data.</strong> No telemetry, no analytics, no accounts, no cookies, no third parties. Nothing you open, and nothing about how you use the extension, is ever sent to us or to anyone else. Every part of Skim runs on your own device.</p>
+</aside>
+
+<h2>What Skim does</h2>
+<p>Skim is a markdown viewer. It takes a <code>.md</code> file, whether it lives on your computer or on the web, and renders it as a clean, formatted page inside your browser. That rendering happens entirely on your device. The contents of the files you open never leave your machine, because Skim has no server to send them to.</p>
+
+<h2>Data we collect: none</h2>
+<p>We want to be specific, because "we value your privacy" pages usually are not. Skim does not collect, store, or transmit any of the following:</p>
+<ul>
+<li>The contents of the files or pages you view.</li>
+<li>The names, paths, or URLs of those files.</li>
+<li>Your browsing history or the tabs you have open.</li>
+<li>Analytics, usage metrics, or telemetry of any kind.</li>
+<li>Personal information, accounts, or identifiers.</li>
+</ul>
+<p>There is no tracking pixel, no fingerprinting, and no background phone-home. Skim ships no analytics library at all.</p>
+
+<h2>Permissions, and why each one exists</h2>
+<p>Browsers ask you to grant an extension certain permissions. Here is every permission Skim requests and the plain reason it needs it. In all cases the work is done locally, on your device, and the result is never transmitted.</p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>Permission</th><th>Why Skim needs it</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>storage</code></td>
+<td>Remembers your settings, such as your light or dark theme choice, and syncs them across your own signed-in browsers using the browser's built-in sync. Only your preferences are stored, never file contents.</td>
+</tr>
+<tr>
+<td><code>activeTab</code> + <code>scripting</code></td>
+<td>Lets Skim render the current page as markdown when you ask it to, by clicking the toolbar button. It runs only on the tab you invoked it on, only when you invoke it.</td>
+</tr>
+<tr>
+<td><code>tabs</code></td>
+<td>Detects when you open a local <code>.md</code> file without file access enabled, so Skim can offer the one-time setup walkthrough. Tab URLs are matched locally against the <code>.md</code> pattern on your device. They are never stored and never transmitted.</td>
+</tr>
+<tr>
+<td><code>file:///*</code> host access</td>
+<td>Reads the bytes of a local markdown file so Skim can render it and live-reload it as you edit. This applies only after you turn on the "Allow access to file URLs" switch yourself, and the file is read on your device only.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>Everything runs locally</h2>
+<p>Skim has no backend. There is no Skim server, no API, and no database. Parsing markdown, rendering math and diagrams, detecting file encodings, and reloading a file when it changes all happen inside your browser. Because there is nowhere for your data to go, none of it goes anywhere.</p>
+
+<h2>No cookies, no third parties</h2>
+<p>Skim sets no cookies and embeds no third-party scripts, trackers, or advertising. It does not load remote code. The fonts, styles, and libraries it uses are bundled with the extension, so viewing a file does not trigger any network request to us or to anyone else.</p>
+
+<h2>Open source</h2>
+<p>Skim is free and open source under the MIT license. You do not have to take our word for any of the above: the entire source is public, so you can read exactly what it does. The code lives at <a href="https://github.com/skim-md/skim" rel="noopener">github.com/skim-md/skim</a>.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy ever changes, we will update the date at the top of this page and reflect the change in the public repository's history. Because Skim collects nothing today, any future change that affected your data would be a deliberate, visible one.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy, or anything else? Email <a href="mailto:hello@skim.md">hello@skim.md</a>, or open an issue at <a href="https://github.com/skim-md/skim/issues" rel="noopener">github.com/skim-md/skim/issues</a>.</p>
+</article>
