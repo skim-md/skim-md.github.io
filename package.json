@@ -17,7 +17,8 @@
     "dompurify": "^3.4.11",
     "highlight.js": "^11.11.1",
     "katex": "^0.17.0",
-    "marked": "^18.0.5"
+    "marked": "^18.0.5",
+    "marked-footnote": "^1.4.0"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",

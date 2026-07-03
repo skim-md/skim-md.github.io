@@ -7,8 +7,7 @@
 -->
 <article class="prose">
 <h1>The best markdown viewer extensions in 2026: an honest comparison</h1>
-<p class="byline"><strong>Full disclosure:</strong> we make Skim, one of the extensions below. To keep this useful anyway, every claim about the others is verifiable on their store pages and repos, we say plainly what they do better than us, and we recommend a competitor for two of the three reader profiles at the end.</p>
-<p class="byline">Facts checked July 2026: user counts, ratings, update dates, pricing, and source-code status for both competitors were pulled from their Chrome Web Store listings and GitHub repositories on July 2, 2026. Sources are linked inline below.</p>
+<p class="byline"><strong>Full disclosure:</strong> we make Skim, one of the three below. Every claim about the others is verifiable on their store pages and repos (checked July 2, 2026, sources linked inline), we say plainly what they do better, and we recommend a competitor for two of the three reader profiles at the end.</p>
 
 <h2>What actually matters in a markdown viewer</h2>
 <p>Most of what separates these three comes down to a handful of things. Correct rendering: tables that don't break, math that shows as equations instead of raw LaTeX, code blocks with working syntax highlighting. Opening local <code>file://</code> pages without a fight, since Chrome blocks extensions from local files by default and every viewer needs the same one-time permission grant. Actually being maintained, since Chrome ships changes that quietly break stale extensions and a project that hasn't updated in a while is a real risk, not a cosmetic flaw. Respecting your privacy, since these tools read files before you've decided what's in them. And, if you work with AI agents, live reload: the page keeping up automatically as an agent rewrites the file underneath it.</p>
@@ -23,7 +22,7 @@
 
 <h2>Skim: the pitch, plainly</h2>
 <p>Skim is the newest of the three, built around a specific habit: reading a file an AI agent is actively writing. Everything is free, including the folder browser md-reader charges Pro for. The current source is MIT-licensed and public at <a href="https://github.com/skim-md/skim" rel="noopener">github.com/skim-md/skim</a>, not an old snapshot kept around for appearances. First run walks through the local-file permission with one guided switch instead of leaving you to find it in <code>chrome://extensions</code> on your own. Live reload is built specifically for agent output: leave a <code>plan.md</code> open while an agent rewrites it and the page updates in place, scroll position kept. It renders KaTeX math and Mermaid diagrams, and the whole extension is under 6 MB.</p>
-<p>The honest downsides: Skim is not on the Chrome Web Store yet, install is from GitHub for now, a few extra steps compared with a one-click store install. It's Chrome-family only today (Edge, Brave, and other Chromium browsers work fine; Firefox is planned, not shipped). And it's the newest of the three by a wide margin, with the smallest user base and the least real-world mileage of any extension on this page. If a small, unproven install source is a dealbreaker for you, that's a fair reason to wait.</p>
+<p>The honest downsides: Skim is the newest of the three by a wide margin, with the smallest user base and the least real-world mileage of any extension on this page. It's newest to the stores too, so it has the fewest ratings so far. If an unproven newcomer is a dealbreaker for you, that's a fair reason to wait for it to build a track record.</p>
 
 <h2>How they compare</h2>
 <div class="table-scroll">
@@ -49,7 +48,31 @@
 <p class="byline">Reviewed July 2026. We'll update this as the tools change.</p>
 
 <aside class="cta-box">
-  <p><strong>Reading a lot of AI-agent output?</strong> Skim is free and open source, with live reload built for exactly that. <a href="{{installUrl}}" rel="noopener">Get it free on GitHub</a> (Chrome Web Store listing coming soon), or try it with no install at all in the <a href="/viewer/">online viewer</a>.</p>
+  <p><strong>Reading a lot of AI-agent output?</strong> Skim is free and open source, with live reload built for exactly that. <a href="{{installUrl}}" rel="noopener">Add it to your browser, free</a>, or try it with no install at all in the <a href="/viewer/">online viewer</a>.</p>
 </aside>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The best markdown viewer extensions in 2026: an honest comparison",
+  "description": "Markdown Viewer, Markdown Reader, and Skim compared honestly: price, open source, local-file setup, live reload, and who each one is right for.",
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-03",
+  "author": { "@type": "Organization", "name": "Skim" },
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim-md.github.io/" },
+  "mainEntityOfPage": "https://skim-md.github.io/best-markdown-viewer-extensions-2026/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://skim-md.github.io/blog/" },
+    { "@type": "ListItem", "position": 2, "name": "Best markdown viewer extensions in 2026", "item": "https://skim-md.github.io/best-markdown-viewer-extensions-2026/" }
+  ]
+}
+</script>
 
 </article>

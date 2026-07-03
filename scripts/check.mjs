@@ -15,7 +15,10 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const r = (...p) => resolve(root, ...p);
 
 const WEIGHT_BUDGET = 300 * 1024;
-const WEIGHT_EXEMPT = /^assets\/(viewer\.bundle\.js|skim\.css|viewer-fonts\.css|katex\/)/;
+// Lazy viewer assets + promo screenshots are exempt: both load only below the
+// fold / on intent (promo <img> are loading="lazy"), so they never block the
+// first render the budget is protecting.
+const WEIGHT_EXEMPT = /^assets\/(viewer\.bundle\.js|skim\.css|viewer-fonts\.css|katex\/|promo\/)/;
 
 // Renderer snapshots: vendored copies must match the live extension checkout
 // (sibling dir, same convention as scripts/sync-renderer.mjs; override with

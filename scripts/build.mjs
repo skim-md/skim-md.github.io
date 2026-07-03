@@ -12,11 +12,29 @@ const r = (...p) => resolve(root, ...p);
 
 // ---- Site-wide constants (single place to swap when things change) ----
 export const SITE_ORIGIN = 'https://skim-md.github.io'; // -> https://skim.md when purchased
-export const INSTALL_URL = 'https://github.com/skim-md/skim'; // -> CWS listing URL when live
-export const INSTALL_LABEL = 'Get Skim for Chrome, free (GitHub)';
+// Store listing URLs. PLACEHOLDER ids: swap for the real listings once live.
+// The per-browser map lives in the detect script in templates/layout.html;
+// this default (Chrome Web Store) is the static href before JS runs.
+export const INSTALL_URL = 'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid';
+export const INSTALL_LABEL = 'Add Skim to your browser, free';
+export const REPO_URL = 'https://github.com/skim-md/skim';
 export const GOATCOUNTER_CODE = ''; // e.g. 'skim' once the user creates the account
 
-const consts = { SITE_ORIGIN, INSTALL_URL, INSTALL_LABEL, GOATCOUNTER_CODE };
+// The primary install control: a two-tone button whose left segment carries
+// the visitor's actual browser logo (swapped client-side from the sprite in
+// templates/layout.html) and whose label + store link are rewritten to match.
+// Used wherever a page wants the full CTA treatment ({{installBtn}}); inline
+// prose keeps the plain {{installUrl}}/{{installLabel}} text link.
+const INSTALL_BTN =
+  '<span class="install-cta">' +
+  `<a class="btn-chrome" href="${INSTALL_URL}" rel="noopener" data-install>` +
+  '<span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span>' +
+  '<span class="bi-text"><span class="bi-label" data-install-label>Add to Chrome</span>' +
+  '<span class="bi-sub" data-install-sub>Free &middot; open source &middot; no sign-up</span></span></a>' +
+  '<a class="install-alt" href="/install/" data-install-alt>Using another browser? See every install option &rarr;</a>' +
+  '</span>';
+
+const consts = { SITE_ORIGIN, INSTALL_URL, INSTALL_LABEL, REPO_URL, GOATCOUNTER_CODE, installBtn: INSTALL_BTN };
 
 // Webfonts: the site self-hosts the product's own typefaces. Latin subsets
 // load on every page (site-fonts.css); Hebrew + mono-700 load lazily with

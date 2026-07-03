@@ -5,15 +5,35 @@
   "path": "/"
 }
 -->
-<section class="hero wrap">
-  <span class="eyebrow">Free, open-source Chrome extension</span>
-  <h1>Read what your AI wrote. <em>Instantly.</em></h1>
-  <p class="sub">Skim turns raw <code>.md</code> files into beautiful, readable pages right in your browser. Agent plans, READMEs, notes, docs. Everything happens on your device.</p>
-  <div class="actions">
-    <a class="btn primary" href="{{installUrl}}" rel="noopener">{{installLabel}}</a>
-    <a class="btn" href="/viewer/">Try the online viewer</a>
+<section class="hero wrap hero-split">
+  <div class="hero-lead">
+    <span class="eyebrow">Free, open-source Chrome extension</span>
+    <h1>Read what your AI wrote. <em>Instantly.</em></h1>
+    <p class="sub">Skim turns raw <code>.md</code> files into beautiful, readable pages right in your browser. Agent plans, READMEs, notes, docs. Everything happens on your device.</p>
+    <div class="actions">{{installBtn}}</div>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Open source, MIT</span>
+      <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> No data collected</span>
+      <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Works offline</span>
+      <span><a href="{{repoUrl}}" rel="noopener">Read the source on GitHub &rarr;</a></span>
+    </div>
   </div>
-  <p class="note">Chrome Web Store listing coming soon. Until then, install the preview from GitHub: two minutes, instructions included. MIT-licensed.</p>
+  <div class="hero-gallery" id="hero-gallery">
+    <div class="gal">
+      <img class="gal-img active" src="/assets/promo/02-autoreload.png" width="1280" height="800" fetchpriority="high" decoding="async" alt="Skim live-reloading a plan.md as an agent writes it">
+      <img class="gal-img" src="/assets/promo/04-math-mermaid.png" width="1280" height="800" decoding="async" alt="Skim rendering KaTeX math and a mermaid diagram">
+      <img class="gal-img" src="/assets/promo/01-hero.png" width="1280" height="800" decoding="async" alt="Skim rendering a document with a contents sidebar">
+      <img class="gal-img" src="/assets/promo/03-file-access.png" width="1280" height="800" decoding="async" alt="Skim's guided local file-access onboarding">
+      <img class="gal-img" src="/assets/promo/05-free.png" width="1280" height="800" decoding="async" alt="Skim: every feature free, no paywall">
+    </div>
+    <div class="gal-dots" aria-label="Screenshot gallery">
+      <button class="gal-dot active" type="button" aria-label="Show screenshot 1"></button>
+      <button class="gal-dot" type="button" aria-label="Show screenshot 2"></button>
+      <button class="gal-dot" type="button" aria-label="Show screenshot 3"></button>
+      <button class="gal-dot" type="button" aria-label="Show screenshot 4"></button>
+      <button class="gal-dot" type="button" aria-label="Show screenshot 5"></button>
+    </div>
+  </div>
 </section>
 
 <div class="wrap">
@@ -22,15 +42,17 @@
       <span class="dot" aria-hidden="true"></span>
       <span>plan.md</span>
       <span class="demo-live">auto-reloading</span>
+      <span class="demo-edit" aria-hidden="true"><span class="dot-edit"></span>editable, type in the left pane</span>
       <button class="demo-replay link-btn" hidden type="button">Replay</button>
     </div>
     <div class="demo-body">
       <pre class="demo-src" aria-hidden="true"><code></code></pre>
       <article class="demo-out skim markdown-body viewer-pane">
-        <p class="muted">An agent is about to write a plan here. Watch the raw markdown on the left become a page on the right, live. That is Skim's auto-reload: leave the tab open and it keeps up.</p>
+        <p class="muted">An agent is about to write a plan here. Watch the raw markdown on the left become a page on the right, live. When it's done, the left pane is yours to edit.</p>
       </article>
     </div>
   </section>
+  <p class="note" style="font: 14px var(--sans); color: var(--muted); margin: 10px 2px 0;">One click from your browser's store. Free, open source, and MIT-licensed.</p>
 </div>
 
 <section class="section">
@@ -38,12 +60,46 @@
     <span class="eyebrow">Why Skim</span>
     <h2 class="md-h">Built for the AI era</h2>
     <div class="cards">
-      <div class="card reveal"><h3>Live reload</h3><p>Keep an agent's <code>plan.md</code> open in a tab. Skim re-renders the moment the file changes on disk, scroll position preserved.</p></div>
-      <div class="card reveal"><h3>One-switch local files</h3><p>Chrome blocks extensions from <code>file://</code> pages by default. Skim walks you through the single toggle once, then never nags again.</p></div>
-      <div class="card reveal"><h3>Math, diagrams, tables</h3><p>KaTeX math, mermaid diagrams, GitHub-flavored tables with smart handling for wide content. Hebrew and English bidi done right.</p></div>
-      <div class="card reveal"><h3>Folder view, free</h3><p>Browse a folder of markdown files and hop between siblings. Other viewers charge for this. Skim never will.</p></div>
-      <div class="card reveal"><h3>Copy for AI</h3><p>One click copies the document (or a selection) as clean markdown source, ready to paste back into a chat.</p></div>
-      <div class="card reveal"><h3>Private by design</h3><p>No accounts, no telemetry, no network calls with your content. The store privacy declaration reads: no data collected.</p></div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></div>
+        <h3>Live reload</h3><p>Keep an agent's <code>plan.md</code> open in a tab. Skim re-renders the instant the file changes, scroll position kept.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/></svg></div>
+        <h3>One-switch local files</h3><p>Chrome blocks <code>file://</code> by default. Skim flips the single switch with you, once, then never nags.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M17 5H7l6 7-6 7h10"/></svg></div>
+        <h3>Math, diagrams, tables</h3><p>KaTeX math, mermaid diagrams, GitHub-flavored tables. Hebrew and English bidi done right.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <h3>Folder view, free</h3><p>Browse a folder of markdown and hop between siblings. Other viewers charge for this. Skim never will.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="12" height="14" rx="2"/><path d="M16 17v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"/></svg></div>
+        <h3>Copy for AI</h3><p>One click copies the document, or a selection, as clean markdown source, ready to paste back into a chat.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Private by design</h3><p>No accounts, no telemetry, no network calls with your content. The store privacy line reads: no data collected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <figure class="figure reveal" style="margin: 0;">
+        <img class="shot" src="/assets/promo/01-hero.png" width="1280" height="800" loading="lazy" decoding="async" alt="Skim rendering a plan.md file: a contents sidebar on the left, a formatted document with headings, checklists, and code on the right.">
+      </figure>
+      <div>
+        <span class="eyebrow">The real thing</span>
+        <h2 style="font-size: clamp(24px,3.5vw,32px); letter-spacing:-0.01em; margin:0 0 14px;">A document, not a text dump</h2>
+        <p>Every <code>.md</code> file opens with a contents sidebar that tracks where you are as you scroll, syntax-highlighted code, real tables, and light or dark themes. The same page you'd get on GitHub, for files that never leave your machine.</p>
+        <p class="muted" style="font-family: var(--sans); font-size: 15px;">Shown: an agent's <code>plan.md</code>, rendered by the extension.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -52,16 +108,16 @@
   <div class="wrap">
     <span class="eyebrow">Honest by policy</span>
     <h2 class="md-h">How Skim compares</h2>
-    <p class="muted">A snapshot. Full details in <a href="/best-markdown-viewer-extensions-2026/">the 2026 comparison</a>.</p>
+    <p class="muted">The five-second version. Full, sourced write-up in <a href="/best-markdown-viewer-extensions-2026/">the 2026 comparison</a>.</p>
     <div class="table-scroll reveal">
       <table class="compare">
         <thead><tr><th></th><th>Skim</th><th>Markdown Viewer</th><th>Markdown Reader</th></tr></thead>
         <tbody>
-          <tr><td>Price</td><td class="yes">Free, everything included</td><td class="yes">Free</td><td>Free, with a paid Pro plan for advanced options</td></tr>
-          <tr><td>Open source</td><td class="yes">MIT, current code</td><td class="yes">MIT</td><td class="no">2.x only on GitHub; shipping 3.x is closed-source</td></tr>
-          <tr><td>Maintained</td><td class="yes">Actively (2026)</td><td class="no">Last update May 2024</td><td class="yes">Active, updated June 2026</td></tr>
-          <tr><td>Local-file setup</td><td class="yes">Guided one-switch onboarding</td><td>Manual toggle</td><td>Manual toggle</td></tr>
-          <tr><td>Live reload for agent output</td><td class="yes">Yes, scroll preserved</td><td>Auto-reload option</td><td>Live preview</td></tr>
+          <tr><td>Everything free</td><td class="yes">Yes, all features</td><td class="yes">Yes</td><td class="no">Pro tier for advanced options</td></tr>
+          <tr><td>Open source</td><td class="yes">MIT, current code</td><td class="yes">MIT</td><td class="no">Shipping 3.x is closed</td></tr>
+          <tr><td>Maintained in 2026</td><td class="yes">Actively</td><td class="no">Last update May 2024</td><td class="yes">Actively</td></tr>
+          <tr><td>Guided file access</td><td class="yes">One-switch onboarding</td><td class="no">Manual toggle</td><td class="no">Manual toggle</td></tr>
+          <tr><td>Live reload for agents</td><td class="yes">Yes, scroll preserved</td><td>Auto-reload option</td><td class="yes">Live preview</td></tr>
         </tbody>
       </table>
     </div>
@@ -72,18 +128,15 @@
   <div class="wrap">
     <span class="eyebrow">No install needed</span>
     <h2 class="md-h">See it on your own file</h2>
-    <p>Drop any <code>.md</code> file into the <a href="/viewer/">free online viewer</a>. It uses the exact same rendering engine as the extension, entirely in your browser.</p>
-    <div class="cta-box reveal"><p><strong>New to markdown files?</strong> Start with <a href="/how-to-open-md-file/">how to open a .md file</a>, or the AI-specific guide: <a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a>.</p></div>
+    <p>Drop any <code>.md</code> file into the <a href="/viewer/">free online viewer</a>. Same rendering engine as the extension, entirely in your browser.</p>
+    <div class="cta-box reveal"><p><strong>New to markdown files?</strong> Start with <a href="/how-to-open-md-file/">how to open a .md file</a>, or the AI-specific guide: <a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file?</a></p></div>
   </div>
 </section>
 
 <section class="closing" aria-label="Install Skim">
   <div class="wrap">
     <p class="close-line">Your next <code>.md</code> file deserves better than a wall of raw text.</p>
-    <div class="actions">
-      <a class="btn primary" href="{{installUrl}}" rel="noopener">{{installLabel}}</a>
-    </div>
-    <p class="note">MIT-licensed. No accounts, no telemetry, nothing leaves your device.</p>
+    <div class="actions">{{installBtn}}</div>
   </div>
 </section>
 
@@ -92,7 +145,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Skim — Markdown Viewer & Reader",
-  "operatingSystem": "Chrome",
+  "operatingSystem": "Chrome, Edge, Brave, Opera, Vivaldi",
   "applicationCategory": "BrowserApplication",
   "applicationSubCategory": "Markdown viewer",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -101,6 +154,42 @@
   "license": "https://opensource.org/license/mit/",
   "description": "Free, open-source markdown viewer extension for Chrome. Renders .md files with live reload, KaTeX math, mermaid diagrams, and folder browsing. No data collected."
 }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Skim free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Skim is completely free and open source under the MIT license, with no Pro tier, no paywall, and no account. Every feature, including folder browsing, math, and diagrams, is available to everyone." } },
+    { "@type": "Question", "name": "Does Skim upload my files?", "acceptedAnswer": { "@type": "Answer", "text": "No. Skim renders markdown entirely on your device. It collects no data, has no telemetry, and makes no network calls with your content. Files never leave your machine." } },
+    { "@type": "Question", "name": "Can Skim read local .md files?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chrome blocks extensions from local file:// pages by default; Skim walks you through the single 'Allow access to file URLs' switch once, then renders every local markdown file you open." } },
+    { "@type": "Question", "name": "Does Skim work with AI coding agents?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Skim is built for reading files an AI agent is actively writing. Leave a plan.md open in a tab and Skim live-reloads it in place, preserving scroll position, every time the agent rewrites the file." } }
+  ]
+}
+</script>
+
+<script>
+// Hero gallery: crossfade through the product screenshots, pause on hover,
+// and let the dots jump. Honors reduced-motion (stays on the first frame).
+(function () {
+  var g = document.getElementById('hero-gallery');
+  if (!g) return;
+  var imgs = g.querySelectorAll('.gal-img');
+  var dots = g.querySelectorAll('.gal-dot');
+  if (imgs.length < 2) return;
+  var i = 0, timer = 0;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n) {
+    imgs[i].classList.remove('active'); if (dots[i]) dots[i].classList.remove('active');
+    i = (n + imgs.length) % imgs.length;
+    imgs[i].classList.add('active'); if (dots[i]) dots[i].classList.add('active');
+  }
+  function start() { if (reduced) return; clearInterval(timer); timer = setInterval(function () { show(i + 1); }, 3400); }
+  dots.forEach(function (d, n) { d.addEventListener('click', function () { show(n); start(); }); });
+  g.addEventListener('mouseenter', function () { clearInterval(timer); });
+  g.addEventListener('mouseleave', start);
+  start();
+})();
 </script>
 
 <script type="module">
@@ -116,15 +205,5 @@ if ('IntersectionObserver' in window) {
 }
 if ('requestIdleCallback' in window) requestIdleCallback(boot, { timeout: 4000 });
 else setTimeout(boot, 2000);
-
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const els = document.querySelectorAll('.reveal');
-if (reduced || !('IntersectionObserver' in window)) {
-  els.forEach((el) => el.classList.add('in'));
-} else {
-  const rio = new IntersectionObserver((es) => es.forEach((e) => {
-    if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); }
-  }), { threshold: 0.15 });
-  els.forEach((el) => rio.observe(el));
-}
+// (Scroll reveals are handled once, for every page, in the shared layout script.)
 </script>

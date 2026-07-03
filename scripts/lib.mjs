@@ -37,6 +37,8 @@ export function applyLayout(layout, meta, body, consts) {
     content: body,
     installUrl: consts.INSTALL_URL,
     installLabel: consts.INSTALL_LABEL,
+    installBtn: consts.installBtn || '',
+    repoUrl: consts.REPO_URL || consts.INSTALL_URL,
     analytics,
   };
   // Two passes: the body itself may contain {{installUrl}} etc.

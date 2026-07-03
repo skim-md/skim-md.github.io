@@ -105,7 +105,13 @@ export function initViewer(root, getPendingFile) {
 
   ['dragover', 'dragenter'].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.add('over'); }));
   ['dragleave', 'drop'].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.remove('over'); }));
-  drop.addEventListener('drop', (e) => handleFile(e.dataTransfer.files?.[0]));
+  // Accept a drop anywhere on the page, not only on the dropzone. After the
+  // first render (e.g. the sample), the page scrolls down and the dropzone
+  // leaves the viewport, so a document-level handler is what keeps drag-and-
+  // drop working. (The page shell also preventDefaults drops so the browser
+  // never navigates away; rendering happens here.)
+  document.addEventListener('dragover', (e) => e.preventDefault());
+  document.addEventListener('drop', (e) => { e.preventDefault(); const f = e.dataTransfer?.files?.[0]; if (f) handleFile(f); });
   drop.addEventListener('click', () => fileInput.click());
   drop.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); } });
   fileInput.addEventListener('change', () => handleFile(fileInput.files?.[0]));
@@ -162,18 +168,32 @@ export function initHeroDemo(root) {
   const replay = root.querySelector('.demo-replay');
   injectCss();
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let raf = 0;
+  let raf = 0, inputRaf = 0;
+
+  // Once the run ends, the source pane becomes a live editor: type into the
+  // left and the rendered page on the right keeps up, which is the whole
+  // pitch, demonstrated on the reader's own keystrokes.
+  function enableEditing() {
+    srcEl.setAttribute('contenteditable', 'plaintext-only');
+    srcEl.setAttribute('spellcheck', 'false');
+    replay.hidden = false;
+  }
+  srcEl.addEventListener('input', () => {
+    cancelAnimationFrame(inputRaf);
+    inputRaf = requestAnimationFrame(() => { renderBody(outEl, srcEl.textContent); decorate(outEl); });
+  });
 
   function finish() {
     srcEl.textContent = DEMO_PLAN;
     renderBody(outEl, DEMO_PLAN);
     decorate(outEl);
-    replay.hidden = false;
+    enableEditing();
   }
 
   function play() {
     cancelAnimationFrame(raf);
     replay.hidden = true;
+    srcEl.removeAttribute('contenteditable');
     if (reduced) return finish(); // no typewriter for reduced motion
     let i = 0;
     let lastRender = 0;
@@ -187,7 +207,7 @@ export function initHeroDemo(root) {
         lastRender = t;
       }
       if (i < DEMO_PLAN.length) raf = requestAnimationFrame(step);
-      else replay.hidden = false;
+      else enableEditing();
     };
     raf = requestAnimationFrame(step);
   }
