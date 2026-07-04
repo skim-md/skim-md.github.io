@@ -11,7 +11,7 @@
 <h1>What is an AGENTS.md file?</h1>
 <p class="byline"><time datetime="2026-07-03">Updated 3 July 2026</time></p>
 <p class="byline">The instructions file coding agents read before they touch your repo. 4 minute read.</p>
-<figure class="figure post-hero"><img class="shot" src="/assets/blog/what-is-agents-md.png" width="1200" height="630" loading="lazy" decoding="async" alt="What an AGENTS.md file is and how to read it"></figure>
+<figure class="figure post-hero"><img class="shot" src="/assets/blog/what-is-agents-md.png" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" alt="What an AGENTS.md file is and how to read it"></figure>
 
 <h2>An open convention, not one tool's feature</h2>
 <p><code>AGENTS.md</code> is a plain markdown file, usually sitting at the root of a repository, that gives an AI coding agent the context it needs before it starts making changes. It started as a convention rather than a single vendor's feature, and it has since been adopted across a wide range of coding agents, including OpenAI's Codex, Cursor, and a growing list of others. The idea is simple: instead of every tool inventing its own config format, agents look for one shared, human-readable file and read whatever they find there.</p>

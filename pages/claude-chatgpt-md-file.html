@@ -11,7 +11,7 @@
 <h1>Claude or ChatGPT gave you a .md file? Here's how to read it</h1>
 <p class="byline"><time datetime="2026-07-03">Updated 3 July 2026</time></p>
 <p class="byline">Nothing is wrong with the file. It just needs rendering. 4 minute read.</p>
-<figure class="figure post-hero"><img class="shot" src="/assets/blog/claude-chatgpt-md-file.png" width="1200" height="630" loading="lazy" decoding="async" alt="A .md file from Claude or ChatGPT rendered as a clean formatted page"></figure>
+<figure class="figure post-hero"><img class="shot" src="/assets/blog/claude-chatgpt-md-file.png" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" alt="A .md file from Claude or ChatGPT rendered as a clean formatted page"></figure>
 
 <h2>Why AI tools hand you .md files</h2>
 <p>Markdown is how language models structure text: headings, numbered steps, tables, and code blocks, all written with plain characters like <code>#</code> and <code>**</code> instead of hidden formatting. It is the format models were trained on and the format they default to, so ChatGPT and Claude exports often arrive as <code>.md</code>, and coding agents like Claude Code and Cursor write files such as <code>plan.md</code>, <code>notes.md</code>, or <code>report.md</code> straight to your disk while they work. If you open one of those in Notepad or TextEdit, you get a page full of stray <code>#</code> and <code>**</code> marks instead of a document. The file is not broken. It just needs something that understands markdown to turn it into a formatted page.</p>
