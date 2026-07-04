@@ -83,6 +83,8 @@ img, svg, video { max-width: 100%; height: auto; }
 .bi-sub { font-size: 12px; opacity: 0.82; font-weight: 500; margin-top: 1px; }
 .install-alt { font: 14px var(--sans); color: var(--muted); text-decoration: none; border-bottom: 1px dashed color-mix(in srgb, var(--muted) 55%, transparent); padding-bottom: 1px; }
 .install-alt:hover { color: var(--accent); border-color: var(--accent); }
+/* On the install page itself the "see every install option" link is redundant. */
+.install-here .install-alt { display: none; }
 /* Compact variant lives in the header bar: chip + label, no subline. Its
    label is set to white explicitly: var(--bg) (the full-size button's text
    color) is dark in dark theme, but the chip's accent background is a
@@ -142,6 +144,26 @@ img, svg, video { max-width: 100%; height: auto; }
 .prose pre { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; overflow-x: auto; }
 .prose pre code { background: none; border: 0; padding: 0; }
 .prose blockquote { border-left: 3px solid var(--accent); margin: 1em 0; padding: 2px 18px; color: var(--muted); }
+
+/* Teaching demo: raw markdown source (with colored syntax marks) beside the
+   result it renders to. Used on the "what is markdown" guide. Faux headings
+   are <div>s, not real <h*>, so example previews never touch the page outline. */
+.prose .md-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; margin: 18px 0; }
+@media (max-width: 620px) { .prose .md-demo { grid-template-columns: 1fr; } }
+.prose .md-demo .md-src { margin: 0; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; overflow-x: auto; }
+.prose .md-demo .md-src code { background: none; border: 0; padding: 0; font: 0.85em/1.75 var(--mono); white-space: pre; }
+.prose .md-demo .md-out { background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; }
+.prose .md-demo .md-out > :first-child { margin-top: 0; }
+.prose .md-demo .md-out > :last-child { margin-bottom: 0; }
+.prose .md-demo .md-out p { margin: 0.4em 0; }
+.md-demo .md-h1, .md-demo .md-h2, .md-demo .md-h3 { font-weight: 700; line-height: 1.2; margin: 4px 0; color: var(--text); }
+.md-demo .md-h1 { font-size: 1.5em; }
+.md-demo .md-h2 { font-size: 1.25em; }
+.md-demo .md-h3 { font-size: 1.05em; }
+.md-demo .md-note { color: var(--muted); font-family: var(--sans); font-size: 0.9em; }
+/* markdown source syntax tokens */
+.md-src .tk { color: var(--accent); }
+.md-src .tb { color: var(--accent-2); font-weight: 700; }
 
 /* Tables always scroll inside their own wrapper, never the page. */
 .table-scroll { overflow-x: auto; margin: 1.2em 0; border: 1px solid var(--border); border-radius: var(--radius); }
