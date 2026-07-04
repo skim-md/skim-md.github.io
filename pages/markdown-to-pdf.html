@@ -1,0 +1,144 @@
+<!--meta
+{
+  "title": "How to Convert Markdown to PDF (Free, No Upload)",
+  "description": "Convert markdown to PDF free and privately: render your .md file, then print to PDF from your browser. No upload, plus VS Code and Pandoc options.",
+  "path": "/markdown-to-pdf/",
+  "date": "2026-07-04",
+  "updated": "2026-07-04"
+}
+-->
+<article class="prose">
+<h1>How to convert markdown to PDF (free, nothing uploaded)</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">The free, private method first, then the power-user options and one warning. 4 minute read.</p>
+
+<h2>The short version</h2>
+<p>You do not need a special converter or an upload site to turn a <code>.md</code> file into a PDF. The trick is to render the markdown into a formatted page first, then use the "Save as PDF" option that is already built into your browser's Print dialog. It is free, it works offline, and your file never leaves your computer. Everything else on this page is either a power-user shortcut or a caution about the options you should skip.</p>
+
+<h2>Recommended: render, then print to PDF</h2>
+<p>This is the method to use for anything you care about, especially anything private. Nothing is uploaded and there is nothing to install if you use the online viewer.</p>
+<ol>
+<li>Open your markdown file in a renderer. Drag your <code>.md</code> file onto the <a href="/viewer/">free online viewer</a>, or open it with the Skim extension if you have it. Either way the file is rendered on your own device.</li>
+<li>Check that it looks right. Headings, tables, code blocks, and lists should all be formatted the way you want them in the final PDF.</li>
+<li>Open the Print dialog. Press <code>Ctrl+P</code> on Windows or Linux, or <code>Cmd+P</code> on a Mac.</li>
+<li>Set the destination to "Save as PDF" (some browsers label it "Microsoft Print to PDF" or "Save to PDF").</li>
+<li>Click Save, choose where the file goes, and you have a PDF.</li>
+</ol>
+<p>Because the page is rendered locally and the browser generates the PDF itself, the content of your document is never sent to any server. That is the whole reason this method beats the convert-online sites for sensitive work.</p>
+
+<h2>Get the PDF looking right</h2>
+<p>The Print dialog has a few settings that make a real difference to the result. It is worth opening "More settings" and checking them before you save.</p>
+<ul>
+<li><strong>Margins.</strong> The default is usually fine, but "Minimum" or "None" gives you more usable width for wide tables and code blocks.</li>
+<li><strong>Background graphics.</strong> Turn this on if you want code-block shading, colored callouts, or table borders to appear in the PDF. With it off you get plain black text on white, which prints smaller.</li>
+<li><strong>Light vs dark.</strong> Switch the viewer to a light theme before printing. A dark theme can carry over and waste ink or look muddy on paper.</li>
+<li><strong>Page breaks.</strong> Use the print preview to spot headings or tables that get split awkwardly across pages. Adjusting the scale slightly, or adding a blank line in the source, often nudges them into a cleaner spot.</li>
+<li><strong>Scale.</strong> If the content spills onto an extra page, dropping the scale to 90 percent frequently pulls it back.</li>
+</ul>
+
+<h2>Alternatives, and their trade-offs</h2>
+<p>The render-then-print method covers almost everyone. These are worth knowing about if you convert markdown often or need to automate it.</p>
+<h3>VS Code with a markdown to PDF extension</h3>
+<p>If you already live in VS Code, an extension such as "Markdown PDF" adds a right-click "Export to PDF" command. It is convenient when the editor is already open, and it runs locally. The trade-offs: you have to install and trust a third-party extension, and its styling can differ from what you see in the built-in preview, so check the output.</p>
+<h3>Pandoc on the command line</h3>
+<p>For power users and scripts, <a href="/what-is-markdown/">Pandoc</a> is the most flexible option. The basic command is:</p>
+<ol>
+<li>Install Pandoc, and a LaTeX engine if you want the default high-quality output.</li>
+<li>Run <code>pandoc file.md -o file.pdf</code> in your terminal.</li>
+</ol>
+<p>It is free, local, scriptable, and great for batch conversions or consistent templated output. The cost is setup: the PDF engine is a real install, and getting the styling exactly how you want it takes some reading. Overkill for a one-off file, ideal for a repeatable pipeline.</p>
+<h3>The one to be careful with: random upload sites</h3>
+<p>Search results are full of "markdown to PDF" websites where you paste text or upload a file and get a PDF back. They work, but understand the deal: your document is sent to someone else's server to be converted. For a throwaway file that is no big deal. For anything with client details, unreleased work, credentials, or personal information, that content has now left your machine and you have no idea what happens to it. This privacy risk is exactly why rendering locally and printing to PDF is the better default. If a file matters, keep it on your own device.</p>
+
+<aside class="cta-box">
+  <p><strong>Ready to make a PDF?</strong> Render your file free in the <a href="/viewer/">online viewer</a>, or install <a href="{{installUrl}}" rel="noopener">the Skim extension</a> for local files with live reload, then press <code>Ctrl+P</code> or <code>Cmd+P</code> and choose Save as PDF. Nothing is uploaded, it all happens on your device.</p>
+</aside>
+
+<h2>FAQ</h2>
+<h3>What is the easiest way to convert markdown to PDF for free?</h3>
+<p>Render the <code>.md</code> file in a viewer, then open your browser's Print dialog and choose "Save as PDF". It is free, needs no extra software, and nothing is uploaded.</p>
+<h3>Does converting markdown to PDF this way upload my file?</h3>
+<p>No. When you render locally and print to PDF, both the formatting and the PDF are produced on your own device. The file never touches a server, which is why this method is safe for private documents.</p>
+<h3>How do I convert markdown to PDF on the command line?</h3>
+<p>Install Pandoc and run <code>pandoc file.md -o file.pdf</code>. This is ideal for automation and batch jobs, though it takes more setup than the print-to-PDF method.</p>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/how-to-open-md-file/">How to open a .md file, three ways</a></li>
+<li><a href="/what-is-markdown/">What is markdown, in plain English</a></li>
+<li><a href="/readme-md/">What a README.md file is and how to read one</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert markdown to PDF for free without uploading",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Render the markdown file",
+      "text": "Open your .md file in a viewer. Drag it onto the free online viewer or open it with the Skim extension so it renders on your own device."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check the formatting",
+      "text": "Confirm that headings, tables, code blocks, and lists look the way you want them in the final PDF."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Open the Print dialog",
+      "text": "Press Ctrl+P on Windows or Linux, or Cmd+P on a Mac."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Choose Save as PDF",
+      "text": "Set the print destination to Save as PDF, adjust margins and background graphics if needed."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Save the PDF",
+      "text": "Click Save and choose where the PDF file is stored. The conversion happens entirely on your device."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the easiest way to convert markdown to PDF for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Render the .md file in a viewer, then open your browser's Print dialog and choose Save as PDF. It is free, needs no extra software, and nothing is uploaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does converting markdown to PDF this way upload my file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. When you render locally and print to PDF, both the formatting and the PDF are produced on your own device. The file never touches a server, which is why this method is safe for private documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert markdown to PDF on the command line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Install Pandoc and run pandoc file.md -o file.pdf. This is ideal for automation and batch jobs, though it takes more setup than the print-to-PDF method."
+      }
+    }
+  ]
+}
+</script>
+</article>

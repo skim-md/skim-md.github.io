@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Open a .MD File on Windows, Mac, or Online</title>
-<meta name="description" content="Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.">
-<link rel="canonical" href="https://skim.md/how-to-open-md-file/">
+<title>How to Convert Markdown to PDF (Free, No Upload)</title>
+<meta name="description" content="Convert markdown to PDF free and privately: render your .md file, then print to PDF from your browser. No upload, plus VS Code and Pandoc options.">
+<link rel="canonical" href="https://skim.md/markdown-to-pdf/">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Skim">
-<meta property="og:title" content="How to Open a .MD File on Windows, Mac, or Online">
-<meta property="og:description" content="Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.">
-<meta property="og:url" content="https://skim.md/how-to-open-md-file/">
+<meta property="og:title" content="How to Convert Markdown to PDF (Free, No Upload)">
+<meta property="og:description" content="Convert markdown to PDF free and privately: render your .md file, then print to PDF from your browser. No upload, plus VS Code and Pandoc options.">
+<meta property="og:url" content="https://skim.md/markdown-to-pdf/">
 <meta property="og:image" content="https://skim.md/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Skim, a free open-source markdown viewer for the browser">
-<meta property="article:published_time" content="2026-07-02">
-<meta property="article:modified_time" content="2026-07-03">
+<meta property="article:published_time" content="2026-07-04">
+<meta property="article:modified_time" content="2026-07-04">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Open a .MD File on Windows, Mac, or Online">
-<meta name="twitter:description" content="Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.">
+<meta name="twitter:title" content="How to Convert Markdown to PDF (Free, No Upload)">
+<meta name="twitter:description" content="Convert markdown to PDF free and privately: render your .md file, then print to PDF from your browser. No upload, plus VS Code and Pandoc options.">
 <meta name="twitter:image" content="https://skim.md/assets/og.png">
 <meta name="theme-color" content="#0d1017">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -77,87 +77,134 @@
 </header>
 <main id="main">
 <article class="prose">
-<h1>How to open a .md file (Windows, Mac, or no install at all)</h1>
-<p class="byline"><time datetime="2026-07-03">Updated 3 July 2026</time></p>
-<p class="byline">The fastest fix first, then the setup worth doing if this keeps happening. 4 minute read.</p>
+<h1>How to convert markdown to PDF (free, nothing uploaded)</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">The free, private method first, then the power-user options and one warning. 4 minute read.</p>
 
-<h2>What a .md file actually is</h2>
-<p>A <code>.md</code> file is a markdown file: plain text with a few formatting marks mixed in, like <code>#</code> for a heading, <code>**bold**</code> for bold, and <code>-</code> for a list item. It is not a program and it cannot run code on your computer, so it is always safe to open. GitHub projects ship a <code>README.md</code> with almost every repository. Note apps like Obsidian and Notion export to it. And AI tools such as Claude and ChatGPT increasingly write their answers, plans, and reports as <code>.md</code> files instead of plain chat text. If you just double-clicked one and got a wall of text with stray symbols, nothing is broken. The file just needs something that understands those marks and turns them into a formatted page.</p>
+<h2>The short version</h2>
+<p>You do not need a special converter or an upload site to turn a <code>.md</code> file into a PDF. The trick is to render the markdown into a formatted page first, then use the "Save as PDF" option that is already built into your browser's Print dialog. It is free, it works offline, and your file never leaves your computer. Everything else on this page is either a power-user shortcut or a caution about the options you should skip.</p>
 
-<h2>Fastest: open it online, nothing to install</h2>
-<p>If you only need to read one file right now, skip installing anything. Use the <a href="/viewer/">free online markdown viewer</a>:</p>
+<h2>Recommended: render, then print to PDF</h2>
+<p>This is the method to use for anything you care about, especially anything private. Nothing is uploaded and there is nothing to install if you use the online viewer.</p>
 <ol>
-<li>Go to <a href="/viewer/">skim.md/viewer</a> in any browser.</li>
-<li>Drag your <code>.md</code> file onto the page, or click to choose it.</li>
-<li>Read it, fully formatted, in a couple of seconds.</li>
+<li>Open your markdown file in a renderer. Drag your <code>.md</code> file onto the <a href="/viewer/">free online viewer</a>, or open it with the Skim extension if you have it. Either way the file is rendered on your own device.</li>
+<li>Check that it looks right. Headings, tables, code blocks, and lists should all be formatted the way you want them in the final PDF.</li>
+<li>Open the Print dialog. Press <code>Ctrl+P</code> on Windows or Linux, or <code>Cmd+P</code> on a Mac.</li>
+<li>Set the destination to "Save as PDF" (some browsers label it "Microsoft Print to PDF" or "Save to PDF").</li>
+<li>Click Save, choose where the file goes, and you have a PDF.</li>
 </ol>
-<p>Nothing is uploaded. The file is rendered entirely on your device, so it works the same on a work laptop, a phone, or a computer you do not own. There is nothing to install and nothing to configure. If you only ever open a markdown file once in a while, this is genuinely the easiest option and you can stop reading here.</p>
+<p>Because the page is rendered locally and the browser generates the PDF itself, the content of your document is never sent to any server. That is the whole reason this method beats the convert-online sites for sensitive work.</p>
 
-<h2>Best for repeat use: render it in your browser</h2>
-<p>If <code>.md</code> files keep landing in your downloads folder, a browser extension is worth the two minutes it takes to set up, because after that every file just works. Skim is a free, open-source extension that renders markdown automatically:</p>
+<h2>Get the PDF looking right</h2>
+<p>The Print dialog has a few settings that make a real difference to the result. It is worth opening "More settings" and checking them before you save.</p>
+<ul>
+<li><strong>Margins.</strong> The default is usually fine, but "Minimum" or "None" gives you more usable width for wide tables and code blocks.</li>
+<li><strong>Background graphics.</strong> Turn this on if you want code-block shading, colored callouts, or table borders to appear in the PDF. With it off you get plain black text on white, which prints smaller.</li>
+<li><strong>Light vs dark.</strong> Switch the viewer to a light theme before printing. A dark theme can carry over and waste ink or look muddy on paper.</li>
+<li><strong>Page breaks.</strong> Use the print preview to spot headings or tables that get split awkwardly across pages. Adjusting the scale slightly, or adding a blank line in the source, often nudges them into a cleaner spot.</li>
+<li><strong>Scale.</strong> If the content spills onto an extra page, dropping the scale to 90 percent frequently pulls it back.</li>
+</ul>
+
+<h2>Alternatives, and their trade-offs</h2>
+<p>The render-then-print method covers almost everyone. These are worth knowing about if you convert markdown often or need to automate it.</p>
+<h3>VS Code with a markdown to PDF extension</h3>
+<p>If you already live in VS Code, an extension such as "Markdown PDF" adds a right-click "Export to PDF" command. It is convenient when the editor is already open, and it runs locally. The trade-offs: you have to install and trust a third-party extension, and its styling can differ from what you see in the built-in preview, so check the output.</p>
+<h3>Pandoc on the command line</h3>
+<p>For power users and scripts, <a href="/what-is-markdown/">Pandoc</a> is the most flexible option. The basic command is:</p>
 <ol>
-<li>Add Skim from the Chrome Web Store (Edge, Brave, Opera, and other Chromium browsers install it too; Firefox and Safari have their own store listings).</li>
-<li>Flip Chrome's one file-access switch. Chrome hides local files from extensions by default for privacy, so it needs your permission once. Skim shows you exactly where to click.</li>
-<li>Double-click any <code>.md</code> file from now on. It opens as a formatted page instead of raw text, automatically, every time.</li>
+<li>Install Pandoc, and a LaTeX engine if you want the default high-quality output.</li>
+<li>Run <code>pandoc file.md -o file.pdf</code> in your terminal.</li>
 </ol>
-<p>This is the "set it up once and forget it" option. It also handles things the quick online viewer intentionally skips to stay light, like live reload while a file is still being written and diagrams.</p>
-
-<h2>With apps already on your computer</h2>
-<p>You do not strictly need a new tool at all. Everything already on your machine can open a <code>.md</code> file, it just will not format it.</p>
-<p>On Windows, right-click the file, choose Open with, and pick Notepad, or run <code>notepad file.md</code> from a terminal. You will see the raw text, headings marked with <code>#</code>, bold text wrapped in <code>**</code>, and so on. That is fine for a quick glance at a short file.</p>
-<p>On a Mac, TextEdit opens it the same way: right-click, Open With, TextEdit. Or select the file and press Space for Quick Look, which shows the raw text without opening a full app.</p>
-<p>On any operating system, VS Code opens <code>.md</code> files with a built-in preview pane, so you can see the source and the formatted version side by side. That is a solid middle ground if you already have VS Code installed for other reasons.</p>
-<p>Be honest with yourself about what these give you: the source, not the formatted page. Fine for a two-line file, tedious for anything with tables, code blocks, or more than a screen's worth of text.</p>
-
-<h2>FAQ</h2>
-<h3>Is a .md file safe to open?</h3>
-<p>Yes. It is plain text; it cannot run programs. Renderers like Skim also sanitize any embedded HTML before displaying it, so even a file from an untrusted source is safe to view.</p>
-<h3>Can I convert a .md file to PDF?</h3>
-<p>Yes. Render it first, either with an extension or the online viewer, then use your browser's Print dialog and choose Save as PDF.</p>
-<h3>Can I edit a .md file?</h3>
-<p>Any text editor works: Notepad, TextEdit, VS Code, or whatever you already have. Markdown is just text with a few light formatting marks, so nothing special is required to change it.</p>
+<p>It is free, local, scriptable, and great for batch conversions or consistent templated output. The cost is setup: the PDF engine is a real install, and getting the styling exactly how you want it takes some reading. Overkill for a one-off file, ideal for a repeatable pipeline.</p>
+<h3>The one to be careful with: random upload sites</h3>
+<p>Search results are full of "markdown to PDF" websites where you paste text or upload a file and get a PDF back. They work, but understand the deal: your document is sent to someone else's server to be converted. For a throwaway file that is no big deal. For anything with client details, unreleased work, credentials, or personal information, that content has now left your machine and you have no idea what happens to it. This privacy risk is exactly why rendering locally and printing to PDF is the better default. If a file matters, keep it on your own device.</p>
 
 <aside class="cta-box">
-  <p><strong>Opening .md files often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Add it to your browser, free</a>, or keep using the <a href="/viewer/">online viewer</a>.</p>
+  <p><strong>Ready to make a PDF?</strong> Render your file free in the <a href="/viewer/">online viewer</a>, or install <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">the Skim extension</a> for local files with live reload, then press <code>Ctrl+P</code> or <code>Cmd+P</code> and choose Save as PDF. Nothing is uploaded, it all happens on your device.</p>
 </aside>
+
+<h2>FAQ</h2>
+<h3>What is the easiest way to convert markdown to PDF for free?</h3>
+<p>Render the <code>.md</code> file in a viewer, then open your browser's Print dialog and choose "Save as PDF". It is free, needs no extra software, and nothing is uploaded.</p>
+<h3>Does converting markdown to PDF this way upload my file?</h3>
+<p>No. When you render locally and print to PDF, both the formatting and the PDF are produced on your own device. The file never touches a server, which is why this method is safe for private documents.</p>
+<h3>How do I convert markdown to PDF on the command line?</h3>
+<p>Install Pandoc and run <code>pandoc file.md -o file.pdf</code>. This is ideal for automation and batch jobs, though it takes more setup than the print-to-PDF method.</p>
 
 <h2>Related guides</h2>
 <ul>
-<li><a href="/open-md-windows-11/">Open .md files on Windows 11, step by step</a></li>
-<li><a href="/open-md-mac/">Open .md files on a Mac, step by step</a></li>
-<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file, three ways</a></li>
+<li><a href="/what-is-markdown/">What is markdown, in plain English</a></li>
+<li><a href="/readme-md/">What a README.md file is and how to read one</a></li>
 </ul>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert markdown to PDF for free without uploading",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Render the markdown file",
+      "text": "Open your .md file in a viewer. Drag it onto the free online viewer or open it with the Skim extension so it renders on your own device."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check the formatting",
+      "text": "Confirm that headings, tables, code blocks, and lists look the way you want them in the final PDF."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Open the Print dialog",
+      "text": "Press Ctrl+P on Windows or Linux, or Cmd+P on a Mac."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Choose Save as PDF",
+      "text": "Set the print destination to Save as PDF, adjust margins and background graphics if needed."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Save the PDF",
+      "text": "Click Save and choose where the PDF file is stored. The conversion happens entirely on your device."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
-  "datePublished": "2026-07-02",
-  "dateModified": "2026-07-03",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
   "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is a .md file safe to open?",
+      "name": "What is the easiest way to convert markdown to PDF for free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. It is plain text; it cannot run programs. Renderers like Skim also sanitize any embedded HTML before displaying it, so even a file from an untrusted source is safe to view."
+        "text": "Render the .md file in a viewer, then open your browser's Print dialog and choose Save as PDF. It is free, needs no extra software, and nothing is uploaded."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I convert a .md file to PDF?",
+      "name": "Does converting markdown to PDF this way upload my file?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Render it first, either with an extension or the online viewer, then use your browser's Print dialog and choose Save as PDF."
+        "text": "No. When you render locally and print to PDF, both the formatting and the PDF are produced on your own device. The file never touches a server, which is why this method is safe for private documents."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I edit a .md file?",
+      "name": "How do I convert markdown to PDF on the command line?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Any text editor works: Notepad, TextEdit, VS Code, or whatever you already have. Markdown is just text with a few light formatting marks, so nothing special is required to change it."
+        "text": "Install Pandoc and run pandoc file.md -o file.pdf. This is ideal for automation and batch jobs, though it takes more setup than the print-to-PDF method."
       }
     }
   ]

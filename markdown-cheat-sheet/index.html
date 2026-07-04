@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Open a .MD File on Windows, Mac, or Online</title>
-<meta name="description" content="Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.">
-<link rel="canonical" href="https://skim.md/how-to-open-md-file/">
+<title>Markdown Cheat Sheet: Every Syntax with Examples</title>
+<meta name="description" content="Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.">
+<link rel="canonical" href="https://skim.md/markdown-cheat-sheet/">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Skim">
-<meta property="og:title" content="How to Open a .MD File on Windows, Mac, or Online">
-<meta property="og:description" content="Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.">
-<meta property="og:url" content="https://skim.md/how-to-open-md-file/">
+<meta property="og:title" content="Markdown Cheat Sheet: Every Syntax with Examples">
+<meta property="og:description" content="Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.">
+<meta property="og:url" content="https://skim.md/markdown-cheat-sheet/">
 <meta property="og:image" content="https://skim.md/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Skim, a free open-source markdown viewer for the browser">
-<meta property="article:published_time" content="2026-07-02">
-<meta property="article:modified_time" content="2026-07-03">
+<meta property="article:published_time" content="2026-07-04">
+<meta property="article:modified_time" content="2026-07-04">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Open a .MD File on Windows, Mac, or Online">
-<meta name="twitter:description" content="Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.">
+<meta name="twitter:title" content="Markdown Cheat Sheet: Every Syntax with Examples">
+<meta name="twitter:description" content="Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.">
 <meta name="twitter:image" content="https://skim.md/assets/og.png">
 <meta name="theme-color" content="#0d1017">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -77,87 +77,194 @@
 </header>
 <main id="main">
 <article class="prose">
-<h1>How to open a .md file (Windows, Mac, or no install at all)</h1>
-<p class="byline"><time datetime="2026-07-03">Updated 3 July 2026</time></p>
-<p class="byline">The fastest fix first, then the setup worth doing if this keeps happening. 4 minute read.</p>
+<h1>Markdown cheat sheet: every syntax with examples</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">A quick-scan reference for every common markdown mark, with copy-ready examples. 5 minute skim.</p>
 
-<h2>What a .md file actually is</h2>
-<p>A <code>.md</code> file is a markdown file: plain text with a few formatting marks mixed in, like <code>#</code> for a heading, <code>**bold**</code> for bold, and <code>-</code> for a list item. It is not a program and it cannot run code on your computer, so it is always safe to open. GitHub projects ship a <code>README.md</code> with almost every repository. Note apps like Obsidian and Notion export to it. And AI tools such as Claude and ChatGPT increasingly write their answers, plans, and reports as <code>.md</code> files instead of plain chat text. If you just double-clicked one and got a wall of text with stray symbols, nothing is broken. The file just needs something that understands those marks and turns them into a formatted page.</p>
+<p>Markdown is plain text with a few light formatting marks. This page lists the syntax you will actually use, grouped by task, with the raw markdown on the left and what it produces on the right. Bookmark it and copy what you need.</p>
 
-<h2>Fastest: open it online, nothing to install</h2>
-<p>If you only need to read one file right now, skip installing anything. Use the <a href="/viewer/">free online markdown viewer</a>:</p>
-<ol>
-<li>Go to <a href="/viewer/">skim.md/viewer</a> in any browser.</li>
-<li>Drag your <code>.md</code> file onto the page, or click to choose it.</li>
-<li>Read it, fully formatted, in a couple of seconds.</li>
-</ol>
-<p>Nothing is uploaded. The file is rendered entirely on your device, so it works the same on a work laptop, a phone, or a computer you do not own. There is nothing to install and nothing to configure. If you only ever open a markdown file once in a while, this is genuinely the easiest option and you can stop reading here.</p>
+<h2>Headings</h2>
+<p>Start a line with one to six <code>#</code> characters, followed by a space. More hashes means a smaller heading.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code># Title</code></td><td>Top-level heading (h1)</td></tr>
+<tr><td><code>## Section</code></td><td>Section heading (h2)</td></tr>
+<tr><td><code>### Subsection</code></td><td>Sub-section heading (h3)</td></tr>
+<tr><td><code>###### Smallest</code></td><td>Smallest heading (h6)</td></tr>
+</tbody>
+</table>
+</div>
 
-<h2>Best for repeat use: render it in your browser</h2>
-<p>If <code>.md</code> files keep landing in your downloads folder, a browser extension is worth the two minutes it takes to set up, because after that every file just works. Skim is a free, open-source extension that renders markdown automatically:</p>
-<ol>
-<li>Add Skim from the Chrome Web Store (Edge, Brave, Opera, and other Chromium browsers install it too; Firefox and Safari have their own store listings).</li>
-<li>Flip Chrome's one file-access switch. Chrome hides local files from extensions by default for privacy, so it needs your permission once. Skim shows you exactly where to click.</li>
-<li>Double-click any <code>.md</code> file from now on. It opens as a formatted page instead of raw text, automatically, every time.</li>
-</ol>
-<p>This is the "set it up once and forget it" option. It also handles things the quick online viewer intentionally skips to stay light, like live reload while a file is still being written and diagrams.</p>
+<h2>Emphasis</h2>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code>**bold**</code></td><td><strong>bold</strong></td></tr>
+<tr><td><code>*italic*</code></td><td><em>italic</em></td></tr>
+<tr><td><code>_italic_</code></td><td><em>italic</em></td></tr>
+<tr><td><code>***bold italic***</code></td><td><strong><em>bold italic</em></strong></td></tr>
+<tr><td><code>~~strikethrough~~</code></td><td><del>strikethrough</del></td></tr>
+<tr><td><code>`inline code`</code></td><td><code>inline code</code></td></tr>
+</tbody>
+</table>
+</div>
+<p>Both <code>*</code> and <code>_</code> work for italic, and doubling them gives bold. Pick one style and stay consistent.</p>
 
-<h2>With apps already on your computer</h2>
-<p>You do not strictly need a new tool at all. Everything already on your machine can open a <code>.md</code> file, it just will not format it.</p>
-<p>On Windows, right-click the file, choose Open with, and pick Notepad, or run <code>notepad file.md</code> from a terminal. You will see the raw text, headings marked with <code>#</code>, bold text wrapped in <code>**</code>, and so on. That is fine for a quick glance at a short file.</p>
-<p>On a Mac, TextEdit opens it the same way: right-click, Open With, TextEdit. Or select the file and press Space for Quick Look, which shows the raw text without opening a full app.</p>
-<p>On any operating system, VS Code opens <code>.md</code> files with a built-in preview pane, so you can see the source and the formatted version side by side. That is a solid middle ground if you already have VS Code installed for other reasons.</p>
-<p>Be honest with yourself about what these give you: the source, not the formatted page. Fine for a two-line file, tedious for anything with tables, code blocks, or more than a screen's worth of text.</p>
+<h2>Lists</h2>
+<p>Unordered lists use a leading <code>-</code>, <code>*</code>, or <code>+</code>. Ordered lists use a number and a dot. Indent to nest.</p>
+<pre><code>- First item
+- Second item
+  - Nested item
+  - Another nested item
 
-<h2>FAQ</h2>
-<h3>Is a .md file safe to open?</h3>
-<p>Yes. It is plain text; it cannot run programs. Renderers like Skim also sanitize any embedded HTML before displaying it, so even a file from an untrusted source is safe to view.</p>
-<h3>Can I convert a .md file to PDF?</h3>
-<p>Yes. Render it first, either with an extension or the online viewer, then use your browser's Print dialog and choose Save as PDF.</p>
-<h3>Can I edit a .md file?</h3>
-<p>Any text editor works: Notepad, TextEdit, VS Code, or whatever you already have. Markdown is just text with a few light formatting marks, so nothing special is required to change it.</p>
+1. First step
+2. Second step
+   1. Nested step</code></pre>
+
+<h3>Task lists</h3>
+<p>A GitHub Flavored Markdown extra: put a checkbox after the list marker. Skim and GitHub render these as tick boxes.</p>
+<pre><code>- [ ] Not done yet
+- [x] Finished</code></pre>
+
+<h2>Links and images</h2>
+<p>Links wrap the visible text in square brackets and the target in parentheses. Images are the same with a leading <code>!</code>.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code>[link text](https://skim.md/)</code></td><td>A clickable link</td></tr>
+<tr><td><code>[link text](https://skim.md/ "Title")</code></td><td>A link with a hover title</td></tr>
+<tr><td><code>![alt text](image.png)</code></td><td>An embedded image</td></tr>
+<tr><td><code>&lt;https://skim.md/&gt;</code></td><td>An autolink (bare URL)</td></tr>
+</tbody>
+</table>
+</div>
+<p>You can also use reference-style links: write <code>[link text][ref]</code> in the body, then define <code>[ref]: https://skim.md/</code> lower down. Handy when the same URL appears many times.</p>
+
+<h2>Inline code and code blocks</h2>
+<p>Wrap short snippets in single backticks. For multiple lines, fence the block with three backticks and name the language for syntax highlighting.</p>
+<pre><code>Use `console.log()` inline.
+
+```js
+const greet = (name) =&gt; {
+  return "Hello, " + name;
+};
+```</code></pre>
+<p>The language tag after the opening fence (here <code>js</code>) is optional but gives you highlighted output.</p>
+
+<h2>Blockquotes</h2>
+<p>Prefix a line with <code>&gt;</code>. Stack the marker to nest quotes.</p>
+<pre><code>&gt; This is a quote.
+&gt; It can span multiple lines.
+&gt;
+&gt; &gt; And it can nest.</code></pre>
+
+<h2>Horizontal rules</h2>
+<p>Put three or more of the same symbol on their own line to draw a divider. Three hyphens, three asterisks, or three underscores all work.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code>***</code></td><td>A horizontal rule</td></tr>
+<tr><td><code>___</code></td><td>A horizontal rule</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Tables</h2>
+<p>Separate columns with pipes and put a divider row of hyphens under the header. Colons in the divider row set column alignment.</p>
+<pre><code>| Feature | Supported |
+| - | - |
+| Tables | Yes |
+| Emphasis | Yes |</code></pre>
+<p>Alignment: <code>:-</code> aligns left, <code>-:</code> aligns right, and <code>:-:</code> centers a column. Cells do not need to line up in the source; the renderer handles spacing.</p>
+
+<h2>GitHub Flavored Markdown extras</h2>
+<p>GitHub Flavored Markdown (GFM) adds a few widely supported features on top of the basics. Skim renders all of these.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>Markdown</th></tr></thead>
+<tbody>
+<tr><td>Task lists</td><td><code>- [x] done</code> and <code>- [ ] to do</code></td></tr>
+<tr><td>Tables</td><td><code>| a | b |</code> with a <code>| - | - |</code> divider</td></tr>
+<tr><td>Strikethrough</td><td><code>~~text~~</code></td></tr>
+<tr><td>Autolinks</td><td>A bare <code>https://skim.md/</code> becomes a link</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Math and diagrams</h2>
+<p>Skim also renders math and diagrams that plain markdown leaves out. Inline math uses single dollar signs and block math uses doubled ones, powered by KaTeX.</p>
+<pre><code>Inline: $E = mc^2$
+
+Block:
+$$
+a^2 + b^2 = c^2
+$$</code></pre>
+<p>Diagrams use a fenced <code>mermaid</code> block, so a flowchart or sequence diagram lives right inside your markdown:</p>
+<pre><code>```mermaid
+sequenceDiagram
+  Editor-&gt;&gt;Skim: send markdown
+  Skim-&gt;&gt;Reader: show formatted page
+```</code></pre>
 
 <aside class="cta-box">
-  <p><strong>Opening .md files often?</strong> Skim is a free, open-source Chrome extension that renders every markdown file you open, local files included, with live reload, math, and diagrams. <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Add it to your browser, free</a>, or keep using the <a href="/viewer/">online viewer</a>.</p>
+  <p><strong>Want to see your markdown rendered?</strong> To preview any file, use the <a href="/viewer/">free online viewer</a> with nothing to install, or install <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">the Skim extension</a> to render every markdown file you open, with live reload, math, and diagrams built in.</p>
 </aside>
 
 <h2>Related guides</h2>
 <ul>
-<li><a href="/open-md-windows-11/">Open .md files on Windows 11, step by step</a></li>
-<li><a href="/open-md-mac/">Open .md files on a Mac, step by step</a></li>
-<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? Here's how to read it</a></li>
+<li><a href="/what-is-markdown/">What is markdown? A plain-English explainer</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file on Windows, Mac, or online</a></li>
+<li><a href="/readme-md/">What a README.md file is and how to write one</a></li>
+<li><a href="/what-is-skim/">What is Skim, the markdown viewer</a></li>
 </ul>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Markdown Cheat Sheet: Every Syntax with Examples",
+  "description": "Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "author": { "@type": "Organization", "name": "Skim" },
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
-  "datePublished": "2026-07-02",
-  "dateModified": "2026-07-03",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
   "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is a .md file safe to open?",
+      "name": "How do I make text bold in markdown?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. It is plain text; it cannot run programs. Renderers like Skim also sanitize any embedded HTML before displaying it, so even a file from an untrusted source is safe to view."
+        "text": "Wrap the text in two asterisks on each side, like **bold**. For italic, use one asterisk or one underscore, like *italic*."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I convert a .md file to PDF?",
+      "name": "How do I add a link in markdown?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Render it first, either with an extension or the online viewer, then use your browser's Print dialog and choose Save as PDF."
+        "text": "Put the visible text in square brackets followed by the URL in parentheses, like [link text](https://skim.md/). Add a leading exclamation mark to embed an image instead."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I edit a .md file?",
+      "name": "How do I write a code block in markdown?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Any text editor works: Notepad, TextEdit, VS Code, or whatever you already have. Markdown is just text with a few light formatting marks, so nothing special is required to change it."
+        "text": "Fence the code with three backticks on their own line above and below it. Add a language name after the opening fence, such as js or python, for syntax highlighting."
       }
     }
   ]

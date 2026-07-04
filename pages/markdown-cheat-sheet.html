@@ -1,0 +1,204 @@
+<!--meta
+{
+  "title": "Markdown Cheat Sheet: Every Syntax with Examples",
+  "description": "Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.",
+  "path": "/markdown-cheat-sheet/",
+  "date": "2026-07-04",
+  "updated": "2026-07-04"
+}
+-->
+<article class="prose">
+<h1>Markdown cheat sheet: every syntax with examples</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">A quick-scan reference for every common markdown mark, with copy-ready examples. 5 minute skim.</p>
+
+<p>Markdown is plain text with a few light formatting marks. This page lists the syntax you will actually use, grouped by task, with the raw markdown on the left and what it produces on the right. Bookmark it and copy what you need.</p>
+
+<h2>Headings</h2>
+<p>Start a line with one to six <code>#</code> characters, followed by a space. More hashes means a smaller heading.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code># Title</code></td><td>Top-level heading (h1)</td></tr>
+<tr><td><code>## Section</code></td><td>Section heading (h2)</td></tr>
+<tr><td><code>### Subsection</code></td><td>Sub-section heading (h3)</td></tr>
+<tr><td><code>###### Smallest</code></td><td>Smallest heading (h6)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Emphasis</h2>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code>**bold**</code></td><td><strong>bold</strong></td></tr>
+<tr><td><code>*italic*</code></td><td><em>italic</em></td></tr>
+<tr><td><code>_italic_</code></td><td><em>italic</em></td></tr>
+<tr><td><code>***bold italic***</code></td><td><strong><em>bold italic</em></strong></td></tr>
+<tr><td><code>~~strikethrough~~</code></td><td><del>strikethrough</del></td></tr>
+<tr><td><code>`inline code`</code></td><td><code>inline code</code></td></tr>
+</tbody>
+</table>
+</div>
+<p>Both <code>*</code> and <code>_</code> work for italic, and doubling them gives bold. Pick one style and stay consistent.</p>
+
+<h2>Lists</h2>
+<p>Unordered lists use a leading <code>-</code>, <code>*</code>, or <code>+</code>. Ordered lists use a number and a dot. Indent to nest.</p>
+<pre><code>- First item
+- Second item
+  - Nested item
+  - Another nested item
+
+1. First step
+2. Second step
+   1. Nested step</code></pre>
+
+<h3>Task lists</h3>
+<p>A GitHub Flavored Markdown extra: put a checkbox after the list marker. Skim and GitHub render these as tick boxes.</p>
+<pre><code>- [ ] Not done yet
+- [x] Finished</code></pre>
+
+<h2>Links and images</h2>
+<p>Links wrap the visible text in square brackets and the target in parentheses. Images are the same with a leading <code>!</code>.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code>[link text](https://skim.md/)</code></td><td>A clickable link</td></tr>
+<tr><td><code>[link text](https://skim.md/ "Title")</code></td><td>A link with a hover title</td></tr>
+<tr><td><code>![alt text](image.png)</code></td><td>An embedded image</td></tr>
+<tr><td><code>&lt;https://skim.md/&gt;</code></td><td>An autolink (bare URL)</td></tr>
+</tbody>
+</table>
+</div>
+<p>You can also use reference-style links: write <code>[link text][ref]</code> in the body, then define <code>[ref]: https://skim.md/</code> lower down. Handy when the same URL appears many times.</p>
+
+<h2>Inline code and code blocks</h2>
+<p>Wrap short snippets in single backticks. For multiple lines, fence the block with three backticks and name the language for syntax highlighting.</p>
+<pre><code>Use `console.log()` inline.
+
+```js
+const greet = (name) =&gt; {
+  return "Hello, " + name;
+};
+```</code></pre>
+<p>The language tag after the opening fence (here <code>js</code>) is optional but gives you highlighted output.</p>
+
+<h2>Blockquotes</h2>
+<p>Prefix a line with <code>&gt;</code>. Stack the marker to nest quotes.</p>
+<pre><code>&gt; This is a quote.
+&gt; It can span multiple lines.
+&gt;
+&gt; &gt; And it can nest.</code></pre>
+
+<h2>Horizontal rules</h2>
+<p>Put three or more of the same symbol on their own line to draw a divider. Three hyphens, three asterisks, or three underscores all work.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Markdown</th><th>Renders as</th></tr></thead>
+<tbody>
+<tr><td><code>***</code></td><td>A horizontal rule</td></tr>
+<tr><td><code>___</code></td><td>A horizontal rule</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Tables</h2>
+<p>Separate columns with pipes and put a divider row of hyphens under the header. Colons in the divider row set column alignment.</p>
+<pre><code>| Feature | Supported |
+| - | - |
+| Tables | Yes |
+| Emphasis | Yes |</code></pre>
+<p>Alignment: <code>:-</code> aligns left, <code>-:</code> aligns right, and <code>:-:</code> centers a column. Cells do not need to line up in the source; the renderer handles spacing.</p>
+
+<h2>GitHub Flavored Markdown extras</h2>
+<p>GitHub Flavored Markdown (GFM) adds a few widely supported features on top of the basics. Skim renders all of these.</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Feature</th><th>Markdown</th></tr></thead>
+<tbody>
+<tr><td>Task lists</td><td><code>- [x] done</code> and <code>- [ ] to do</code></td></tr>
+<tr><td>Tables</td><td><code>| a | b |</code> with a <code>| - | - |</code> divider</td></tr>
+<tr><td>Strikethrough</td><td><code>~~text~~</code></td></tr>
+<tr><td>Autolinks</td><td>A bare <code>https://skim.md/</code> becomes a link</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Math and diagrams</h2>
+<p>Skim also renders math and diagrams that plain markdown leaves out. Inline math uses single dollar signs and block math uses doubled ones, powered by KaTeX.</p>
+<pre><code>Inline: $E = mc^2$
+
+Block:
+$$
+a^2 + b^2 = c^2
+$$</code></pre>
+<p>Diagrams use a fenced <code>mermaid</code> block, so a flowchart or sequence diagram lives right inside your markdown:</p>
+<pre><code>```mermaid
+sequenceDiagram
+  Editor-&gt;&gt;Skim: send markdown
+  Skim-&gt;&gt;Reader: show formatted page
+```</code></pre>
+
+<aside class="cta-box">
+  <p><strong>Want to see your markdown rendered?</strong> To preview any file, use the <a href="/viewer/">free online viewer</a> with nothing to install, or install <a href="{{installUrl}}" rel="noopener">the Skim extension</a> to render every markdown file you open, with live reload, math, and diagrams built in.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/what-is-markdown/">What is markdown? A plain-English explainer</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file on Windows, Mac, or online</a></li>
+<li><a href="/readme-md/">What a README.md file is and how to write one</a></li>
+<li><a href="/what-is-skim/">What is Skim, the markdown viewer</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Markdown Cheat Sheet: Every Syntax with Examples",
+  "description": "Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "author": { "@type": "Organization", "name": "Skim" },
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make text bold in markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wrap the text in two asterisks on each side, like **bold**. For italic, use one asterisk or one underscore, like *italic*."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add a link in markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Put the visible text in square brackets followed by the URL in parentheses, like [link text](https://skim.md/). Add a leading exclamation mark to embed an image instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a code block in markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fence the code with three backticks on their own line above and below it. Add a language name after the opening fence, such as js or python, for syntax highlighting."
+      }
+    }
+  ]
+}
+</script>
+</article>

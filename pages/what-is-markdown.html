@@ -1,0 +1,167 @@
+<!--meta
+{
+  "title": "What Is Markdown? A Plain-English Guide",
+  "description": "Markdown is plain text with light formatting marks that turns into a formatted page. What it is, the core syntax, and how to read a .md file.",
+  "path": "/what-is-markdown/",
+  "date": "2026-07-04",
+  "updated": "2026-07-04"
+}
+-->
+<article class="prose">
+<h1>What is markdown?</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">Plain text with a few formatting marks, and how it becomes a formatted page. 6 minute read.</p>
+
+<h2>The short version</h2>
+<p>Markdown is a way of writing formatted text using plain characters you already have on your keyboard. You put a <code>#</code> in front of a line to make it a heading, wrap a word in <code>**</code> to make it bold, and start a line with <code>-</code> to make a list item. The result stays perfectly readable as raw text, and a renderer can turn those same marks into a proper formatted page with real headings, bold text, and bulleted lists.</p>
+<p>It was created in 2004 by John Gruber, with help from Aaron Swartz, and the goal was stated plainly at the time: a markdown document should be publishable as plain text, without looking like it has been marked up with tags or instructions. That single idea explains almost everything about how markdown looks and why people like it.</p>
+
+<h2>Why markdown exists</h2>
+<p>Before markdown, writing for the web usually meant HTML, where a bit of bold text looks like <code>&lt;strong&gt;bold&lt;/strong&gt;</code> and a link is a mouthful of angle brackets and quotes. That is precise, but it is tiring to write and unpleasant to read in its raw form. Markdown was designed to fix both problems at once:</p>
+<ul>
+<li>The source is easy to read on its own. You can hand someone a raw markdown file and they will understand it, marks and all.</li>
+<li>It converts cleanly to HTML. A renderer reads the marks and produces the formatted page a browser can display.</li>
+</ul>
+<p>So markdown is readable two ways at the same time: as source text and as a rendered document. That is the property that made it spread.</p>
+
+<h2>Where you run into it</h2>
+<p>Once you know the name, you start seeing markdown everywhere:</p>
+<ul>
+<li><strong>Code projects.</strong> Almost every software project ships a <code>README.md</code>, the front-page description of what the project is and how to use it. On GitHub and similar sites, that file is rendered automatically at the top of the page.</li>
+<li><strong>Community sites.</strong> Reddit comments, Discord messages, and Stack Overflow posts all accept markdown, which is why typing <code>**this**</code> makes text bold in those boxes.</li>
+<li><strong>Note apps.</strong> Obsidian stores its notes as plain markdown files, and Notion and many others can export to it, so your writing is not locked inside one company's format.</li>
+<li><strong>AI tools.</strong> Claude, ChatGPT, and similar assistants increasingly write their answers, plans, and reports as markdown, and often hand you a <code>.md</code> file directly. When an answer comes back with neat headings and bullet points, that is markdown being rendered for you.</li>
+</ul>
+
+<h2>The core syntax, with examples</h2>
+<p>Markdown's whole vocabulary fits on a page. Here are the marks you will actually use, each shown as the raw text you type.</p>
+
+<h3>Headings</h3>
+<p>One to six <code>#</code> characters at the start of a line set the heading level, from largest to smallest:</p>
+<pre><code># Title
+## Section
+### Subsection</code></pre>
+
+<h3>Bold and italic</h3>
+<p>Wrap text in asterisks. One asterisk on each side is italic, two is bold:</p>
+<pre><code>*italic* and **bold**</code></pre>
+
+<h3>Lists</h3>
+<p>Start lines with <code>-</code> for a bulleted list, or with numbers for an ordered one:</p>
+<pre><code>- first point
+- second point
+
+1. step one
+2. step two</code></pre>
+
+<h3>Links and images</h3>
+<p>A link is the visible text in square brackets followed by the address in parentheses. An image is the same with an exclamation mark in front, where the bracketed text becomes the alt description:</p>
+<pre><code>[Skim](https://skim.md/)
+![alt text](picture.png)</code></pre>
+
+<h3>Code</h3>
+<p>Wrap a short snippet in single backticks to show it <code>inline</code>. For a whole block, put it between lines of three backticks:</p>
+<pre><code>Here is `inline code` in a sentence.
+
+```
+a whole
+block of code
+```</code></pre>
+
+<h3>Blockquotes</h3>
+<p>Start a line with <code>&gt;</code> to quote it:</p>
+<pre><code>&gt; This line is quoted.</code></pre>
+
+<h3>Tables</h3>
+<p>Rows are separated by pipes, with a line of dashes marking the header:</p>
+<pre><code>| Name | Role   |
+| :- | :- |
+| Ada  | Author |</code></pre>
+<p>That is close to the entire language. The reason people can pick it up in an afternoon is that there is genuinely not much more to learn.</p>
+
+<h2>The source versus the rendered page</h2>
+<p>This is the point that trips people up most, so it is worth stating clearly. A <code>.md</code> file holds the <em>source</em>: the plain text with the marks still visible. The <em>rendered page</em> is what you get after a program reads those marks and applies real formatting. They are two views of the same content.</p>
+<p>When you double-click a <code>.md</code> file and get a wall of text with stray <code>#</code> and <code>**</code> symbols, nothing is broken. You are simply looking at the source, because whatever opened it does not render markdown. Give the same file to something that does, like GitHub, a note app, or a viewer, and you get the clean formatted version instead. Both are correct; one just has the formatting turned on.</p>
+
+<h2>Flavors of markdown</h2>
+<p>Gruber's original markdown covered the basics but left some gaps, and it did not define every edge case precisely. Over the years, a few standardized versions filled those gaps:</p>
+<ul>
+<li><strong>CommonMark</strong> is a strict, carefully specified version of the original, written so that different tools render the same document the same way. It is the common base most modern renderers build on.</li>
+<li><strong>GitHub Flavored Markdown</strong>, often shortened to GFM, extends CommonMark with the practical extras GitHub needed: tables, task list checkboxes, strikethrough with <code>~~text~~</code>, and automatic links from bare URLs.</li>
+</ul>
+<p>In everyday use the differences rarely matter. The headings, bold, lists, and links you learned above work the same across all of them. The flavors mostly add features on top rather than changing the core.</p>
+
+<h2>How to actually read a .md file</h2>
+<p>Since a raw <code>.md</code> file shows you the source, reading it comfortably just means pointing it at something that renders markdown. You have a few easy options:</p>
+<ul>
+<li><strong>Online, nothing installed.</strong> Drag the file onto the <a href="/viewer/">free online markdown viewer</a> and read it formatted in a couple of seconds. The file is rendered on your own device, so nothing is uploaded.</li>
+<li><strong>In your browser, every time.</strong> A browser extension can render every <code>.md</code> file you open automatically, local files included. That is the "set it up once and forget it" option covered in our guide on <a href="/how-to-open-md-file/">how to open a .md file</a>.</li>
+<li><strong>With apps you already have.</strong> Any text editor opens the source, and VS Code has a built-in preview pane that shows the formatted version alongside it.</li>
+</ul>
+
+<aside class="cta-box">
+  <p><strong>Reading markdown files often?</strong> Skim renders any <code>.md</code> file as a clean formatted page, local files included, with live reload, math, and diagrams. Try the <a href="/viewer/">free online markdown viewer</a>, or install <a href="{{installUrl}}" rel="noopener">the free Skim extension</a> to render every file you open automatically.</p>
+</aside>
+
+<h2>FAQ</h2>
+<h3>What does markdown actually do?</h3>
+<p>It lets you write formatted text using plain keyboard characters. Marks like <code>#</code> for a heading and <code>**</code> for bold stay readable as raw text, and a renderer turns them into a real formatted page with headings, bold text, and lists.</p>
+<h3>What is the difference between markdown and a .md file?</h3>
+<p>Markdown is the writing format, the set of rules for those formatting marks. A <code>.md</code> file is just a text file saved in that format. The <code>.md</code> extension tells other programs the text inside uses markdown.</p>
+<h3>Is markdown the same as HTML?</h3>
+<p>No, but they are related. Markdown is a simpler, more readable way to write, and a renderer converts it into HTML for a browser to display. You can even drop raw HTML into a markdown file when you need something markdown does not cover.</p>
+<h3>Do I need to learn markdown to read a .md file?</h3>
+<p>No. Open the file with anything that renders markdown, like GitHub, a note app, or an online viewer, and you get a normal formatted page. Knowing the marks only helps if you want to write markdown yourself.</p>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/how-to-open-md-file/">How to open a .md file, Windows, Mac, or online</a></li>
+<li><a href="/markdown-cheat-sheet/">Markdown cheat sheet: every mark on one page</a></li>
+<li><a href="/what-is-skim/">What is Skim?</a></li>
+<li><a href="/readme-md/">What is a README.md file?</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does markdown actually do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It lets you write formatted text using plain keyboard characters. Marks like # for a heading and ** for bold stay readable as raw text, and a renderer turns them into a real formatted page with headings, bold text, and lists."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between markdown and a .md file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Markdown is the writing format, the set of rules for those formatting marks. A .md file is just a text file saved in that format. The .md extension tells other programs the text inside uses markdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is markdown the same as HTML?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, but they are related. Markdown is a simpler, more readable way to write, and a renderer converts it into HTML for a browser to display. You can even drop raw HTML into a markdown file when you need something markdown does not cover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to learn markdown to read a .md file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Open the file with anything that renders markdown, like GitHub, a note app, or an online viewer, and you get a normal formatted page. Knowing the marks only helps if you want to write markdown yourself."
+      }
+    }
+  ]
+}
+</script>
+</article>
