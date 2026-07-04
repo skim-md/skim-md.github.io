@@ -15,6 +15,7 @@
 
 <h2>An open convention, not one tool's feature</h2>
 <p><code>AGENTS.md</code> is a plain markdown file, usually sitting at the root of a repository, that gives an AI coding agent the context it needs before it starts making changes. It started as a convention rather than a single vendor's feature, and it has since been adopted across a wide range of coding agents, including OpenAI's Codex, Cursor, and a growing list of others. The idea is simple: instead of every tool inventing its own config format, agents look for one shared, human-readable file and read whatever they find there.</p>
+<figure class="figure"><img class="diagram" src="/assets/blog/dg-what-is-agents-md.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: a repository contains an AGENTS.md file that an AI coding agent reads to learn the project"><figcaption>AGENTS.md is the file coding agents read to learn your project.</figcaption></figure>
 <p>That shared-file idea matters more than any single tool's implementation. A repository maintainer writes one <code>AGENTS.md</code>, and any agent that follows the convention picks it up, without the maintainer having to keep several tool-specific files in sync.</p>
 
 <h2>What actually goes in one</h2>

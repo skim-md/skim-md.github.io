@@ -84,6 +84,7 @@
 
 <h2>Claude Code's project memory</h2>
 <p><code>CLAUDE.md</code> is a plain markdown file that Claude Code, Anthropic's coding agent, reads automatically at the start of a session. It's the place project-specific instructions live: the things you'd otherwise have to repeat at the start of every conversation. Put them in <code>CLAUDE.md</code> once, and Claude Code picks them up on its own from then on, no need to paste them into the chat again.</p>
+<figure class="figure"><img class="diagram" src="/assets/blog/dg-what-is-claude-md.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: a project holds a CLAUDE.md file that Claude Code reads on each run"><figcaption>CLAUDE.md is standing memory Claude Code reads on every run.</figcaption></figure>
 
 <h2>What people actually put in it</h2>
 <p>Most CLAUDE.md files cover a similar set of ground. The exact commands to build, test, and lint the project, so Claude doesn't have to guess or search for a <code>package.json</code> script by trial and error. Style rules that aren't enforced by a linter: naming conventions, preferred patterns, things to avoid. And architecture notes: how the pieces fit together, which directories are generated output versus hand-written source, and any part of the codebase that's easy to misunderstand at a glance. It reads like an onboarding note for a new teammate, because that's roughly the job it does, just for an agent instead of a person.</p>

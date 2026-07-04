@@ -331,6 +331,9 @@ td.yes { color: var(--text); } td.no { color: var(--muted); }
 .shot { display: block; width: 100%; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 24px 60px -28px rgba(0,0,0,0.55); background: var(--panel); }
 figure.figure { margin: 28px 0 8px; }
 figure.figure figcaption { margin-top: 10px; font: 14px var(--sans); color: var(--muted); text-align: center; }
+/* In-body explanatory diagram: the PNG carries its own light card + frame, so
+   it just needs to scale. No extra border/shadow (that would double up). */
+.prose img.diagram { display: block; width: 100%; height: auto; border-radius: 14px; }
 .split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
 .split.rev { grid-template-columns: 0.95fr 1.05fr; }
 

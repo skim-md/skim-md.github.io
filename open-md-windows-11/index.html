@@ -84,6 +84,7 @@
 
 <h2>The 10-second answer</h2>
 <p>Windows 11 does not render markdown out of the box, so double-clicking a <code>.md</code> file just opens raw text in whatever app is set as default. You have three real options, ranked by how they read: a browser extension gives you a formatted page automatically every time, a free online viewer gives you a formatted page with zero install, and Notepad gives you the raw text with nothing to set up at all.</p>
+<figure class="figure"><img class="diagram" src="/assets/blog/dg-open-md-windows-11.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: a .md file on Windows opens as text, then a viewer turns it into a formatted page"><figcaption>The path from a raw .md file to a formatted page on Windows.</figcaption></figure>
 
 <h2>Option 1: Notepad, built in, raw text</h2>
 <p>Right-click the file, choose Open with, and pick Notepad, or run <code>notepad file.md</code> from a terminal. You will see the file exactly as written: a heading looks like <code>## Setup</code>, bold text looks like <code>**important**</code>, and a link looks like <code>[click here](https://example.com)</code>. Nothing is formatted. That is fine if you just need to scan a short file for one piece of information, like a version number or a single command. It gets tiring fast on anything longer, especially files with tables or code blocks, where the raw marks make the content genuinely hard to follow.</p>
