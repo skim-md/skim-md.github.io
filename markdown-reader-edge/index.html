@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markdown Viewer for Microsoft Edge (Free)</title>
+<meta name="description" content="Skim is a free, open-source markdown viewer for Microsoft Edge that renders .md files, with live reload, math, diagrams, and no data collected.">
+<link rel="canonical" href="https://skim.md/markdown-reader-edge/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Skim">
+<meta property="og:title" content="Markdown Viewer for Microsoft Edge (Free)">
+<meta property="og:description" content="Skim is a free, open-source markdown viewer for Microsoft Edge that renders .md files, with live reload, math, diagrams, and no data collected.">
+<meta property="og:url" content="https://skim.md/markdown-reader-edge/">
+<meta property="og:image" content="https://skim.md/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Skim, a free open-source markdown viewer for the browser">
+<meta property="article:published_time" content="2026-07-04">
+<meta property="article:modified_time" content="2026-07-04">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Markdown Viewer for Microsoft Edge (Free)">
+<meta name="twitter:description" content="Skim is a free, open-source markdown viewer for Microsoft Edge that renders .md files, with live reload, math, diagrams, and no data collected.">
+<meta name="twitter:image" content="https://skim.md/assets/og.png">
+<meta name="theme-color" content="#0d1017">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Skim","alternateName":"Skim Markdown Viewer","url":"https://skim.md/","publisher":{"@type":"Organization","name":"Skim","url":"https://skim.md/","logo":{"@type":"ImageObject","url":"https://skim.md/assets/icon-512.png","width":512,"height":512},"sameAs":["https://github.com/skim-md/skim"]}}
+</script>
+<link rel="stylesheet" href="/assets/site-fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>/* theme before first paint: no flash */try{var t=localStorage.getItem('skim-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="g-edge" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0a5ad3"/><stop offset="1" stop-color="#37c5f0"/></linearGradient>
+  <linearGradient id="g-arc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a5f"/><stop offset=".5" stop-color="#a06bff"/><stop offset="1" stop-color="#4f7cff"/></linearGradient>
+  <radialGradient id="g-ff" cx=".38" cy=".28" r=".85"><stop offset="0" stop-color="#ffe141"/><stop offset=".45" stop-color="#ff7a1a"/><stop offset="1" stop-color="#e02b6d"/></radialGradient>
+  <symbol id="logo-chrome" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 24 6.68 14a20 20 0 0 1 34.64 0Z"/><path fill="#FBBC05" d="M24 24 41.32 14A20 20 0 0 1 24 44Z"/><path fill="#34A853" d="M24 24 24 44A20 20 0 0 1 6.68 14Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.5" fill="#4285F4"/></symbol>
+  <symbol id="logo-edge" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="url(#g-edge)"/><path fill="#fff" d="M13 30c2.5 4.4 7 6.6 11.6 6.6 3.6 0 6.4-1 8.4-2.6v-4.4c-2.2 1.9-5 2.9-8 2.9-4.7 0-8.4-2.7-8.4-6.6 0-2.3 1.3-4.2 3.4-5.3-4.6 1-8 5.2-7 9.4z"/><path fill="#37c5f0" d="M35 20c0-6-6-11-13-11-6.4 0-11.7 4.2-13.4 10 2.2-3.4 6-5.4 10.2-5.4 5 0 9 2.6 9.8 6.4z"/></symbol>
+  <symbol id="logo-brave" viewBox="0 0 48 48"><path fill="#fb542b" d="m24 4 10 3.4 2.6 3-1 4.6 1.8 4.4-4 15.2L24 44l-9.2-6.2-4-15.2 1.8-4.4-1-4.6 2.6-3z"/><path fill="#fff" d="m24 14 5.6 6.6-2 3.4 2.2 2.4-5.8 4.4-5.8-4.4 2.2-2.4-2-3.4z"/></symbol>
+  <symbol id="logo-opera" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="19" ry="20" fill="#ee2f41"/><ellipse cx="24" cy="24" rx="7.5" ry="12.5" fill="#fff"/></symbol>
+  <symbol id="logo-vivaldi" viewBox="0 0 48 48"><rect x="4" y="4" width="40" height="40" rx="13" fill="#ef3939"/><path fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" d="M15 18l9 15 9-15"/></symbol>
+  <symbol id="logo-arc" viewBox="0 0 48 48"><rect x="5" y="5" width="38" height="38" rx="12" fill="url(#g-arc)"/><circle cx="23" cy="21" r="7.5" fill="none" stroke="#fff" stroke-width="4.2"/><path stroke="#fff" stroke-width="4.2" stroke-linecap="round" d="M25 28 18 39"/></symbol>
+  <symbol id="logo-firefox" viewBox="0 0 48 48"><circle cx="24" cy="25" r="19" fill="url(#g-ff)"/><path fill="#fff" opacity=".9" d="M24 9c4.2 2 5.6 6.2 3.4 9.6 3.2-1.2 5.6.8 6.6 3.4C35.4 13.6 30 8.6 24 9z"/><path fill="#ffe141" opacity=".55" d="M11 20c-1.4 3-1 7 1 10-.6-3.4.6-6.6 3-8.6-2 .2-3.4-.2-4-1.4z"/></symbol>
+  <symbol id="logo-safari" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#1e9bf0"/><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-width="1.6" opacity=".55"/><path fill="#fff" d="M24 24 34 14 28 26z"/><path fill="#ff3b30" d="M24 24 14 34 20 22z"/></symbol>
+</defs></svg>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Skim home">
+      <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <strong>Skim</strong>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a class="nav-ext" href="/install/" aria-label="Install the Skim extension">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.2 2.2 0 0 1 0 4.4H2V19a2 2 0 0 0 2 2h3.8v-1.5a2.2 2.2 0 0 1 4.4 0V21H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg>
+        <span>Extensions</span>
+      </a>
+      <a href="/viewer/">Viewer</a>
+      <a href="/ai/">For AI</a>
+      <a href="/blog/">Blog</a>
+      <a class="btn-chrome compact" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install>
+        <span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span>
+        <span class="bi-label">Install</span>
+      </a>
+      <a class="nav-gh" href="https://github.com/skim-md/skim" rel="noopener" aria-label="Skim on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true" width="17" height="17"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle light and dark theme">◐</button>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="prose">
+<h1>A markdown viewer for Microsoft Edge that just works</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">What a markdown viewer does, and the free one to add to Edge in two minutes. 3 minute read.</p>
+<figure class="figure post-hero"><img class="shot" src="/assets/blog/markdown-reader-edge.png" width="1200" height="630" loading="lazy" decoding="async" alt="Skim, a free markdown viewer for Microsoft Edge, rendering a .md file"></figure>
+
+<h2>Why raw markdown looks like a wall of text</h2>
+<p>A markdown file, the kind ending in <code>.md</code>, is plain text with a few formatting marks mixed in: <code>#</code> for a heading, <code>**bold**</code> for bold, <code>-</code> for a list item, and pipes and dashes for tables. Microsoft Edge does not understand those marks on its own. Open a <code>.md</code> file in a fresh tab and Edge either downloads it or shows the raw text, symbols and all, as one long unformatted block. Nothing is broken. Edge simply has no built-in markdown viewer, so it shows you the source instead of the page the source describes.</p>
+<p>A markdown reader for Microsoft Edge fixes that. It sits in the browser, notices when a page is markdown, and turns those marks into a formatted document: real headings, readable tables, highlighted code, working links. You open the file the way you always would, and it arrives as a clean page instead of a symbol soup.</p>
+
+<h2>Skim: a free, open-source markdown viewer for Edge</h2>
+<p><strong>Skim is a free, open-source Edge extension that renders markdown automatically.</strong> Once it is installed, any <code>.md</code> file you open, whether it is a URL on the web, a README, or a local file on your own disk, opens as a formatted page. There is no button to press and no menu to find. Skim recognizes markdown and renders it for you.</p>
+<p>It is MIT-licensed, so the source is public and anyone can read exactly what it does. It collects no data, runs no telemetry, and makes no network calls on your behalf. Everything renders on your device. Edge is built on Chromium, the same engine as Chrome, so Skim runs on it natively and feels like a part of the browser.</p>
+
+<h2>How to add it to Microsoft Edge</h2>
+<p>Setup takes about two minutes, and most of that is one privacy switch Edge asks you to flip.</p>
+<ol>
+<li>Open the <a href="https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Skim listing in Edge Add-ons</a>.</li>
+<li>Click <strong>Get</strong>, then confirm when Edge asks. It installs like any other add-on, with one click.</li>
+<li>Flip Edge's file-access switch. Edge hides local files from extensions by default, so to read <code>.md</code> files from your own disk it needs your permission once. Skim shows you exactly where to click, so you are not hunting through settings.</li>
+<li>Open any <code>.md</code> file from now on. It renders as a formatted page automatically, every time, with no extra steps.</li>
+</ol>
+<p>If you only ever open markdown files on the web and never local ones, you can skip the file-access step. That switch only matters for files stored on your own computer.</p>
+
+<h2>Prefer the Chrome Web Store version? That works too</h2>
+<p>Because Edge is Chromium-based, it can install extensions from the Chrome Web Store as well as from Edge Add-ons. The first time you visit a Chrome Web Store page, Edge offers to "Allow extensions from other stores"; turn that on and you can add the Chrome build of Skim exactly as you would in Chrome. Either route gives you the same extension. Most people use the Edge Add-ons listing above because it is one fewer prompt, but the choice is yours.</p>
+
+<h2>What Skim can do</h2>
+<p>A viewer is only as good as what it renders. Skim aims to handle the markdown people actually write, not a stripped-down subset:</p>
+<ul>
+<li><strong>Live reload.</strong> Skim watches the file and re-renders it in place the moment it changes on disk. Leave an AI agent's plan open in a tab and watch it tick off tasks in real time, no manual refresh, with your scroll position kept.</li>
+<li><strong>KaTeX math.</strong> LaTeX expressions render as real equations instead of raw backslashes and braces.</li>
+<li><strong>Mermaid diagrams.</strong> Flowcharts and sequence diagrams written as code render as actual diagrams.</li>
+<li><strong>GFM tables.</strong> GitHub-flavored markdown tables, task lists, footnotes, and syntax-highlighted code blocks all render correctly.</li>
+<li><strong>Folder view.</strong> Browse a whole project of markdown files from a sidebar, free, with no Pro tier gating it.</li>
+<li><strong>Copy as markdown.</strong> One click turns the rendered page back into clean markdown source, ready to paste into your next prompt or document.</li>
+<li><strong>Private and on-device.</strong> Files never leave your machine. No account, no telemetry, no data collected, and it all works offline.</li>
+</ul>
+
+<h2>No install? Read it online instead</h2>
+<p>If you only need to read one file and would rather not add anything to Edge, there is a no-install option. The <a href="/viewer/">free online markdown viewer</a> renders any <code>.md</code> file you drag onto the page, right in the browser, with nothing uploaded. It works on a work laptop, a phone, or a computer you do not own. For a file you will open once, that is genuinely the fastest route. For files that keep landing in your downloads folder, the extension is the better long-term fix, because after setup every file just works.</p>
+
+<h2>FAQ</h2>
+<h3>Does Microsoft Edge have a built-in markdown viewer?</h3>
+<p>No. Edge shows a <code>.md</code> file as raw text or downloads it, because it has no built-in way to render markdown. You need an extension like Skim, or an online viewer, to see it as a formatted page.</p>
+<h3>Is the Skim markdown viewer for Edge free?</h3>
+<p>Yes. Skim is MIT open source and completely free, with no Pro tier, no paywall, and no account. Features that some other viewers charge for, like folder browsing, are free in Skim.</p>
+<h3>Can it read local .md files from my computer?</h3>
+<p>Yes. After you flip Edge's "Allow access to file URLs" switch, which Skim walks you through once, it renders local <code>.md</code> files exactly like ones on the web. Nothing is uploaded.</p>
+<h3>Can Edge install the Chrome Web Store version of Skim?</h3>
+<p>Yes. Edge is Chromium-based, so once you allow extensions from other stores it can install Skim from the Chrome Web Store as well as from Edge Add-ons. Both give you the same extension.</p>
+<h3>Does Skim collect any data?</h3>
+<p>No. Skim renders everything on your device. There is no telemetry, no analytics, and no network call on your behalf, and it works fully offline.</p>
+
+<aside class="cta-box">
+  <p><strong>Tired of raw markdown in Edge?</strong> Skim is a free, open-source markdown viewer that renders every <code>.md</code> file you open, local files included, with live reload, KaTeX math, and mermaid diagrams. <a href="https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Add Skim to Edge, free</a>, or read one file now with no install in the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/markdown-reader-chrome/">A markdown reader for Chrome that just works</a></li>
+<li><a href="/best-markdown-viewer-extensions-2026/">The best markdown viewer extensions in 2026</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file</a></li>
+<li><a href="/what-is-skim/">What is Skim?</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Microsoft Edge have a built-in markdown viewer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Edge shows a .md file as raw text or downloads it, because it has no built-in way to render markdown. You need an extension like Skim, or an online viewer, to see it as a formatted page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Skim markdown viewer for Edge free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Skim is MIT open source and completely free, with no Pro tier, no paywall, and no account. Features that some other viewers charge for, like folder browsing, are free in Skim."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it read local .md files from my computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After you flip Edge's Allow access to file URLs switch, which Skim walks you through once, it renders local .md files exactly like ones on the web. Nothing is uploaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Edge install the Chrome Web Store version of Skim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Edge is Chromium-based, so once you allow extensions from other stores it can install Skim from the Chrome Web Store as well as from Edge Add-ons. Both give you the same extension."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Skim collect any data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Skim renders everything on your device. There is no telemetry, no analytics, and no network call on your behalf, and it works fully offline."
+      }
+    }
+  ]
+}
+</script>
+</article>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-lead">
+        <a class="foot-brand" href="/" aria-label="Skim home">
+          <span class="lines" aria-hidden="true"><span></span><span></span><span></span></span>
+          <strong>Skim</strong>
+        </a>
+        <p class="foot-tag">Read what your AI wrote. Instantly.</p>
+        <p class="muted foot-mini">Free and MIT-licensed. No accounts, no tracking, everything on-device.</p>
+        <a class="btn-ghost foot-gh" href="https://github.com/skim-md/skim" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          View source on GitHub
+        </a>
+      </div>
+      <div class="foot-links">
+        <div>
+          <p class="foot-h">Product</p>
+          <a href="/viewer/">Free online viewer</a>
+          <a href="/ai/">For AI workflows</a>
+          <a href="/install/">Install for your browser</a>
+          <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Get it on GitHub</a>
+        </div>
+        <div>
+          <p class="foot-h">Guides</p>
+          <a href="/what-is-skim/">What is Skim?</a>
+          <a href="/how-to-open-md-file/">Open a .md file</a>
+          <a href="/claude-chatgpt-md-file/">Read a .md from Claude or ChatGPT</a>
+          <a href="/readme-md/">Open a README.md</a>
+          <a href="/blog/">All guides &amp; posts</a>
+        </div>
+        <div>
+          <p class="foot-h">Project</p>
+          <a href="https://github.com/skim-md/skim" rel="noopener">Source (MIT)</a>
+          <a href="https://github.com/skim-md/skim/issues" rel="noopener">Report an issue</a>
+          <a href="/best-markdown-viewer-extensions-2026/">How Skim compares</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; Skim. Open source under the MIT license.</span>
+      <span class="muted">Not affiliated with Google. Chrome is a trademark of Google LLC.</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  // Theme toggle
+  var btn = document.getElementById('theme-toggle');
+  if (btn) btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var next = cur === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('skim-theme', next); } catch (e) {}
+  });
+
+  // Scroll reveals, shared across every page: without this, any element with
+  // .reveal stays at opacity:0 (that was the /ai page's "empty gaps" bug).
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var rio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      reveals.forEach(function (el) { rio.observe(el); });
+    }
+  }
+
+  // Highlight the current section in the nav.
+  var path = location.pathname.replace(/index\.html$/, '') || '/';
+  document.querySelectorAll('.site-nav a[href^="/"]').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (href === path || (href !== '/' && path.indexOf(href) === 0)) a.setAttribute('aria-current', 'page');
+  });
+
+  // Rewrite the install CTA to the visitor's actual browser: swap the logo in
+  // the button's left segment, sharpen the label, and point at that browser's
+  // store listing. (Store URLs are PLACEHOLDER ids to swap once live.)
+  var STORE = {
+    Chrome:  'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Edge:    'https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid',
+    Brave:   'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Opera:   'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Vivaldi: 'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Arc:     'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
+    Firefox: 'https://addons.mozilla.org/firefox/addon/skim-markdown-viewer/',
+    Safari:  'https://apps.apple.com/app/skim-markdown-viewer/id000000000'
+  };
+  var ua = navigator.userAgent || '', name = 'Chrome';
+  if (navigator.brave && navigator.brave.isBrave) name = 'Brave';
+  else if (/Edg\//.test(ua)) name = 'Edge';
+  else if (/OPR\/|Opera/.test(ua)) name = 'Opera';
+  else if (/Vivaldi/.test(ua)) name = 'Vivaldi';
+  else if (/Firefox\//.test(ua)) name = 'Firefox';
+  else if (/Safari\//.test(ua) && !/Chrome|Chromium|CriOS/.test(ua)) name = 'Safari';
+  var href = STORE[name] || STORE.Chrome;
+  document.querySelectorAll('[data-install-label]').forEach(function (el) { el.textContent = 'Add to ' + name; });
+  document.querySelectorAll('[data-install]').forEach(function (a) { a.setAttribute('href', href); });
+  document.querySelectorAll('[data-install-use]').forEach(function (u) { u.setAttribute('href', '#logo-' + name.toLowerCase()); });
+})();
+</script>
+<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->
+</body>
+</html>

@@ -9,7 +9,8 @@
     "test": "node --test",
     "check": "node scripts/check.mjs",
     "og": "node scripts/gen-og.mjs",
-    "favicon": "node scripts/gen-favicon.mjs"
+    "favicon": "node scripts/gen-favicon.mjs",
+    "blogimg": "node scripts/gen-blog-images.mjs"
   },
   "dependencies": {
     "@fontsource/frank-ruhl-libre": "^5.2.8",

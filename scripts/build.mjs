@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 import { parseMeta, outPathFor, applyLayout } from './lib.mjs';
 import { generateFavicons } from './gen-favicon.mjs';
+import { generateBlogImages } from './gen-blog-images.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const r = (...p) => resolve(root, ...p);
@@ -124,6 +125,7 @@ async function buildSitemapAndRobots(urls) {
 await vendorFonts();
 await vendorViewerAssets();
 await generateFavicons();
+await generateBlogImages();
 await bundleViewer();
 const urls = await buildPages();
 await buildSitemapAndRobots(urls);

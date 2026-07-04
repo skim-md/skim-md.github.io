@@ -11,6 +11,7 @@
 <h1>What is markdown?</h1>
 <p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
 <p class="byline">Plain text with a few formatting marks, and how it becomes a formatted page. 6 minute read.</p>
+<figure class="figure post-hero"><img class="shot" src="/assets/blog/what-is-markdown.png" width="1200" height="630" loading="lazy" decoding="async" alt="Markdown source text turning into a formatted page"></figure>
 
 <h2>The short version</h2>
 <p>Markdown is a way of writing formatted text using plain characters you already have on your keyboard. You put a <code>#</code> in front of a line to make it a heading, wrap a word in <code>**</code> to make it bold, and start a line with <code>-</code> to make a list item. The result stays perfectly readable as raw text, and a renderer can turn those same marks into a proper formatted page with real headings, bold text, and bulleted lists.</p>
@@ -34,49 +35,78 @@
 </ul>
 
 <h2>The core syntax, with examples</h2>
-<p>Markdown's whole vocabulary fits on a page. Here are the marks you will actually use, each shown as the raw text you type.</p>
+<p>Markdown's whole vocabulary fits on a page. Each example below shows the raw text you type on the left and the formatted result it renders to on the right.</p>
 
 <h3>Headings</h3>
 <p>One to six <code>#</code> characters at the start of a line set the heading level, from largest to smallest:</p>
-<pre><code># Title
-## Section
-### Subsection</code></pre>
+<div class="md-demo">
+<pre class="md-src"><code><span class="tk">#</span> Title
+<span class="tk">##</span> Section
+<span class="tk">###</span> Subsection</code></pre>
+<div class="md-out">
+<div class="md-h1">Title</div>
+<div class="md-h2">Section</div>
+<div class="md-h3">Subsection</div>
+</div>
+</div>
 
 <h3>Bold and italic</h3>
 <p>Wrap text in asterisks. One asterisk on each side is italic, two is bold:</p>
-<pre><code>*italic* and **bold**</code></pre>
+<div class="md-demo">
+<pre class="md-src"><code><span class="tk">*</span>italic<span class="tk">*</span> and <span class="tb">**</span>bold<span class="tb">**</span></code></pre>
+<div class="md-out"><p><em>italic</em> and <strong>bold</strong></p></div>
+</div>
 
 <h3>Lists</h3>
 <p>Start lines with <code>-</code> for a bulleted list, or with numbers for an ordered one:</p>
-<pre><code>- first point
-- second point
+<div class="md-demo">
+<pre class="md-src"><code><span class="tk">-</span> first point
+<span class="tk">-</span> second point
 
-1. step one
-2. step two</code></pre>
+<span class="tk">1.</span> step one
+<span class="tk">2.</span> step two</code></pre>
+<div class="md-out">
+<ul><li>first point</li><li>second point</li></ul>
+<ol><li>step one</li><li>step two</li></ol>
+</div>
+</div>
 
 <h3>Links and images</h3>
 <p>A link is the visible text in square brackets followed by the address in parentheses. An image is the same with an exclamation mark in front, where the bracketed text becomes the alt description:</p>
-<pre><code>[Skim](https://skim.md/)
-![alt text](picture.png)</code></pre>
+<div class="md-demo">
+<pre class="md-src"><code><span class="tk">[</span>Skim<span class="tk">](</span>https://skim.md/<span class="tk">)</span>
+<span class="tk">![</span>a diagram<span class="tk">](</span>picture.png<span class="tk">)</span></code></pre>
+<div class="md-out"><p><a href="https://skim.md/">Skim</a></p><p class="md-note">and the image embeds inline, using <em>a diagram</em> as its alt text.</p></div>
+</div>
 
 <h3>Code</h3>
 <p>Wrap a short snippet in single backticks to show it <code>inline</code>. For a whole block, put it between lines of three backticks:</p>
-<pre><code>Here is `inline code` in a sentence.
+<div class="md-demo">
+<pre class="md-src"><code>Here is <span class="tk">`</span>inline code<span class="tk">`</span> in a sentence.
 
-```
+<span class="tk">```</span>
 a whole
 block of code
-```</code></pre>
+<span class="tk">```</span></code></pre>
+<div class="md-out"><p>Here is <code>inline code</code> in a sentence.</p><pre><code>a whole
+block of code</code></pre></div>
+</div>
 
 <h3>Blockquotes</h3>
 <p>Start a line with <code>&gt;</code> to quote it:</p>
-<pre><code>&gt; This line is quoted.</code></pre>
+<div class="md-demo">
+<pre class="md-src"><code><span class="tk">&gt;</span> This line is quoted.</code></pre>
+<div class="md-out"><blockquote>This line is quoted.</blockquote></div>
+</div>
 
 <h3>Tables</h3>
 <p>Rows are separated by pipes, with a line of dashes marking the header:</p>
-<pre><code>| Name | Role   |
-| :- | :- |
-| Ada  | Author |</code></pre>
+<div class="md-demo">
+<pre class="md-src"><code><span class="tk">|</span> Name <span class="tk">|</span> Role   <span class="tk">|</span>
+<span class="tk">|</span> :- <span class="tk">|</span> :- <span class="tk">|</span>
+<span class="tk">|</span> Ada  <span class="tk">|</span> Author <span class="tk">|</span></code></pre>
+<div class="md-out"><table><thead><tr><th>Name</th><th>Role</th></tr></thead><tbody><tr><td>Ada</td><td>Author</td></tr></tbody></table></div>
+</div>
 <p>That is close to the entire language. The reason people can pick it up in an afternoon is that there is genuinely not much more to learn.</p>
 
 <h2>The source versus the rendered page</h2>

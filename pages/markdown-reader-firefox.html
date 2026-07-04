@@ -1,0 +1,126 @@
+<!--meta
+{
+  "title": "Markdown Viewer for Firefox: Free & Open Source",
+  "description": "Skim is a free, open-source markdown viewer for Firefox that renders .md files automatically, with live reload, math, diagrams, and no data collected.",
+  "path": "/markdown-reader-firefox/",
+  "date": "2026-07-04",
+  "updated": "2026-07-04"
+}
+-->
+<article class="prose">
+<h1>A markdown viewer for Firefox that just works</h1>
+<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline">What a markdown viewer is, and the free one to add to Firefox in two minutes. 3 minute read.</p>
+<figure class="figure post-hero"><img class="shot" src="/assets/blog/markdown-reader-firefox.png" width="1200" height="630" loading="lazy" decoding="async" alt="Skim, a free markdown viewer for Firefox, rendering a .md file"></figure>
+
+<h2>Why raw markdown looks like a wall of text</h2>
+<p>A markdown file, the kind ending in <code>.md</code>, is plain text with a few formatting marks mixed in: <code>#</code> for a heading, <code>**bold**</code> for bold, <code>-</code> for a list item, and pipes and dashes for tables. Firefox does not understand those marks on its own. Open a <code>.md</code> file in a fresh tab and Firefox either downloads it or shows the raw text, symbols and all, as one long unformatted block. Nothing is broken. Firefox simply has no built-in markdown viewer, so it shows you the source instead of the page the source describes.</p>
+<p>A markdown viewer for Firefox fixes that. It sits in the browser, notices when a page is markdown, and turns those marks into a formatted document: real headings, readable tables, highlighted code, working links. You open the file the way you always would, and it arrives as a clean page instead of a symbol soup.</p>
+
+<h2>Skim: a free, open-source markdown viewer for Firefox</h2>
+<p><strong>Skim is a free, open-source Firefox add-on that renders markdown automatically.</strong> Once it is installed, any <code>.md</code> file you open, whether it is a URL on the web, a README, or a local file on your own disk, opens as a formatted page. There is no button to press and no menu to find. Skim recognizes markdown and renders it for you.</p>
+<p>It is MIT-licensed, so the source is public and anyone can read exactly what it does. It collects no data, runs no telemetry, and makes no network calls on your behalf. Everything renders on your device. Firefox is not a Chromium browser: it runs on Mozilla's own Gecko engine and has its own add-on store, Firefox Add-ons (addons.mozilla.org, often shortened to AMO). So Skim ships as a separate Firefox build, distinct from the Chrome version, with the same features.</p>
+
+<h2>How to add it to Firefox</h2>
+<p>Setup takes about two minutes, and most of that is one permission Firefox asks you to confirm.</p>
+<ol>
+<li>Open the <a href="https://addons.mozilla.org/firefox/addon/skim-markdown-viewer/" rel="noopener">Skim listing on Firefox Add-ons</a> and click "Add to Firefox".</li>
+<li>Confirm the permission prompt. Firefox asks once, then the add-on is installed and ready.</li>
+<li>Open any <code>.md</code> file from now on. It renders as a formatted page automatically, every time, with no extra steps.</li>
+</ol>
+<p>If you only ever open markdown files on the web, that is all you need. Reading local files takes one more setting, covered next.</p>
+
+<h2>Reading local files</h2>
+<p>To render <code>.md</code> files stored on your own disk (anything opened as a <code>file://</code> address), Firefox needs to let the add-on run on local files. Open <code>about:addons</code>, click Skim, and check its permissions. Enable "Access your data for files" (the file access permission) so the add-on can read local markdown. After that, double-click any <code>.md</code> file on your computer and it opens as a formatted page, exactly like one on the web. Nothing is uploaded.</p>
+
+<h2>What Skim can do</h2>
+<p>A viewer is only as good as what it renders. Skim aims to handle the markdown people actually write, not a stripped-down subset:</p>
+<ul>
+<li><strong>Live reload.</strong> Skim watches the file and re-renders it in place the moment it changes on disk. Leave an AI agent's plan open in a tab and watch it tick off tasks in real time, no manual refresh, with your scroll position kept.</li>
+<li><strong>KaTeX math.</strong> LaTeX expressions render as real equations instead of raw backslashes and braces.</li>
+<li><strong>Mermaid diagrams.</strong> Flowcharts and sequence diagrams written as code render as actual diagrams.</li>
+<li><strong>GFM tables.</strong> GitHub-flavored markdown tables, task lists, footnotes, and syntax-highlighted code blocks all render correctly.</li>
+<li><strong>Folder view.</strong> Browse a whole project of markdown files from a sidebar, free, with no Pro tier gating it.</li>
+<li><strong>Copy as markdown.</strong> One click turns the rendered page back into clean markdown source, ready to paste into your next prompt or document.</li>
+<li><strong>Private and on-device.</strong> Files never leave your machine. No account, no telemetry, no data collected, and it all works offline.</li>
+</ul>
+
+<h2>No install? Read it online instead</h2>
+<p>If you only need to read one file and would rather not add anything to Firefox, there is a no-install option. The <a href="/viewer/">free online markdown viewer</a> renders any <code>.md</code> file you drag onto the page, right in the browser, with nothing uploaded. It works in Firefox just as well as anywhere else, on a work laptop, a phone, or a computer you do not own. For a file you will open once, that is genuinely the fastest route. For files that keep landing in your downloads folder, the add-on is the better long-term fix, because after setup every file just works.</p>
+
+<h2>FAQ</h2>
+<h3>Does Firefox have a built-in markdown viewer?</h3>
+<p>No. Firefox shows a <code>.md</code> file as raw text or downloads it, because it has no built-in way to render markdown. You need an add-on like Skim, or an online viewer, to see it as a formatted page.</p>
+<h3>Is the Skim markdown viewer for Firefox free?</h3>
+<p>Yes. Skim is MIT open source and completely free, with no Pro tier, no paywall, and no account. Features that some other viewers charge for, like folder browsing, are free in Skim.</p>
+<h3>Can it read local .md files from my computer?</h3>
+<p>Yes. In <code>about:addons</code>, open Skim and enable its file access permission ("Access your data for files"). After that it renders local <code>.md</code> files exactly like ones on the web. Nothing is uploaded.</p>
+<h3>Is the Firefox version the same as the Chrome one?</h3>
+<p>The features are the same. Because Firefox uses the Gecko engine rather than Chromium, Skim ships as a separate build for Firefox, but it renders the same markdown with the same live reload, math, and diagrams.</p>
+<h3>Does Skim collect any data?</h3>
+<p>No. Skim renders everything on your device. There is no telemetry, no analytics, and no network call on your behalf, and it works fully offline.</p>
+
+<aside class="cta-box">
+  <p><strong>Tired of raw markdown in Firefox?</strong> Skim is a free, open-source markdown viewer that renders every <code>.md</code> file you open, local files included, with live reload, KaTeX math, and mermaid diagrams. <a href="https://addons.mozilla.org/firefox/addon/skim-markdown-viewer/" rel="noopener">Add Skim to Firefox, free</a>, or read one file now with no install in the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/markdown-reader-chrome/">A markdown reader for Chrome that just works</a></li>
+<li><a href="/best-markdown-viewer-extensions-2026/">The best markdown viewer extensions in 2026</a></li>
+<li><a href="/how-to-open-md-file/">How to open a .md file</a></li>
+<li><a href="/what-is-skim/">What is Skim?</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Firefox have a built-in markdown viewer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Firefox shows a .md file as raw text or downloads it, because it has no built-in way to render markdown. You need an add-on like Skim, or an online viewer, to see it as a formatted page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Skim markdown viewer for Firefox free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Skim is MIT open source and completely free, with no Pro tier, no paywall, and no account. Features that some other viewers charge for, like folder browsing, are free in Skim."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it read local .md files from my computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In about:addons, open Skim and enable its file access permission (Access your data for files). After that it renders local .md files exactly like ones on the web. Nothing is uploaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Firefox version the same as the Chrome one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The features are the same. Because Firefox uses the Gecko engine rather than Chromium, Skim ships as a separate build for Firefox, but it renders the same markdown with the same live reload, math, and diagrams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Skim collect any data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Skim renders everything on your device. There is no telemetry, no analytics, and no network call on your behalf, and it works fully offline."
+      }
+    }
+  ]
+}
+</script>
+</article>
