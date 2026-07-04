@@ -97,6 +97,34 @@ reference tone.
    and descriptive, keyword-aware `alt` text.** Lazy + fixed dimensions keep the
    page fast and prevent layout shift.
 
+## 4b. In-body diagrams (more images = more Google Images reach)
+
+Do not stop at the header image. A good post has one or more explanatory
+"sketches" in the body, near the content they illustrate. They are generated the
+same self-hosted way and indexed by Google Images.
+
+1. Add a spec to `DIAGRAMS` in `scripts/gen-blog-diagrams.mjs`. Two shapes cover
+   most needs:
+   - `flow`: a 2 to 4 step pipeline of labeled boxes joined by arrows. Good for
+     "source to rendered", install flows, "render then print".
+     ```js
+     { id: '<slug>', kind: 'flow', accent: '#4d68d6', steps: [ { l1: 'Short', l2: 'sub' }, ... ] }
+     ```
+   - `cards`: three labeled point cards. Good for "what to look for" / "where you
+     see it".
+     ```js
+     { id: '<slug>', kind: 'cards', accent: '#22a06b', cards: [ { l1: 'Free', l2: 'every feature' }, ... ] }
+     ```
+   Keep `l1` short (it auto-shrinks but ~14 chars is the sweet spot). It renders
+   to `/assets/blog/dg-<id>.png` (1200x300).
+2. Run `npm run blogimg` (or the full build).
+3. Place it in the body between block elements, near the section it explains
+   (NOT next to the header hero), with a caption:
+   ```html
+   <figure class="figure"><img class="diagram" src="/assets/blog/dg-<id>.png" width="1200" height="300" loading="lazy" decoding="async" alt="Descriptive alt"><figcaption>One-line caption.</figcaption></figure>
+   ```
+   Use `class="diagram"` (not `shot`); the PNG already carries its own frame.
+
 ## 5. Showing markdown with color and formatting
 
 When a post teaches syntax, do not dump raw markdown in a flat `<pre>` (it looks

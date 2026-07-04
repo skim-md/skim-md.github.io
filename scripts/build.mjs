@@ -8,6 +8,7 @@ import { build } from 'esbuild';
 import { parseMeta, outPathFor, applyLayout } from './lib.mjs';
 import { generateFavicons } from './gen-favicon.mjs';
 import { generateBlogImages } from './gen-blog-images.mjs';
+import { generateBlogDiagrams } from './gen-blog-diagrams.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const r = (...p) => resolve(root, ...p);
@@ -126,6 +127,7 @@ await vendorFonts();
 await vendorViewerAssets();
 await generateFavicons();
 await generateBlogImages();
+await generateBlogDiagrams();
 await bundleViewer();
 const urls = await buildPages();
 await buildSitemapAndRobots(urls);
