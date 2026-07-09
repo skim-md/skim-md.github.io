@@ -18,7 +18,7 @@ export const SITE_ORIGIN = 'https://skim.md'; // custom domain live 2026-07-03 (
 // Store listing URLs. PLACEHOLDER ids: swap for the real listings once live.
 // The per-browser map lives in the detect script in templates/layout.html;
 // this default (Chrome Web Store) is the static href before JS runs.
-export const INSTALL_URL = 'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid';
+export const INSTALL_URL = 'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd';
 export const INSTALL_LABEL = 'Add Skim to your browser, free';
 export const REPO_URL = 'https://github.com/skim-md/skim';
 export const GOATCOUNTER_CODE = ''; // e.g. 'skim' once the user creates the account
