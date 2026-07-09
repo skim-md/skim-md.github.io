@@ -4,7 +4,8 @@
 import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { build } from 'esbuild';
+import { build, transform } from 'esbuild';
+import sharp from 'sharp';
 import { parseMeta, outPathFor, applyLayout } from './lib.mjs';
 import { generateFavicons } from './gen-favicon.mjs';
 import { generateBlogImages } from './gen-blog-images.mjs';
@@ -93,6 +94,35 @@ async function bundleViewer() {
   });
 }
 
+// Promo screenshots ship as PNG source; serve resized WebP instead (roughly
+// half the bytes, the biggest Lighthouse "image delivery" win). Two widths per
+// image feed the srcset in the markup: 1280 (retina/desktop) and 640 (phones).
+const PROMO_WIDTHS = [640, 1280];
+async function optimizePromo() {
+  const dir = r('assets/promo');
+  const pngs = (await readdir(dir)).filter((f) => /^\d.*\.png$/.test(f));
+  for (const f of pngs) {
+    const base = f.replace(/\.png$/, '');
+    for (const w of PROMO_WIDTHS) {
+      const out = w === 1280 ? `${base}.webp` : `${base}-${w}.webp`;
+      await sharp(resolve(dir, f)).resize({ width: w }).webp({ quality: 80 }).toFile(resolve(dir, out));
+    }
+  }
+  console.log(`promo: ${pngs.length} png -> webp x${PROMO_WIDTHS.length} widths`);
+}
+
+// Inline the site CSS (minified) straight into every page's <head>. The two
+// stylesheets were the report's render-blocking requests; inlining removes the
+// round trip entirely, and the whole payload is ~9 KB minified, so this is the
+// "inline critical CSS" fix Lighthouse asks for rather than a tradeoff.
+async function inlineCriticalCss() {
+  const fonts = await readFile(r('assets/site-fonts.css'), 'utf8'); // written by vendorFonts()
+  const site = await readFile(r('assets/site.css'), 'utf8');
+  const { code } = await transform(`${fonts}\n${site}`, { loader: 'css', minify: true });
+  consts.inlineStyles = `<style>${code.trim()}</style>`;
+  console.log(`inlined: site-fonts.css + site.css (${(code.length / 1024).toFixed(1)} KB minified)`);
+}
+
 async function buildPages() {
   const layout = await readFile(r('templates/layout.html'), 'utf8');
   const files = (await readdir(r('pages'))).filter((f) => f.endsWith('.html')).sort();
@@ -128,6 +158,8 @@ await vendorViewerAssets();
 await generateFavicons();
 await generateBlogImages();
 await generateBlogDiagrams();
+await optimizePromo();
 await bundleViewer();
+await inlineCriticalCss(); // after vendorFonts(): reads the site-fonts.css it wrote
 const urls = await buildPages();
 await buildSitemapAndRobots(urls);

@@ -36,6 +36,7 @@ export function applyLayout(layout, meta, body, consts) {
     description: escAttr(meta.description),
     canonical,
     origin: consts.SITE_ORIGIN,
+    inlineStyles: consts.inlineStyles || '',
     extraHead: meta.extraHead || '',
     robots,
     content: body,

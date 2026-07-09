@@ -49,6 +49,13 @@ function decorate(container) {
     const href = a.getAttribute('href') || '';
     if (!href.startsWith('#')) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
   });
+  // GitHub task-list checkboxes render as bare disabled <input>s with no
+  // label; name each from its list item so they are not "unlabelled" to AT.
+  container.querySelectorAll('input[type="checkbox"]:not([aria-label])').forEach((cb) => {
+    const li = cb.closest('li');
+    const text = li ? li.textContent.trim() : '';
+    cb.setAttribute('aria-label', text || 'Task item');
+  });
 }
 
 const SAMPLE = `---
