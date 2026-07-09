@@ -63,7 +63,7 @@
       <a href="/viewer/">Viewer</a>
       <a href="/ai/">For AI</a>
       <a href="/blog/">Blog</a>
-      <a class="btn-chrome compact" href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener" data-install>
+      <a class="btn-chrome compact" href="https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd" rel="noopener" data-install>
         <span class="cmark-wrap" data-install-mark><svg class="cmark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-chrome" data-install-use></use></svg></span>
         <span class="bi-label">Install</span>
       </a>
@@ -91,18 +91,15 @@
 <p>It is MIT-licensed, so the source is public and anyone can read exactly what it does. It collects no data, runs no telemetry, and makes no network calls on your behalf. Everything renders on your device. Edge is built on Chromium, the same engine as Chrome, so Skim runs on it natively and feels like a part of the browser.</p>
 
 <h2>How to add it to Microsoft Edge</h2>
-<p>Setup takes about two minutes, and most of that is one privacy switch Edge asks you to flip.</p>
+<p>Edge installs Skim from the Chrome Web Store, the same listing Chrome uses, because Edge is built on Chromium and runs Chrome extensions natively. Setup takes about two minutes, and most of that is one privacy switch Edge asks you to flip.</p>
 <ol>
-<li>Open the <a href="https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Skim listing in Edge Add-ons</a>.</li>
-<li>Click <strong>Get</strong>, then confirm when Edge asks. It installs like any other add-on, with one click.</li>
+<li>Open the <a href="https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd" rel="noopener">Skim listing on the Chrome Web Store</a> in Edge. The first time you visit a Chrome Web Store page, Edge offers to "Allow extensions from other stores"; turn that on.</li>
+<li>Click <strong>Add to Chrome</strong>, then confirm when Edge asks. It installs like any other extension, with one click.</li>
 <li>Flip Edge's file-access switch. Edge hides local files from extensions by default, so to read <code>.md</code> files from your own disk it needs your permission once. Skim shows you exactly where to click, so you are not hunting through settings.</li>
 <li>Open any <code>.md</code> file from now on. It renders as a formatted page automatically, every time, with no extra steps.</li>
 </ol>
 <p>If you only ever open markdown files on the web and never local ones, you can skip the file-access step. That switch only matters for files stored on your own computer.</p>
-<figure class="figure"><img class="diagram" src="/assets/blog/dg-markdown-reader-edge.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: install Skim from Edge Add-ons and every .md file renders automatically"><figcaption>Add Skim from Edge Add-ons and every .md renders on its own.</figcaption></figure>
-
-<h2>Prefer the Chrome Web Store version? That works too</h2>
-<p>Because Edge is Chromium-based, it can install extensions from the Chrome Web Store as well as from Edge Add-ons. The first time you visit a Chrome Web Store page, Edge offers to "Allow extensions from other stores"; turn that on and you can add the Chrome build of Skim exactly as you would in Chrome. Either route gives you the same extension. Most people use the Edge Add-ons listing above because it is one fewer prompt, but the choice is yours.</p>
+<figure class="figure"><img class="diagram" src="/assets/blog/dg-markdown-reader-edge.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: install Skim from the Chrome Web Store in Edge and every .md file renders automatically"><figcaption>Add Skim from the Chrome Web Store and every .md renders on its own.</figcaption></figure>
 
 <h2>What Skim can do</h2>
 <p>A viewer is only as good as what it renders. Skim aims to handle the markdown people actually write, not a stripped-down subset:</p>
@@ -132,7 +129,7 @@
 <p>No. Skim renders everything on your device. There is no telemetry, no analytics, and no network call on your behalf, and it works fully offline.</p>
 
 <aside class="cta-box">
-  <p><strong>Tired of raw markdown in Edge?</strong> Skim is a free, open-source markdown viewer that renders every <code>.md</code> file you open, local files included, with live reload, KaTeX math, and mermaid diagrams. <a href="https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Add Skim to Edge, free</a>, or read one file now with no install in the <a href="/viewer/">online viewer</a>.</p>
+  <p><strong>Tired of raw markdown in Edge?</strong> Skim is a free, open-source markdown viewer that renders every <code>.md</code> file you open, local files included, with live reload, KaTeX math, and mermaid diagrams. <a href="https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd" rel="noopener">Add Skim to Edge, free</a>, or read one file now with no install in the <a href="/viewer/">online viewer</a>.</p>
 </aside>
 
 <h2>Related guides</h2>
@@ -218,7 +215,7 @@
           <a href="/viewer/">Free online viewer</a>
           <a href="/ai/">For AI workflows</a>
           <a href="/install/">Install for your browser</a>
-          <a href="https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid" rel="noopener">Get it on GitHub</a>
+          <a href="https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd" rel="noopener">Get it on GitHub</a>
         </div>
         <div>
           <p class="foot-h">Guides</p>
@@ -279,13 +276,13 @@
   // the button's left segment, sharpen the label, and point at that browser's
   // store listing. (Store URLs are PLACEHOLDER ids to swap once live.)
   var STORE = {
-    Chrome:  'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
-    Edge:    'https://microsoftedge.microsoft.com/addons/detail/skim-markdown-viewer/placeholderskimid',
-    Brave:   'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
-    Opera:   'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
-    Vivaldi: 'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
-    Arc:     'https://chromewebstore.google.com/detail/skim-markdown-viewer/placeholderskimid',
-    Firefox: 'https://addons.mozilla.org/firefox/addon/skim-markdown-viewer/',
+    Chrome:  'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd',
+    Edge:    'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd',
+    Brave:   'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd',
+    Opera:   'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd',
+    Vivaldi: 'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd',
+    Arc:     'https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd',
+    Firefox: 'https://addons.mozilla.org/en-US/firefox/addon/skim-markdown-viewer-reader/',
     Safari:  'https://apps.apple.com/app/skim-markdown-viewer/id000000000'
   };
   var ua = navigator.userAgent || '', name = 'Chrome';

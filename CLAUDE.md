@@ -52,9 +52,19 @@ diagrams, rendered examples, blog-index registration).
 - No external resource loads (self-host every image/script/style under
   `/assets/`; external `<a href>` links are fine).
 
-## Known placeholders
+## Store URLs (live as of 2026-07-09)
 
-Store install URLs use placeholder ids (`placeholderskimid` on the Chrome Web
-Store, plus placeholder Edge/AMO/App Store links). Swap `INSTALL_URL` + the
-`STORE` map in `scripts/build.mjs` and `templates/layout.html` once the real
-listings publish.
+The real listings are published and wired in (`INSTALL_URL` in
+`scripts/build.mjs`, the `STORE` map in `templates/layout.html`, plus the
+hardcoded links in `pages/install.html` and the per-browser guide pages):
+
+- Chrome Web Store: `https://chromewebstore.google.com/detail/skim-%E2%80%94-markdown-viewer-re/feeikgjlekgeepjljmnifkbnpcnflcmd`
+- Firefox Add-ons: `https://addons.mozilla.org/en-US/firefox/addon/skim-markdown-viewer-reader/`
+- Edge / Brave / Opera / Vivaldi / Arc all point at the Chrome Web Store URL
+  (Chromium browsers install Chrome extensions; there is no separate Edge
+  Add-ons listing).
+
+Still a placeholder: Safari (`id000000000` App Store link in the `STORE` map).
+There is no Safari build yet; the markdown-reader-safari page already routes
+Safari users to the online viewer, so the dead App Store id is only reachable
+via the client-side browser-detect fallback. Swap it when the Safari app ships.
