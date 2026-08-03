@@ -133,6 +133,8 @@ const DIAGRAMS = [
     { l1: 'Chrome Ext add-on', l2: 'enable once' }, { l1: 'Add to Opera', l2: 'from store' }, { l1: 'Every .md', l2: 'renders auto' } ] },
   { id: 'markdown-reader-vivaldi', kind: 'flow', accent: '#e02b2b', steps: [
     { l1: 'Chrome Store', l2: 'open in Vivaldi' }, { l1: 'Add to Vivaldi', l2: 'confirm' }, { l1: 'Every .md', l2: 'renders auto' } ] },
+  { id: 'markdown-reader-arc', kind: 'flow', accent: '#a06bff', steps: [
+    { l1: 'Chrome Store', l2: 'open in Arc' }, { l1: 'Add to Arc', l2: 'confirm' }, { l1: 'Every .md', l2: 'renders auto' } ] },
   { id: 'markdown-reader-safari', kind: 'flow', accent: '#1e9bf0', steps: [
     { l1: 'Open the viewer', l2: 'in Safari' }, { l1: 'Drop a .md', l2: 'no install' }, { l1: 'Formatted page', l2: 'Mac + iPhone' } ] },
 ];

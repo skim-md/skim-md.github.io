@@ -39,6 +39,7 @@ const COVERS = [
   { slug: 'markdown-reader-brave',                token: 'brave.md',       kicker: 'Brave',      accent: '#fb542b', l1: 'Markdown viewer', l2: 'for Brave' },
   { slug: 'markdown-reader-opera',                token: 'opera.md',       kicker: 'Opera',      accent: '#ee2f41', l1: 'Markdown viewer', l2: 'for Opera' },
   { slug: 'markdown-reader-vivaldi',              token: 'vivaldi.md',     kicker: 'Vivaldi',    accent: '#ef3939', l1: 'Markdown viewer', l2: 'for Vivaldi' },
+  { slug: 'markdown-reader-arc',                  token: 'arc.md',         kicker: 'Arc',        accent: '#a06bff', l1: 'Markdown viewer', l2: 'for Arc' },
   { slug: 'markdown-reader-safari',               token: 'safari.md',      kicker: 'Safari',     accent: '#1e9bf0', l1: 'Markdown viewer', l2: 'for Safari' },
 ];
 

@@ -388,6 +388,60 @@ figure.figure figcaption { margin-top: 10px; font: 14px var(--sans); color: var(
 .steps li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); font: 700 14px var(--sans); }
 .steps li:not(:last-child)::after { content: ""; position: absolute; left: 13.5px; top: 30px; bottom: 2px; width: 1px; background: var(--border); }
 
+/* ---- Release notes: version timeline + live feature visuals -------------
+   Every visual on this page is drawn in CSS from the site theme tokens, not
+   baked into an image, so it re-colours itself with the light/dark toggle
+   instead of sitting on a fixed card the way the generated blog PNGs do. */
+.rn-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 6px; }
+.rn-ver { font: 700 13px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg); background: var(--accent); border-radius: 999px; padding: 7px 12px; }
+.rn-date { font: 14px var(--sans); color: var(--muted); }
+.rn-list { display: grid; gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; }
+.rn-entry { border: 1px solid var(--border); border-radius: 14px; background: var(--panel); padding: 20px 22px; }
+.rn-entry > h3 { margin: 0 0 8px; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+.rn-entry > h3 .rn-tag { font: 600 11px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 999px; padding: 5px 9px; }
+.rn-entry > p { margin: 0; color: var(--muted); font-family: var(--sans); font-size: 16px; }
+.rn-entry > p + p { margin-top: 10px; }
+.rn-figure { margin: 16px 0 0; }
+
+/* Palette strip: the six colour schemes, drawn as their real swatches. */
+.palette { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.palette li { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px 6px 6px; font: 14px var(--sans); color: var(--muted); background: var(--bg); }
+.palette .sw { width: 20px; height: 20px; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--text) 18%, transparent); }
+
+/* Inline keycaps in body copy (the guides mention j/k, gg, G). */
+.prose kbd { font: 600 13px/1 var(--mono); color: var(--text); background: var(--panel-2); border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 6px; padding: 3px 6px; }
+
+/* Keycaps for the keyboard-navigation entry. */
+.keys { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; font-family: var(--sans); }
+.keys li { display: flex; align-items: center; gap: 9px; font-size: 15px; color: var(--muted); }
+.keys kbd { font: 600 13px/1 var(--mono); color: var(--text); background: var(--panel-2); border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 6px; padding: 5px 8px; }
+
+/* Zen mode: two miniature page layouts, sidebar on and off. */
+.zen-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 0; }
+.zen-demo figure { margin: 0; }
+.zen-page { display: flex; gap: 6px; height: 92px; padding: 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); }
+.zen-page .side { width: 26%; border-radius: 5px; background: color-mix(in srgb, var(--accent) 22%, transparent); }
+.zen-page .col { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 2px 0; }
+.zen-page.centered .col { margin: 0 12%; }
+.zen-page .col span { display: block; height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--text) 26%, transparent); }
+.zen-page .col span:first-child { width: 55%; background: color-mix(in srgb, var(--accent) 60%, transparent); height: 8px; }
+.zen-page .col span:nth-child(4) { width: 72%; }
+.zen-demo figcaption { margin-top: 8px; font: 13px var(--sans); color: var(--muted); text-align: center; }
+
+/* Export entry: two output chips. */
+.out-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.out-chips li { font: 14px var(--sans); color: var(--muted); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; background: var(--bg); }
+.out-chips li b { color: var(--text); font-family: var(--mono); font-size: 13px; }
+
+/* Homepage strip that points at the release notes. */
+.whats-new { border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%); border-radius: 16px; padding: 22px 24px; display: grid; gap: 14px; }
+.whats-new h2 { margin: 0; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.01em; }
+.wn-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.wn-chips li { font: 14px var(--sans); color: var(--text); background: var(--panel); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; }
+@media (max-width: 680px) {
+  .zen-demo { grid-template-columns: 1fr; }
+}
+
 /* ---- Responsive ---------------------------------------------------------- */
 /* Between tablet and desktop the full nav + CTA gets tight: drop the GitHub
    word (icon stays) and tighten spacing so nothing clips before the small-

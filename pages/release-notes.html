@@ -1,0 +1,152 @@
+<!--meta
+{
+  "title": "Skim Release Notes: What's New in the Markdown Viewer",
+  "description": "What is new in Skim 2.2: themes and color schemes, zen mode, better PDF and HTML export, keyboard and vim navigation, and a clipboard markdown viewer.",
+  "path": "/release-notes/",
+  "date": "2026-08-03",
+  "updated": "2026-08-03"
+}
+-->
+<article class="prose">
+<h1>What's new in Skim</h1>
+<p class="byline"><time datetime="2026-08-03">Updated 3 August 2026</time></p>
+<p class="byline">Every change that reaches the markdown viewer, newest first. 3 minute read.</p>
+
+<p>Skim is a free, open source markdown viewer for the browser. This page tracks what each release adds, so you can tell at a glance whether the version you have is the one being described. Updates arrive automatically from your browser's extension store, usually within a day of publication.</p>
+
+<div class="rn-head">
+  <span class="rn-ver">Version 2.2</span>
+  <span class="rn-date"><time datetime="2026-08-03">3 August 2026</time></span>
+</div>
+<h2>The reading release</h2>
+<p>2.2 is about what happens after a file renders: how it looks, how you move through it, and how you get it back out. Seven changes, all free, all on-device.</p>
+
+<ul class="rn-list">
+
+<li class="rn-entry">
+<h3>Themes and color schemes <span class="rn-tag">Look</span></h3>
+<p>Light and dark are joined by six color schemes, so a document can be tuned to the room you are reading in rather than to whatever the extension shipped with. Pick a base brightness, then a palette on top: grape, rosé, ocean, sunset, forest, or mono. Mono is deliberately black and white, which is what you want when the page is headed for a printer.</p>
+<p>Your choice syncs across every device signed into the same browser profile, and applies the moment you pick it in any open tab.</p>
+<ul class="palette">
+  <li><span class="sw" style="background: linear-gradient(135deg, #3a3a44 50%, #e0ded4 50%)" aria-hidden="true"></span>None</li>
+  <li><span class="sw" style="background: linear-gradient(135deg, #b06be6, #f08fd4)" aria-hidden="true"></span>Grape</li>
+  <li><span class="sw" style="background: linear-gradient(135deg, #f08fb4, #ffd0a8)" aria-hidden="true"></span>Rosé</li>
+  <li><span class="sw" style="background: linear-gradient(135deg, #6bb8e6, #8fe0d4)" aria-hidden="true"></span>Ocean</li>
+  <li><span class="sw" style="background: linear-gradient(135deg, #f0a06b, #ffd08f)" aria-hidden="true"></span>Sunset</li>
+  <li><span class="sw" style="background: linear-gradient(135deg, #6bc48a, #b8e08f)" aria-hidden="true"></span>Forest</li>
+  <li><span class="sw" style="background: linear-gradient(135deg, #2b2b2b 50%, #f2f2f2 50%)" aria-hidden="true"></span>Mono</li>
+</ul>
+</li>
+
+<li class="rn-entry">
+<h3>Zen mode <span class="rn-tag">Look</span></h3>
+<p>One button hides the contents sidebar and centers the column, leaving the document and nothing else. It is the right mode for a long read, a narrow window, or a screen share where the sidebar is just noise. Press it again and the sidebar comes back exactly as it was.</p>
+<div class="zen-demo">
+  <figure>
+    <div class="zen-page" aria-hidden="true"><div class="side"></div><div class="col"><span></span><span></span><span></span><span></span></div></div>
+    <figcaption>Normal: contents sidebar tracks your scroll</figcaption>
+  </figure>
+  <figure>
+    <div class="zen-page centered" aria-hidden="true"><div class="col"><span></span><span></span><span></span><span></span></div></div>
+    <figcaption>Zen: sidebar gone, column centered</figcaption>
+  </figure>
+</div>
+</li>
+
+<li class="rn-entry">
+<h3>Better PDF export <span class="rn-tag">Export</span></h3>
+<p>Exporting to PDF is now a real print layout rather than a screenshot of a dark theme. Skim prints on white with proper page breaks, keeps headings with the text that follows them, prints link targets where they matter, and can add a numbered table of contents to the front. Page margins are yours to set: none, narrow, normal, or wide.</p>
+<p>Ctrl or Cmd plus P is intercepted so the browser's own print dialog gets the export layout too, which means the PDF looks the same whichever route you take. See the full walkthrough in <a href="/markdown-to-pdf/">convert markdown to PDF</a>.</p>
+</li>
+
+<li class="rn-entry">
+<h3>Better HTML export <span class="rn-tag">Export</span></h3>
+<p>Export the document as a single self-contained <code>.html</code> file. Fonts, styles, math and diagrams are embedded in the file itself, so it opens correctly on a machine that has never heard of Skim, with no network access and nothing to install. The current theme, color scheme and reading density travel with it.</p>
+<ul class="out-chips">
+  <li><b>document.pdf</b> print layout, margins, optional contents</li>
+  <li><b>document.html</b> one file, everything inlined, opens anywhere</li>
+</ul>
+</li>
+
+<li class="rn-entry">
+<h3>Better navigation <span class="rn-tag">Reading</span></h3>
+<p>The contents sidebar highlights the section you are actually in as you scroll, and every heading has a copyable anchor link. Tab and Shift plus Tab step through the document block by block, table row by table row, with the current block marked in the margin, so a long document can be read start to finish without touching the mouse.</p>
+<p>Wide tables and images size themselves to the column instead of overflowing it, and internal links scroll smoothly to their target rather than jumping.</p>
+</li>
+
+<li class="rn-entry">
+<h3>Vim navigation <span class="rn-tag">Reading</span></h3>
+<p>If your hands live on the home row, they can stay there. <kbd>j</kbd> and <kbd>k</kbd> scroll by one rendered line with eased motion, so holding a key glides instead of stuttering. <kbd>G</kbd> jumps to the end of the document and <kbd>gg</kbd> to the start. <kbd>Esc</kbd> clears the reading cursor.</p>
+<p>None of it fires while you are typing in a field or when a modifier is held, and all of it respects the reduced-motion setting in your operating system.</p>
+<ul class="keys">
+  <li><kbd>j</kbd><kbd>k</kbd> scroll a line</li>
+  <li><kbd>g</kbd><kbd>g</kbd> top</li>
+  <li><kbd>G</kbd> bottom</li>
+  <li><kbd>Tab</kbd> next block</li>
+  <li><kbd>Esc</kbd> clear</li>
+</ul>
+</li>
+
+<li class="rn-entry">
+<h3>Clipboard markdown viewer <span class="rn-tag">New</span></h3>
+<p>Copy markdown from anywhere, a chat with Claude or ChatGPT, a code review, a terminal, then click <strong>Render clipboard as MD</strong> in the Skim toolbar popup. It opens in a new tab as a fully rendered page, with the same theme, contents sidebar, export buttons and keyboard navigation as a real file. Nothing is saved to disk and nothing is uploaded.</p>
+<p>Reload that tab and it re-reads your clipboard, so it doubles as a scratch pad: copy, refresh, read. If your browser will not hand the clipboard over, the page accepts a plain Ctrl or Cmd plus V instead.</p>
+</li>
+
+</ul>
+
+<h2>How to update</h2>
+<p>Extensions update themselves. Chrome, Edge, Brave, Opera, Vivaldi and Arc check the Chrome Web Store every few hours; Firefox checks Firefox Add-ons on its own schedule. To force it in a Chromium browser, open <code>chrome://extensions</code>, turn on Developer mode, and click Update. In Firefox, open <code>about:addons</code>, click the gear icon, and choose "Check for Updates".</p>
+<p>To see which version you have, open <code>chrome://extensions</code> or <code>about:addons</code> and read the number under Skim.</p>
+
+<h2>FAQ</h2>
+<h3>Is Skim still free after these updates?</h3>
+<p>Yes. Every feature on this page is free and MIT open source, including themes, zen mode, PDF and HTML export, and the clipboard viewer. There is no Pro tier and no account.</p>
+<h3>Do I need to do anything to get the new version?</h3>
+<p>No. Your browser updates extensions automatically, usually within a day. You can force a check from the extensions page if you would rather not wait.</p>
+<h3>Does the clipboard viewer send my clipboard anywhere?</h3>
+<p>No. The clipboard is read in the extension and rendered in a local tab on your device. Nothing is uploaded, and nothing is written to disk.</p>
+<h3>Where can I see the full commit history?</h3>
+<p>Skim is developed in the open. Every change, including the small ones that do not appear here, is on <a href="{{repoUrl}}" rel="noopener">GitHub</a> under the MIT license.</p>
+
+<aside class="cta-box">
+  <p><strong>Not using Skim yet?</strong> It is a free, open source markdown viewer that renders every <code>.md</code> file you open, local files included, with themes, math, diagrams and one-click export. <a href="{{installUrl}}" rel="noopener">{{installLabel}}</a>, or try it with no install in the <a href="/viewer/">online viewer</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/what-is-skim/">What is Skim?</a></li>
+<li><a href="/install/">Install Skim for your browser</a></li>
+<li><a href="/markdown-to-pdf/">Convert markdown to PDF</a></li>
+<li><a href="/best-markdown-viewer-extensions-2026/">The best markdown viewer extensions in 2026</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Skim: Markdown Viewer & Reader",
+  "softwareVersion": "2.2",
+  "datePublished": "2026-08-03",
+  "operatingSystem": "Chrome, Edge, Brave, Opera, Vivaldi, Arc, Firefox",
+  "applicationCategory": "BrowserApplication",
+  "applicationSubCategory": "Markdown viewer",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://skim.md/release-notes/",
+  "sameAs": ["https://github.com/skim-md/skim"],
+  "license": "https://opensource.org/license/mit/",
+  "releaseNotes": "Skim 2.2 adds light and dark themes with six color schemes, zen mode, a print-quality PDF export with page margins and an optional contents page, single-file HTML export with fonts and diagrams embedded, scrollspy contents and block-by-block keyboard navigation, vim keys (j, k, gg, G) with eased scrolling, and a clipboard markdown viewer that renders copied markdown in a new tab."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Skim still free after these updates?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every feature in Skim 2.2 is free and MIT open source, including themes, zen mode, PDF and HTML export, and the clipboard viewer. There is no Pro tier and no account." } },
+    { "@type": "Question", "name": "Do I need to do anything to get the new version of Skim?", "acceptedAnswer": { "@type": "Answer", "text": "No. Your browser updates extensions automatically, usually within a day. You can force a check from chrome://extensions or about:addons if you would rather not wait." } },
+    { "@type": "Question", "name": "Does the Skim clipboard viewer send my clipboard anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. The clipboard is read in the extension and rendered in a local tab on your device. Nothing is uploaded, and nothing is written to disk." } }
+  ]
+}
+</script>
+</article>
