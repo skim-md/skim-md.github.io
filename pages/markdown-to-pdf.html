@@ -4,12 +4,12 @@
   "description": "Convert markdown to PDF free and privately: render your .md file, then print to PDF from your browser. No upload, plus VS Code and Pandoc options.",
   "path": "/markdown-to-pdf/",
   "date": "2026-07-04",
-  "updated": "2026-07-04"
+  "updated": "2026-08-03"
 }
 -->
 <article class="prose">
 <h1>How to convert markdown to PDF (free, nothing uploaded)</h1>
-<p class="byline"><time datetime="2026-07-04">Updated 4 July 2026</time></p>
+<p class="byline"><time datetime="2026-08-03">Updated 3 August 2026</time></p>
 <p class="byline">The free, private method first, then the power-user options and one warning. 4 minute read.</p>
 <figure class="figure post-hero"><img class="shot" src="/assets/blog/markdown-to-pdf.png" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" alt="Converting a markdown .md file into a clean PDF"></figure>
 
@@ -29,6 +29,8 @@
 <p>Because the page is rendered locally and the browser generates the PDF itself, the content of your document is never sent to any server. That is the whole reason this method beats the convert-online sites for sensitive work.</p>
 
 <h2>Get the PDF looking right</h2>
+<p>If you are printing from the Skim extension, most of this is already handled: it switches to a print layout on white, keeps headings with the text that follows them, avoids splitting tables across pages, and offers a page margin of none, narrow, normal or wide from the export button. It can also add a numbered table of contents as the first page. <code>Ctrl+P</code> and <code>Cmd+P</code> are intercepted so the browser dialog gets that same layout. If you want a file you can share rather than print, Skim also exports a single self-contained <code>.html</code> file with fonts, math and diagrams embedded. See the <a href="/release-notes/">release notes</a> for what changed.</p>
+<p>The settings below still matter when you are printing from somewhere else, such as the online viewer or another renderer.</p>
 <p>The Print dialog has a few settings that make a real difference to the result. It is worth opening "More settings" and checking them before you save.</p>
 <ul>
 <li><strong>Margins.</strong> The default is usually fine, but "Minimum" or "None" gives you more usable width for wide tables and code blocks.</li>
@@ -66,6 +68,7 @@
 
 <h2>Related guides</h2>
 <ul>
+<li><a href="/release-notes/">What's new in Skim</a></li>
 <li><a href="/how-to-open-md-file/">How to open a .md file, three ways</a></li>
 <li><a href="/what-is-markdown/">What is markdown, in plain English</a></li>
 <li><a href="/readme-md/">What a README.md file is and how to read one</a></li>
@@ -77,7 +80,7 @@
   "@type": "HowTo",
   "name": "How to convert markdown to PDF for free without uploading",
   "datePublished": "2026-07-04",
-  "dateModified": "2026-07-04",
+  "dateModified": "2026-08-03",
   "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
   "step": [
     {
@@ -113,7 +116,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "datePublished": "2026-07-04",
-  "dateModified": "2026-07-04",
+  "dateModified": "2026-08-03",
   "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
   "mainEntity": [
     {
