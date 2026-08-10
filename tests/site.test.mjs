@@ -44,6 +44,18 @@ test('applyLayout: noindex pages get a robots meta', () => {
   assert.match(html, /noindex/);
 });
 
+test('applyLayout: og image uses the per-page cover when given, brand banner otherwise', () => {
+  const layout = '<meta property="og:image" content="{{ogImage}}"><meta property="og:image:alt" content="{{ogImageAlt}}">';
+  const base = { SITE_ORIGIN: 'https://example.org', INSTALL_URL: 'y', INSTALL_LABEL: 'z', GOATCOUNTER_CODE: '' };
+  const meta = { title: 'Post title', description: 'd', path: '/post/' };
+  const withCover = applyLayout(layout, meta, '', { ...base, ogImage: 'https://example.org/assets/blog/post.png' });
+  assert.ok(withCover.includes('content="https://example.org/assets/blog/post.png"'));
+  assert.ok(withCover.includes('alt" content="Post title"'));
+  const fallback = applyLayout(layout, meta, '', base);
+  assert.ok(fallback.includes('content="https://example.org/assets/og.png"'));
+  assert.ok(fallback.includes('markdown viewer for the browser'));
+});
+
 test('escAttr escapes quotes and angle brackets', () => {
   assert.equal(escAttr('a"b<c>&'), 'a&quot;b&lt;c&gt;&amp;');
 });

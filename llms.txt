@@ -1,0 +1,44 @@
+# Skim
+
+> Skim is a free, open-source markdown viewer: a browser extension plus an online viewer at skim.md, built for reading AI and agent-written markdown (plans, reports, AGENTS.md files) with live reload, math, and diagrams.
+
+## Product
+
+- [Skim: Markdown Viewer & Reader for Your Browser](https://skim.md/): Read .md files beautifully in your browser: local files, URLs, AI-agent output. Live reload, math, diagrams, folder view. Free, open source, no tracking.
+- [Install Skim: Chrome, Edge, Brave & more](https://skim.md/install/): Add the Skim markdown viewer to your browser in one click: Chrome, Edge, Brave, Opera, Vivaldi, Arc, Firefox, and Safari. Free and open source.
+- [Free Online Markdown Viewer: Open .md Files Instantly](https://skim.md/viewer/): Drop or paste any .md file and read it beautifully: tables, math, code highlighting. 100% in your browser, nothing is uploaded. Free, no sign-up.
+- [Skim: The Markdown Viewer for AI Agent Output](https://skim.md/ai/): Claude Code, Cursor, and CLI agents write plan.md, AGENTS.md, and reports all day. Skim renders them in a tab and live-reloads as the agent keeps writing.
+- [What Is Skim? Open-Source Markdown Viewer for AI](https://skim.md/what-is-skim/): Skim is a free, open-source browser extension that renders markdown files, including AI-written docs, with live reload, math, and diagrams.
+- [Skim Release Notes: What's New in the Markdown Viewer](https://skim.md/release-notes/): What is new in Skim 2.3: interactive quizzes embedded invisibly in markdown files. Plus 2.2: themes, zen mode, PDF and HTML export, vim navigation.
+
+## Guides
+
+- [How to Open a .MD File on Windows, Mac, or Online](https://skim.md/how-to-open-md-file/): Three ways to open a .md (markdown) file: instantly online with no install, in your browser with a free extension, or with apps you already have.
+- [Markdown Cheat Sheet: Every Syntax with Examples](https://skim.md/markdown-cheat-sheet/): Every markdown syntax in one cheat sheet: headings, emphasis, lists, links, images, code blocks, tables, and GitHub Flavored Markdown, with examples.
+- [How to Embed an Interactive Quiz in a Markdown File](https://skim.md/markdown-quiz/): Embed an interactive quiz in any markdown file with one HTML comment. Invisible on GitHub and in VS Code, rendered free by the Skim browser extension.
+- [Markdown Viewer for Arc: Free & Open Source](https://skim.md/markdown-reader-arc/): Skim is a free, open-source markdown viewer for the Arc browser that renders .md files automatically, with themes, math, diagrams, and no data collected.
+- [Markdown Viewer for Brave: Free & Private](https://skim.md/markdown-reader-brave/): Skim is a free, private markdown viewer for Brave that renders .md files automatically, with live reload, math, diagrams, and no data collected.
+- [Markdown Reader for Chrome: Free & Open Source](https://skim.md/markdown-reader-chrome/): Skim is a free, open-source markdown reader for Chrome that renders .md files automatically, with live reload, math, diagrams, and no data collected.
+- [Markdown Viewer for Microsoft Edge (Free)](https://skim.md/markdown-reader-edge/): Skim is a free, open-source markdown viewer for Microsoft Edge that renders .md files, with live reload, math, diagrams, and no data collected.
+- [Markdown Viewer for Firefox: Free & Open Source](https://skim.md/markdown-reader-firefox/): Skim is a free, open-source markdown viewer for Firefox that renders .md files automatically, with live reload, math, diagrams, and no data collected.
+- [Markdown Viewer for Opera: Free & Open Source](https://skim.md/markdown-reader-opera/): Skim is a free, open-source markdown viewer for Opera that renders .md files automatically, with live reload, math, diagrams, and no data collected.
+- [Markdown Viewer for Safari (Free, No Install)](https://skim.md/markdown-reader-safari/): Read markdown on Safari for Mac and iPhone with the free Skim online viewer. Nothing to install, nothing uploaded. A native Safari extension is on the way.
+- [Markdown Viewer for Vivaldi: Free, Open Source](https://skim.md/markdown-reader-vivaldi/): Skim is a free, open-source markdown viewer for Vivaldi that renders .md files automatically, with live reload, math, diagrams, and no data collected.
+- [How to Convert Markdown to PDF (Free, No Upload)](https://skim.md/markdown-to-pdf/): Convert markdown to PDF free and privately: render your .md file, then print to PDF from your browser. No upload, plus VS Code and Pandoc options.
+- [How to Open MD Files on a Mac (Nothing to Install)](https://skim.md/open-md-mac/): Read any .md file on macOS: Quick Look or TextEdit for raw text, a free online viewer for instant formatting, or a browser extension for every file.
+- [How to Open MD Files on Windows 11: 3 Easy Ways](https://skim.md/open-md-windows-11/): Open any .md file on Windows 11: view it formatted in your browser, use a free online viewer, or open the raw text in Notepad. Step-by-step, 2 minutes.
+- [How to Open a README.md File (and Actually Read It)](https://skim.md/readme-md/): Downloaded something with a README.md inside? Read it formatted in seconds: one drag online, or automatically in your browser. No developer tools needed.
+
+## Blog
+
+- [Skim Blog: markdown guides & viewer comparisons](https://skim.md/blog/): Guides on opening and reading .md files on any OS, understanding AGENTS.md and CLAUDE.md, and an honest 2026 comparison of markdown viewer extensions.
+- [What Is Markdown? A Plain-English Guide](https://skim.md/what-is-markdown/): Markdown is plain text with light formatting marks that turns into a formatted page. What it is, the core syntax, and how to read a .md file.
+- [Best Markdown Viewer Extensions in 2026 (Honest Review)](https://skim.md/best-markdown-viewer-extensions-2026/): Markdown Viewer, Markdown Reader, and Skim compared honestly: price, open source, local-file setup, live reload, and who each one is actually right for.
+- [Claude or ChatGPT Gave You a .md File? How to Read It](https://skim.md/claude-chatgpt-md-file/): AI tools love answering in markdown (.md) files. Here's how to read them formatted: online in one drag, or automatically in your browser with live reload.
+- [What Is an AGENTS.md File? (And How to Read One)](https://skim.md/what-is-agents-md/): AGENTS.md is the open convention coding agents read for project instructions. What goes in it, why it's markdown, and how to read one comfortably.
+- [What Is a CLAUDE.md File? Claude Code's Memory Explained](https://skim.md/what-is-claude-md/): CLAUDE.md is the project-instructions file Claude Code reads automatically. What goes in it, where it lives, and how to read one comfortably.
+
+## Project
+
+- [Skim on GitHub](https://github.com/skim-md/skim): Source code for the browser extension, MIT licensed.
+- [Skim Quiz Protocol](https://raw.githubusercontent.com/skim-md/skim/main/SKIM-QUIZ-PROTOCOL.md): Spec for embedding interactive quizzes in any markdown file via HTML comments, invisible in other renderers, written for humans and AI agents.

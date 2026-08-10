@@ -28,6 +28,13 @@ export function applyLayout(layout, meta, body, consts) {
     ? `<script data-goatcounter="https://${consts.GOATCOUNTER_CODE}.goatcounter.com/count" async src="/assets/count.js"></script>`
     : '<!-- analytics: set GOATCOUNTER_CODE in scripts/build.mjs and self-host count.js as assets/count.js -->';
   const ogType = meta.date ? 'article' : 'website';
+  // Social preview: a per-page cover (absolute URL, passed in by the build
+  // when assets/blog/<slug>.png exists) or the site-wide brand banner. Both
+  // are 1200x630, so the og:image:width/height in the layout stay correct.
+  const ogImage = consts.ogImage || `${consts.SITE_ORIGIN}/assets/og.png`;
+  const ogImageAlt = consts.ogImage
+    ? escAttr(meta.title)
+    : 'Skim, a free open-source markdown viewer for the browser';
   const articleMeta = meta.date
     ? `<meta property="article:published_time" content="${escAttr(meta.date)}">\n<meta property="article:modified_time" content="${escAttr(meta.updated || meta.date)}">`
     : '';
@@ -47,6 +54,8 @@ export function applyLayout(layout, meta, body, consts) {
     analytics,
     ogType,
     articleMeta,
+    ogImage,
+    ogImageAlt,
   };
   // Two passes: the body itself may contain {{installUrl}} etc.
   let html = layout;

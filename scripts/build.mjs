@@ -2,6 +2,7 @@
 // root (GitHub Pages serves main branch root), vendor the site webfonts,
 // and generate sitemap.xml/robots.txt.
 import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build, transform } from 'esbuild';
@@ -123,20 +124,36 @@ async function inlineCriticalCss() {
   console.log(`inlined: site-fonts.css + site.css (${(code.length / 1024).toFixed(1)} KB minified)`);
 }
 
+// Social preview: a page whose slug has a generated cover in assets/blog/
+// (see gen-blog-images.mjs, which runs before buildPages) gets that cover as
+// its og:image/twitter:image; every other page keeps the brand banner
+// /assets/og.png. Existence is checked on disk, no hardcoded page list.
+function coverFor(path) {
+  const slug = path.replace(/^\/|\/$/g, ''); // "/what-is-skim/" -> "what-is-skim", "/" -> ""
+  if (!slug || !existsSync(r('assets/blog', `${slug}.png`))) return null;
+  return `${SITE_ORIGIN}/assets/blog/${slug}.png`;
+}
+
 async function buildPages() {
   const layout = await readFile(r('templates/layout.html'), 'utf8');
   const files = (await readdir(r('pages'))).filter((f) => f.endsWith('.html')).sort();
   const sitemapUrls = [];
+  const metas = [];
+  let covers = 0;
   for (const f of files) {
     const src = await readFile(r('pages', f), 'utf8');
     const { meta, body } = parseMeta(src);
     const out = outPathFor(meta.path);
+    const ogImage = coverFor(meta.path);
+    if (ogImage) covers++;
     await mkdir(dirname(r(out)), { recursive: true });
-    await writeFile(r(out), applyLayout(layout, meta, body, consts));
+    await writeFile(r(out), applyLayout(layout, meta, body, ogImage ? { ...consts, ogImage } : consts));
     if (!meta.noindex) sitemapUrls.push(SITE_ORIGIN + meta.path);
-    console.log(`page: pages/${f} -> ${out}`);
+    metas.push(meta);
+    console.log(`page: pages/${f} -> ${out}${ogImage ? ' (og: cover)' : ''}`);
   }
-  return sitemapUrls;
+  console.log(`og images: ${covers} pages use a per-page cover, ${files.length - covers} the brand banner`);
+  return { sitemapUrls, metas };
 }
 
 async function buildSitemapAndRobots(urls) {
@@ -153,6 +170,50 @@ async function buildSitemapAndRobots(urls) {
   console.log(`sitemap: ${urls.length} urls; robots.txt written`);
 }
 
+// llms.txt (llmstxt.org): a machine-readable index of the site for LLMs and
+// agents, regenerated on every build like sitemap.xml. Names and descriptions
+// come from each page's own meta block; only section membership is decided
+// here (Product is the fixed product surface, guide slugs match GUIDE_PATH,
+// every other dated page is a blog post). noindex pages and /privacy/ stay out.
+const LLMS_PRODUCT = ['/', '/install/', '/viewer/', '/ai/', '/what-is-skim/', '/release-notes/'];
+const GUIDE_PATH = /^\/(how-to-|open-md-|markdown-reader-|markdown-to-pdf|markdown-cheat-sheet|markdown-quiz|readme-md)/;
+
+async function buildLlmsTxt(metas) {
+  const byPath = new Map(metas.map((m) => [m.path, m]));
+  const entry = (m) => `- [${m.title}](${SITE_ORIGIN}${m.path}): ${m.description.trim()}`;
+  const rest = metas.filter((m) => !m.noindex && !LLMS_PRODUCT.includes(m.path) && m.path !== '/privacy/');
+  const product = LLMS_PRODUCT.map((p) => byPath.get(p)).filter(Boolean);
+  const guides = rest.filter((m) => GUIDE_PATH.test(m.path)).sort((a, b) => a.path.localeCompare(b.path));
+  const blog = rest
+    .filter((m) => !GUIDE_PATH.test(m.path))
+    .sort((a, b) => (a.path === '/blog/' ? -1 : b.path === '/blog/' ? 1 : String(b.date || '').localeCompare(String(a.date || ''))));
+  const lines = [
+    '# Skim',
+    '',
+    '> Skim is a free, open-source markdown viewer: a browser extension plus an online viewer at skim.md, built for reading AI and agent-written markdown (plans, reports, AGENTS.md files) with live reload, math, and diagrams.',
+    '',
+    '## Product',
+    '',
+    ...product.map(entry),
+    '',
+    '## Guides',
+    '',
+    ...guides.map(entry),
+    '',
+    '## Blog',
+    '',
+    ...blog.map(entry),
+    '',
+    '## Project',
+    '',
+    `- [Skim on GitHub](${REPO_URL}): Source code for the browser extension, MIT licensed.`,
+    '- [Skim Quiz Protocol](https://raw.githubusercontent.com/skim-md/skim/main/SKIM-QUIZ-PROTOCOL.md): Spec for embedding interactive quizzes in any markdown file via HTML comments, invisible in other renderers, written for humans and AI agents.',
+    '',
+  ];
+  await writeFile(r('llms.txt'), lines.join('\n'));
+  console.log(`llms.txt: ${product.length} product, ${guides.length} guides, ${blog.length} blog entries`);
+}
+
 await vendorFonts();
 await vendorViewerAssets();
 await generateFavicons();
@@ -161,5 +222,6 @@ await generateBlogDiagrams();
 await optimizePromo();
 await bundleViewer();
 await inlineCriticalCss(); // after vendorFonts(): reads the site-fonts.css it wrote
-const urls = await buildPages();
-await buildSitemapAndRobots(urls);
+const { sitemapUrls, metas } = await buildPages();
+await buildSitemapAndRobots(sitemapUrls);
+await buildLlmsTxt(metas);

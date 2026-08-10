@@ -7,7 +7,10 @@ from `main` at https://skim.md.
 
 - `npm run build` compiles `pages/*.html` through `templates/layout.html` into
   the repo root, and regenerates favicons, blog cover images, blog diagrams,
-  `sitemap.xml`, and `robots.txt`.
+  `sitemap.xml`, `robots.txt`, and `llms.txt`.
+- Social previews: a page whose slug has a cover in `assets/blog/<slug>.png`
+  gets that cover as its `og:image`/`twitter:image` (checked on disk at build
+  time); all other pages fall back to the brand banner `/assets/og.png`.
 - `npm run check` is a hard SEO/link gate. `npm test` runs unit tests.
 - Before committing: `npm run build && npm run check && npm test` must all pass.
 - Commit the built root files too (Pages serves them); don't commit only `pages/`.
