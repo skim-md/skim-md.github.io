@@ -110,8 +110,8 @@ img, svg, video { max-width: 100%; height: auto; }
 .foot-mini { margin: 0 0 16px; font-size: 14px; }
 .foot-gh { color: var(--text); }
 .foot-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.foot-h { font-weight: 700; margin: 0 0 10px; color: var(--text); }
-.site-foot .foot-links a { display: block; color: var(--muted); text-decoration: none; margin: 7px 0; }
+.foot-h { font-weight: 700; margin: 0 0 10px; color: var(--text); font-size: 14px; }
+.site-foot .foot-links a { display: block; color: var(--muted); text-decoration: none; margin: 6px 0; font-size: 14px; line-height: 1.5; }
 .site-foot .foot-links a:hover { color: var(--accent); }
 .foot-bar { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
 
