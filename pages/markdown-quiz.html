@@ -1,0 +1,134 @@
+<!--meta
+{
+  "title": "How to Embed an Interactive Quiz in a Markdown File",
+  "description": "Embed an interactive quiz in any markdown file with one HTML comment. Invisible on GitHub and in VS Code, rendered free by the Skim browser extension.",
+  "path": "/markdown-quiz/",
+  "date": "2026-08-10",
+  "updated": "2026-08-10"
+}
+-->
+<article class="prose">
+<h1>Put an interactive quiz inside a markdown file</h1>
+<p class="byline"><time datetime="2026-08-10">Updated 10 August 2026</time></p>
+<p class="byline">The questions travel inside the file itself, invisible until you want them. 5 minute read.</p>
+<figure class="figure post-hero"><img class="shot" src="/assets/blog/markdown-quiz.png" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" alt="An interactive quiz embedded invisibly in a markdown file, rendered by the Skim viewer"></figure>
+
+<h2>The trick: a quiz that hides in an HTML comment</h2>
+<p>Markdown has no quiz syntax, and it does not need one. Every markdown renderer already ignores HTML comments, so a quiz that lives inside one is invisible everywhere: GitHub shows the document unchanged, VS Code shows it unchanged, Obsidian, <code>cat</code>, and Skim's own reading view all show it unchanged. The file stays a normal <code>.md</code> file you can commit, share, and diff.</p>
+<p>Skim 2.3.0 introduces the Skim Quiz Protocol v1: a small, documented convention for embedding choice quizzes in exactly that way. A quiz is one HTML comment starting with the marker <code>SKIM-QUIZ</code>, followed by a JSON object. When you open the file in <a href="/what-is-skim/">Skim</a>, a Quiz button appears in the page settings panel and offers to render it. Everywhere else, nothing happens, by design.</p>
+<figure class="figure"><img class="diagram" src="/assets/blog/dg-markdown-quiz.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: a SKIM-QUIZ comment with JSON inside stays invisible on GitHub and in VS Code, and Skim renders it as a quiz pane or fullscreen"><figcaption>One HTML comment: invisible in every renderer, interactive in Skim.</figcaption></figure>
+
+<h2>The format, in one example</h2>
+<p>Paste a block like this anywhere in the file (the end is conventional):</p>
+<pre><code><span class="tk">&lt;!-- SKIM-QUIZ</span>
+{
+  "skimQuiz": 1,
+  "id": "norms-check",
+  "title": "Norms on R^n",
+  "description": "Quick check: homogeneity and the triangle inequality",
+  "layout": "full",
+  "pass": 0.7,
+  "questions": [
+    {
+      "q": "Which of these is **not** a norm on $\\mathbb{R}^2$?",
+      "choices": [
+        "$\\|x\\|_1 = |x_1| + |x_2|$",
+        "$f(x) = x_1^2 + x_2^2$",
+        "$\\|x\\|_\\infty = \\max(|x_1|, |x_2|)$"
+      ],
+      "answer": 1,
+      "hint": ["Norms are homogeneous.", "What happens to $f(2x)$?"],
+      "explain": "Scaling $x$ by $t$ scales $f$ by $t^2$, so homogeneity fails."
+    }
+  ]
+}
+<span class="tk">--&gt;</span></code></pre>
+<p>The JSON is strict: double quotes, no trailing commas, and LaTeX backslashes doubled. <code>skimQuiz: 1</code>, a <code>title</code>, and at least one question are required. Each question has a <code>q</code>, two to ten <code>choices</code>, and an <code>answer</code> given as a zero-based index; an array of indices makes the question multi-select. Everything else is optional: a <code>description</code> for the picker, a <code>layout</code> of <code>half</code> or <code>third</code> for a side pane or <code>full</code> for fullscreen, a <code>pass</code> threshold, <code>shuffle</code> to reorder questions per attempt, one or more progressively stronger <code>hint</code>s, and an <code>explain</code> shown during review.</p>
+<p>Question, choice, hint, and explanation text is full markdown with LaTeX math, and Hebrew, English, or a mix of both render with correct direction, handled by the same bidi engine Skim uses for documents. Here is the quiz above, rendered fullscreen:</p>
+<figure class="figure"><img class="shot" src="/assets/promo/09-quiz-full.webp" width="1280" height="800" loading="lazy" decoding="async" alt="An interactive markdown quiz rendered fullscreen in Skim's light theme: an English multiple choice question with LaTeX answer choices and a hint button"><figcaption>A quiz from a markdown file, fullscreen in the light theme.</figcaption></figure>
+
+<h2>Or have an AI write it for you</h2>
+<p>The full authoring spec ships inside the extension, and the fastest way to use it is to not read it. The Skim toolbar popup has a one-click line, <strong>Copy Skim Markdown Quiz Skill</strong>, that copies the whole protocol to your clipboard. Paste it into Claude or ChatGPT together with your notes and ask for a quiz. The agent gets the exact format, the escaping rules, and the content guidance, so what comes back drops straight into the file. This is the workflow the feature was built around: lecture notes in, drill quiz out, and the file still looks untouched to everyone else.</p>
+
+<h2>Taking a quiz</h2>
+<p>Open the file in Skim, press the Quiz button in the page settings panel, and the quiz opens beside the document in a resizable pane. Drag the divider to make it wider or narrower, drag it all the way to the edge for fullscreen, and if you shrink it below its minimum, Skim asks before closing so a stray drag cannot eat your answers. A numbered palette tracks every question, colored by state: answered, correct, or wrong. Hints reveal one at a time, gentlest first.</p>
+<figure class="figure"><img class="shot" src="/assets/promo/06-quiz-pane.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Skim rendering an interactive quiz from a markdown file in a resizable side pane: a Hebrew question with LaTeX math, a numbered question palette, and a revealed hint, with the document still readable beside it"><figcaption>A Hebrew quiz with LaTeX in the side pane, document still in view. One hint revealed, another on offer.</figcaption></figure>
+<p>The browser's Back button closes the quiz and returns you to the document; Forward reopens it with your answers intact. Nothing about the page is lost either way.</p>
+
+<h2>Scores, pass bars, and review</h2>
+<p>Submitting shows a score screen: your percentage, how many you got right, and, if the quiz set a <code>pass</code> threshold, whether you cleared the bar. From there you can retry, jump back to the palette, or review just the questions you missed, each with its explanation. Skim remembers your best score and attempt count per quiz, stored locally in your browser and never transmitted.</p>
+<figure class="figure"><img class="shot" src="/assets/promo/07-quiz-score.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Markdown quiz score screen in Skim: 67 percent, 2 of 3 correct, a badge reading Below the 70 percent bar, and a button to review the missed question"><figcaption>67 percent against a 70 percent pass bar: close, review the one you missed, try again.</figcaption></figure>
+
+<h2>Several quizzes in one file</h2>
+<p>A file can carry any number of quiz comments. Long study notes might end with a quick concept check, a harder drill, and an exam simulation. Skim lists them in a picker with each quiz's question count, layout, your best score, and how many attempts you have made, so you can see at a glance what is left to beat.</p>
+<figure class="figure"><img class="shot" src="/assets/promo/08-quiz-picker.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Skim's quiz picker for a single markdown file: a Hebrew quiz and an English quiz, each listed with question count, layout, best score, and attempt count"><figcaption>Two quizzes in one file: a Hebrew drill with a best score, an English check not yet attempted.</figcaption></figure>
+
+<h2>Where it works</h2>
+<p>Quizzes ship in Skim 2.3.0 and work anywhere Skim renders markdown: local <code>file://</code> files, files served over http, and markdown pasted through the <a href="/release-notes/">clipboard viewer</a>. Like the rest of Skim, the feature is free, open source, and entirely on-device. There is no account, no sync service, and no telemetry; your questions and your scores never leave the machine. Your browser updates the extension automatically, usually within a day of release.</p>
+
+<h2>FAQ</h2>
+<h3>Will the quiz show up on GitHub or in VS Code?</h3>
+<p>No. The quiz lives in an HTML comment, which every markdown renderer ignores. GitHub, VS Code, Obsidian, and even Skim's own reading view show the document unchanged. Only Skim's Quiz button reveals it, and only when you ask.</p>
+<h3>What can go inside the questions?</h3>
+<p>Full markdown plus LaTeX math, in questions, choices, hints, and explanations. Hebrew, English, and mixed-direction text all render correctly, handled by Skim's bidi engine.</p>
+<h3>Are my quiz scores uploaded anywhere?</h3>
+<p>No. Best scores and attempt counts are stored locally in your browser, per quiz. Nothing is transmitted and there is no account.</p>
+<h3>How do I get Claude or ChatGPT to write a quiz for my notes?</h3>
+<p>Open the Skim toolbar popup and click Copy Skim Markdown Quiz Skill. That copies the full Skim Quiz Protocol v1 to your clipboard. Paste it into the AI chat with your notes and ask for a quiz; the result is a comment block you paste at the end of your file.</p>
+
+<aside class="cta-box">
+  <p><strong>Want quizzes in your own notes?</strong> Skim is a free, open source markdown viewer that renders every <code>.md</code> file you open, and now the quizzes hidden inside them. <a href="{{installUrl}}" rel="noopener">Add it to your browser, free</a>, or see everything else new in the <a href="/release-notes/">release notes</a>.</p>
+</aside>
+
+<h2>Related guides</h2>
+<ul>
+<li><a href="/release-notes/">What's new in Skim</a></li>
+<li><a href="/claude-chatgpt-md-file/">Claude or ChatGPT gave you a .md file? How to read it</a></li>
+<li><a href="/markdown-cheat-sheet/">Markdown cheat sheet</a></li>
+<li><a href="/what-is-skim/">What is Skim?</a></li>
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will the quiz show up on GitHub or in VS Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The quiz lives in an HTML comment, which every markdown renderer ignores. GitHub, VS Code, Obsidian, and even Skim's own reading view show the document unchanged. Only Skim's Quiz button reveals it, and only when you ask."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can go inside the questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full markdown plus LaTeX math, in questions, choices, hints, and explanations. Hebrew, English, and mixed-direction text all render correctly, handled by Skim's bidi engine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my quiz scores uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Best scores and attempt counts are stored locally in your browser, per quiz. Nothing is transmitted and there is no account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get Claude or ChatGPT to write a quiz for my notes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the Skim toolbar popup and click Copy Skim Markdown Quiz Skill. That copies the full Skim Quiz Protocol v1 to your clipboard. Paste it into the AI chat with your notes and ask for a quiz; the result is a comment block you paste at the end of your file."
+      }
+    }
+  ]
+}
+</script>
+</article>

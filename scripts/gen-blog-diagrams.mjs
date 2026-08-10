@@ -121,6 +121,8 @@ const DIAGRAMS = [
     { l1: 'Type a mark', l2: '# ** - > `' }, { l1: 'Renderer', l2: 'reads it' }, { l1: 'Formatting', l2: 'heading, bold, list' } ] },
   { id: 'markdown-reader-chrome', kind: 'flow', accent: '#f0a500', steps: [
     { l1: 'Add to Chrome', l2: 'one click' }, { l1: 'Allow files', l2: 'one switch' }, { l1: 'Every .md', l2: 'renders auto' } ] },
+  { id: 'markdown-quiz', kind: 'flow', accent: '#22a06b', steps: [
+    { l1: 'Quiz comment', l2: 'strict JSON inside' }, { l1: 'Invisible', l2: 'GitHub, VS Code' }, { l1: 'Skim renders it', l2: 'pane or fullscreen' } ] },
   { id: 'markdown-to-pdf', kind: 'flow', accent: '#e0523f', steps: [
     { l1: 'Your .md', l2: '' }, { l1: 'Render it', l2: 'viewer or Skim' }, { l1: 'Print dialog', l2: 'Ctrl or Cmd + P' }, { l1: 'Save as PDF', l2: 'done' } ] },
   { id: 'markdown-reader-firefox', kind: 'flow', accent: '#ff7a1a', steps: [

@@ -33,6 +33,7 @@ const COVERS = [
   { slug: 'markdown-cheat-sheet',                 token: 'cheat-sheet.md', kicker: 'Reference',  accent: '#34d399', l1: 'Markdown', l2: 'cheat sheet' },
   { slug: 'markdown-reader-chrome',               token: 'chrome.md',      kicker: 'Chrome',     accent: '#ffd866', l1: 'Markdown reader', l2: 'for Chrome' },
   { slug: 'markdown-to-pdf',                      token: 'export.md',      kicker: 'Guide',      accent: '#ff6a5f', l1: 'Convert markdown', l2: 'to PDF' },
+  { slug: 'markdown-quiz',                        token: 'quiz.md',        kicker: 'New in 2.3', accent: '#34d399', l1: 'A quiz hidden in', l2: 'your markdown' },
   // Per-browser guides
   { slug: 'markdown-reader-firefox',              token: 'firefox.md',     kicker: 'Firefox',    accent: '#ff7a1a', l1: 'Markdown reader', l2: 'for Firefox' },
   { slug: 'markdown-reader-edge',                 token: 'edge.md',        kicker: 'Edge',       accent: '#37c5f0', l1: 'Markdown viewer', l2: 'for Microsoft Edge' },
