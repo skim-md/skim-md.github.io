@@ -174,14 +174,15 @@ async function buildSitemapAndRobots(urls) {
 // agents, regenerated on every build like sitemap.xml. Names and descriptions
 // come from each page's own meta block; only section membership is decided
 // here (Product is the fixed product surface, guide slugs match GUIDE_PATH,
-// every other dated page is a blog post). noindex pages and /privacy/ stay out.
+// every other dated page is a blog post). noindex pages, /privacy/ and the
+// translated landing pages (llms.txt is English) stay out.
 const LLMS_PRODUCT = ['/', '/install/', '/viewer/', '/ai/', '/what-is-skim/', '/release-notes/'];
 const GUIDE_PATH = /^\/(how-to-|open-md-|markdown-reader-|markdown-to-pdf|markdown-cheat-sheet|markdown-quiz|readme-md)/;
 
 async function buildLlmsTxt(metas) {
   const byPath = new Map(metas.map((m) => [m.path, m]));
   const entry = (m) => `- [${m.title}](${SITE_ORIGIN}${m.path}): ${m.description.trim()}`;
-  const rest = metas.filter((m) => !m.noindex && !LLMS_PRODUCT.includes(m.path) && m.path !== '/privacy/');
+  const rest = metas.filter((m) => !m.noindex && !LLMS_PRODUCT.includes(m.path) && m.path !== '/privacy/' && (!m.lang || m.lang === 'en'));
   const product = LLMS_PRODUCT.map((p) => byPath.get(p)).filter(Boolean);
   const guides = rest.filter((m) => GUIDE_PATH.test(m.path)).sort((a, b) => a.path.localeCompare(b.path));
   const blog = rest

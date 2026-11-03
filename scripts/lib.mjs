@@ -38,7 +38,19 @@ export function applyLayout(layout, meta, body, consts) {
   const articleMeta = meta.date
     ? `<meta property="article:published_time" content="${escAttr(meta.date)}">\n<meta property="article:modified_time" content="${escAttr(meta.updated || meta.date)}">`
     : '';
+  // Translated pages: `"lang": "de"` sets <html lang>, and `"alternates":
+  // {"en": "/", "de": "/de/..."}` emits hreflang links (each page lists all
+  // versions, itself included, plus x-default = the English one).
+  const lang = meta.lang || 'en';
+  const alternates = meta.alternates
+    ? Object.entries(meta.alternates)
+        .map(([hl, p]) => `<link rel="alternate" hreflang="${escAttr(hl)}" href="${consts.SITE_ORIGIN}${escAttr(p)}">`)
+        .concat(meta.alternates.en ? [`<link rel="alternate" hreflang="x-default" href="${consts.SITE_ORIGIN}${escAttr(meta.alternates.en)}">`] : [])
+        .join('\n')
+    : '';
   const tokens = {
+    lang: escAttr(lang),
+    alternates,
     title: escAttr(meta.title),
     description: escAttr(meta.description),
     canonical,
