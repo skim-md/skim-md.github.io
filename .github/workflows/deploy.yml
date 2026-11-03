@@ -73,3 +73,21 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    # Tell Bing, Yandex and the other IndexNow engines that the pages changed.
+    # Bing's index feeds ChatGPT search and Copilot, so this is the fast path
+    # into AI answers. Best effort: a failure here never fails the deploy.
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping IndexNow with every sitemap URL
+        continue-on-error: true
+        env:
+          KEY: afeaa8cedcb59e5b845904fabbb9eeb6
+        run: |
+          URLS=$(curl -fsS https://skim.md/sitemap.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' | jq -R . | jq -sc .)
+          BODY=$(jq -nc --arg key "$KEY" --argjson urls "$URLS" \
+            '{host:"skim.md", key:$key, keyLocation:("https://skim.md/" + $key + ".txt"), urlList:$urls}')
+          curl -sS -o /dev/null -w 'IndexNow HTTP %{http_code}\n' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' -d "$BODY" || true
