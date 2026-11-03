@@ -1,24 +1,29 @@
 <!--meta
 {
-  "title": "How to Open MD Files on Windows 11: 3 Easy Ways",
-  "description": "Open any .md file on Windows 11: view it formatted in your browser, use a free online viewer, or open the raw text in Notepad. Step-by-step, 2 minutes.",
+  "title": "How to Open .MD Files on Windows 11 and 10",
+  "description": "Open any .md file on Windows: Notepad now shows basic formatting on Windows 11, and your browser renders tables, code and math. Step by step.",
   "path": "/open-md-windows-11/",
   "date": "2026-07-02",
-  "updated": "2026-07-03"
+  "updated": "2026-11-03"
 }
 -->
 <article class="prose">
-<h1>How to open .md files on Windows 11</h1>
-<p class="byline"><time datetime="2026-07-03">Updated 3 July 2026</time></p>
-<p class="byline">Windows 11 has no built-in markdown renderer. Here are the three real options. 3 minute read.</p>
+<h1>How to open .md files on Windows 11 and 10</h1>
+<p class="byline"><time datetime="2026-11-03">Updated 3 November 2026</time></p>
+<p class="byline">Notepad on Windows 11 now shows basic markdown formatting. Here is what it covers, and what to use for the rest. 3 minute read.</p>
 <figure class="figure post-hero"><img class="shot" src="/assets/blog/open-md-windows-11.png" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" alt="Opening a .md markdown file on Windows 11"></figure>
 
 <h2>The 10-second answer</h2>
-<p>Windows 11 does not render markdown out of the box, so double-clicking a <code>.md</code> file just opens raw text in whatever app is set as default. You have three real options, ranked by how they read: a browser extension gives you a formatted page automatically every time, a free online viewer gives you a formatted page with zero install, and Notepad gives you the raw text with nothing to set up at all.</p>
+<p>On Windows 11, open the <code>.md</code> file in Notepad. Current versions of Notepad show basic markdown formatting: headings, lists, bold, italic and links. On Windows 10, Notepad shows raw text only. For tables, highlighted code, math or diagrams on either version, open the file in your browser: drop it on the <a href="/viewer/">free online viewer</a>, or install a browser extension so every <code>.md</code> file renders when you double-click it.</p>
 <figure class="figure"><img class="diagram" src="/assets/blog/dg-open-md-windows-11.png" width="1200" height="300" loading="lazy" decoding="async" alt="Diagram: a .md file on Windows opens as text, then a viewer turns it into a formatted page"><figcaption>The path from a raw .md file to a formatted page on Windows.</figcaption></figure>
 
-<h2>Option 1: Notepad, built in, raw text</h2>
-<p>Right-click the file, choose Open with, and pick Notepad, or run <code>notepad file.md</code> from a terminal. You will see the file exactly as written: a heading looks like <code>## Setup</code>, bold text looks like <code>**important**</code>, and a link looks like <code>[click here](https://example.com)</code>. Nothing is formatted. That is fine if you just need to scan a short file for one piece of information, like a version number or a single command. It gets tiring fast on anything longer, especially files with tables or code blocks, where the raw marks make the content genuinely hard to follow.</p>
+<h2>Option 1: Notepad, built in</h2>
+<p>Right-click the file, choose Open with, and pick Notepad, or run <code>notepad file.md</code> from a terminal.</p>
+<ul>
+<li><strong>Windows 11:</strong> Microsoft added markdown formatting to Notepad in 2025. Update Notepad from the Microsoft Store if you do not see it. Headings, lists, bold, italic and links show formatted, and the View formatting button at the bottom switches between the formatted view and the raw text. Microsoft has been adding more, like strikethrough and nested lists, step by step through test builds.</li>
+<li><strong>Windows 10:</strong> Notepad shows the file exactly as written. A heading looks like <code>## Setup</code> and bold text looks like <code>**important**</code>.</li>
+</ul>
+<p>Notepad is fine for a short note or a README. Files written by developers and AI tools are often full of tables, code blocks and math, and those read much better in a full viewer.</p>
 
 <h2>Option 2: free online viewer, formatted, no install</h2>
 <p>For a properly formatted page with nothing to install, use the <a href="/viewer/">free online markdown viewer</a>. Open it in Edge or Chrome, drag your <code>.md</code> file onto the page, and it renders instantly: headings, bold text, tables, and code blocks all appear the way they were meant to look. Nothing is uploaded. The file is processed entirely on your machine, so it works the same on a personal laptop or a locked-down work computer.</p>
@@ -37,7 +42,7 @@
 
 <h2>FAQ</h2>
 <h3>Can Notepad open .md files?</h3>
-<p>Yes, as raw text. It shows the file exactly as written, including formatting marks like <code>#</code> and <code>**</code>, without rendering them.</p>
+<p>Yes. On Windows 11, an up-to-date Notepad shows basic markdown formatting: headings, lists, bold, italic and links. On Windows 10 it shows the raw text, with marks like <code>#</code> and <code>**</code> left as they are.</p>
 <h3>How do I make .md files always open in my browser?</h3>
 <p>Go to Settings, then Apps, then Default apps, search for <code>.md</code>, and set your browser as the default. Every <code>.md</code> file will then open there when you double-click it.</p>
 <h3>Is .md the same as .markdown?</h3>
@@ -58,7 +63,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "datePublished": "2026-07-02",
-  "dateModified": "2026-07-03",
+  "dateModified": "2026-11-03",
   "publisher": { "@type": "Organization", "name": "Skim", "url": "https://skim.md/" },
   "mainEntity": [
     {
@@ -66,7 +71,7 @@
       "name": "Can Notepad open .md files?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, as raw text. It shows the file exactly as written, including formatting marks like # and **, without rendering them."
+        "text": "Yes. On Windows 11, an up-to-date Notepad shows basic markdown formatting: headings, lists, bold, italic and links. On Windows 10 it shows the raw text, with marks like # and ** left as they are."
       }
     },
     {
