@@ -23,7 +23,7 @@ const WEIGHT_EXEMPT = /^assets\/(viewer\.bundle\.js|skim\.css|viewer-fonts\.css|
 // Renderer snapshots: vendored copies must match the live extension checkout
 // (sibling dir, same convention as scripts/sync-renderer.mjs; override with
 // SKIM_EXT_DIR). Drift WARNS, never fails: the extension may be ahead.
-const EXT_DIR = process.env.SKIM_EXT_DIR || r('../mdviewer');
+const EXT_DIR = process.env.SKIM_EXT_DIR || r('../extension');
 const SNAPSHOTS = [
   ['src/render.js', 'vendor/skim/render.js'],
   ['src/frontmatter.js', 'vendor/skim/frontmatter.js'],

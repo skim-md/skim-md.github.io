@@ -6,7 +6,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const EXT = resolve(root, '../mdviewer'); // Skim extension checkout
+const EXT = resolve(root, '../extension'); // Skim extension checkout
 
 const FILES = [
   ['src/render.js', 'vendor/skim/render.js'],
